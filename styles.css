@@ -3,6 +3,7 @@
 :root {
     --primary-color: #572EE5;
     --secundary-color: #5ED7C6;
+    --primary-font: Roboto-Black;
 }
 
 /*Resets */
@@ -12,11 +13,38 @@
     box-sizing: border-box;
 }
 
+/* Utilities*/
+
+.hidden {
+    display:none;
+}
+
+.unhidden {
+    display:block;
+}
+
 /*Header*/
 
 header {
     display: flex;
     justify-content: space-between;
+    border-top: solid var(--primary-color) 5px;
+}
+
+.logo__container {
+    margin-top:18px;
+    margin-left: 156px;
+}
+
+.logo__desktop, .logo__desktop--noc {
+    width: 68px;
+    height: 60px;
+}
+
+tspan .logo__text {
+    font-size: 18px;
+    color: var(--primary-color);
+    word-spacing: 21px;
 }
 
 nav {
@@ -26,6 +54,7 @@ nav {
 
 nav ul {
 display:flex;
+margin-top: 36px;
 
 }
 
@@ -58,4 +87,27 @@ nav ul li a {
   -ms-transform: rotate(45deg);
     -webkit-transform: rotate(45deg);
 
+}
+
+/* Hero Section*/
+.hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.hero__image {
+    width: 400px;
+    height: 190px;
+}
+
+.hero__container {
+    flex-direction: column;
+    margin: 0 auto;
+}
+
+.hero-search__input {
+    border-radius: 27px;
+    width:551px;
+    height:50px;
 }
