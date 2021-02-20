@@ -3,12 +3,14 @@
 header {
     display: flex;
     justify-content: space-between;
-    border-top: solid var(--primary-color) 5px;
+    border-top: solid $primary-color 5px;
+    height: 95px;
+    margin-bottom: 7px;
 }
 
 .logo__container {
-    margin-top:18px;
-    margin-left: 156px;
+    margin-top:29px;
+    margin-left: 22px;
 }
 
 .logo__desktop, .logo__desktop--noc {
@@ -73,17 +75,80 @@ nav ul li a {
 }
 
 .hero__image {
-    width: 400px;
-    height: 190px;
+    width: 273px;
+    height: 130px;
+    margin-bottom: -10px;
+    margin-left:22px;
 }
 
 .hero__container {
     flex-direction: column;
     margin: 0 auto;
-}
+
+    h1 {
+        max-width: 286px;
+        height:99px;
+        margin: 0 auto;
+        font-family: $primary-font;
+        color: $primary-color;
+        font-size: 25px;
+        line-height: 33px;
+        text-align:center;
+    }
+
+    .hero__container-gifos {
+        color: $secundary-color;
+    }
+
+    .hero__search {
+        position: relative;
+        margin-left: 293px;
+        margin-top: 15px;
+    }
+
+
+
+    }
 
 .hero-search__input {
     border-radius: 27px;
-    width:551px;
+    width:334px;
     height:50px;
+    padding-left: 50px;
+    position: absolute;
+    padding-left: 50px;
 }
+
+.hero__trending--text {
+    text-align: center;
+}
+
+
+.hero__trending {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 auto;
+    line-height: 25px;
+
+    .hero__trending--title {
+        font-family: $primary-font;
+        color: $primary-color;
+        text-align: center;
+        font-weight: 700;
+        margin-top: 31px;
+    }
+
+    .hero__trending--text {
+        text-align: center;
+        font-size: 14px;
+        color: $primary-color;
+        font-family: $primary-font;
+    }
+}
+
+
+
+
+
+

@@ -1,0 +1,36 @@
+.footer {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    border-bottom: solid $primary-color 5px;
+
+    .footer__social-icons {
+        display:flex;
+        justify-content: center;
+        margin-bottom: 47.8px;
+
+        img {
+            margin-left: 20px;
+        }
+    }
+
+    .footer-title {
+        text-align: center;
+        margin-bottom: 24px;
+        margin-top: 47px;
+        font-family: $secondary-font;
+        font-size: 15px;
+    }
+
+    li {
+        list-style: none;
+    }
+
+    .footer-copyright {
+        margin-bottom: 23px;
+        text-align: center;
+        font-family: $secondary-font;
+        font-size: $small-font-size;
+        line-height: $large-font-size;
+    }
+}

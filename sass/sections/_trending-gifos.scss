@@ -1,0 +1,44 @@
+.trending-gifos {
+    max-height: 430px;
+    background-color: $background-color;
+    margin: 0 auto;
+    width: 100vw;
+    margin-top: 46px;
+
+    .trending-gifos-gif-container {
+        // display:grid;
+        // grid-template-columns: repeat(auto, 1fr);
+        // grid-template-rows: 1fr;
+        // gap: 22px;
+        margin-top:32px;
+        margin-left: 22px;
+        display: inline-flex;
+        margin-bottom: 82px;
+
+        img {
+            margin-left: 22px;
+        }
+    }
+}
+
+.trending-gifos-text {
+    text-align: center;
+
+    .trending-gifos-text-title {
+        line-height: 30px;
+        font-family: $primary-font;
+        color: $primary-color;
+        font-weight: 700;
+        padding-top: 46px;
+        margin-bottom: 7px;
+        
+    }
+
+    .trending-gifos-text-text-content {
+        line-height: 23px;
+        font-family: $secondary-font;
+        
+    }
+
+
+}

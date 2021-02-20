@@ -1,8 +1,17 @@
+/* Fonts (Bold)*/
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+
+
+/* Fonts (medium)*/
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
 
     $primary-color: #572EE5;
     $secundary-color: #5ED7C6;
-    $primary-font: 'Montserrat', sans-serif;
-    $secondary-font: 'Roboto', sans-serif;
+    $background-color: #F3F5F8;
+    $primary-font: 'Montserrat', sans-serif; /*bold*/
+    $secondary-font: 'Roboto', sans-serif; /*regular*/
+    $primary-size: 16px;
+    $small-font-size: 14px;
+    $large-font-size: 20px;
