@@ -1,0 +1,127 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+/*Resets */
+*, html {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+/* Utilities*/
+.hidden {
+  display: none;
+}
+
+.unhidden {
+  display: block;
+}
+
+/*Header*/
+header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  border-top: solid var(--primary-color) 5px;
+}
+
+.logo__container {
+  margin-top: 18px;
+  margin-left: 156px;
+}
+
+.logo__desktop, .logo__desktop--noc {
+  width: 68px;
+  height: 60px;
+}
+
+tspan .logo__text {
+  font-size: 18px;
+  color: var(--primary-color);
+  word-spacing: 21px;
+}
+
+nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+nav ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 36px;
+}
+
+nav ul li {
+  list-style: none;
+}
+
+nav ul li a {
+  text-decoration: none;
+}
+
+/*Floating Action Button*/
+.floating__button {
+  background-color: var(--primary-color);
+  width: 60px;
+  height: 60px;
+  border-radius: 100%;
+  background: var(--primary-color);
+  border: none;
+  outline: none;
+  color: #FFF;
+  font-size: 36px;
+  -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+          box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  -webkit-transition: .3s;
+  transition: .3s;
+  display: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.kc_fab_main_btn:focus {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+}
+
+/* Hero Section*/
+.hero {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.hero__image {
+  width: 400px;
+  height: 190px;
+}
+
+.hero__container {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 0 auto;
+}
+
+.hero-search__input {
+  border-radius: 27px;
+  width: 551px;
+  height: 50px;
+}
+/*# sourceMappingURL=main.css.map */
