@@ -1,8 +1,21 @@
+footer {
+    border-bottom: solid $primary-color 5px;
+
+}
+
 .footer {
     display: flex;
     justify-content: center;
     flex-direction: column;
-    border-bottom: solid $primary-color 5px;
+    // border-bottom: solid $primary-color 5px;
+        @media screen and (min-width: 499px) {
+            display: inline-flex;
+            flex-direction: row;
+            align-items: center;
+            margin-left: 156px;
+            margin-right: 158px;
+            max-width: 1440px;
+        }
 
     .footer__social-icons {
         display:flex;

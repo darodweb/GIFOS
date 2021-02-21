@@ -4,6 +4,9 @@
     margin: 0 auto;
     width: 100vw;
     margin-top: 46px;
+    @media screen and (min-width:499px) {
+        max-height: 640px;
+    }
 
     .trending-gifos-gif-container {
         // display:grid;
@@ -15,7 +18,34 @@
         display: inline-flex;
         margin-bottom: 82px;
         overflow: hidden;
+        @media screen and (min-width: 499px) {
+            margin-left: 156px;
+            margin-right: 157px;
+            margin-bottom: 182px;
+            img {
+                max-width: 247px;
+                height: 275px;
+            }
 
+            .arrow-container {
+                border: 1px solid $primary-color;
+                height: 40px;
+                width: 40px;
+                text-align: center;
+                margin: auto 0;
+                margin-left: 22px;
+                margin-right: 22px;
+                display:flex;
+                justify-content: center;
+            }
+
+            .arrow {
+                margin:auto 0;
+                font-size: 16px;
+                color: $primary-color;
+                font-weight: 700;
+            }
+        }
         img {
             margin-left: 22px;
         }
@@ -40,6 +70,10 @@
         font-family: $secondary-font;
         
     }
+}
 
-
+@media screen and (min-width: 499px) {
+    .trending-gifos-text-content-container {
+        display:inline-flex;
+    }
 }

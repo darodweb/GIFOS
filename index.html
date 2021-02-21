@@ -8,7 +8,7 @@
     <title>GIFOS</title>
 </head>
 
-<body>
+<body class="page-wrapper">
 
     <header id="header">
         <div class="logo__container">
@@ -47,17 +47,20 @@
         </div>
         <nav>
             <img class="hamburger" id="hamburger" src="./assets/burger.svg" alt="menu-button">
-            <!--Menu Large Screens-->
+
+
             <ul class="menu" id="menu">
                 <li id="modo-nocturno"><a href="#">MODO NOCTURNO</a></li>
                 <li><a href="#">FAVORITOS</a></li>
                 <li><a href="#">MIS GIFOS</a></li>
             </ul>
-            <!--End of Menu Large Screensu-->
+
+            <div class="floating-button-container">
+                <div class="floating__button">+</div>
+            </div>
 
         </nav>
 
-        <button class="floating__button">+</button>
     </header>
 
     <section class="hero" id="hero">
@@ -81,13 +84,23 @@
     <section class="trending-gifos" id="trending-gifos">
         <div class="trending-gifos-text">
             <h2 class="trending-gifos-text-title">Trending GIFOS</h2>
-            <p class="trending-gifos-text-text-content">Mira los últimos</p>
-            <p class="trending-gifos-text-text-content">GIFOS de nuestra comunidad.</p>
+            <div class="trending-gifos-text-content-container">
+                <p class="trending-gifos-text-text-content">Mira los últimos &nbsp;</p>
+                <p class="trending-gifos-text-text-content"> GIFOS de nuestra comunidad.</p>
+            </div>
         </div>
 
         <div class="trending-gifos-gif-container">
+            <div class="arrow-container">
+                <div class="arrow">&#5176;</div>
+            </div>
             <img src="./assets/trending-gifos-placeholder.png" alt="placeholder">
             <img src="./assets/trending-gifos-placeholder.png" alt="placeholder">
+            <img src="./assets/trending-gifos-placeholder.png" alt="placeholder">
+
+            <div class="arrow-container">
+                <div class="arrow">&#5171;</div>
+            </div>
         </div>
     </section>
 

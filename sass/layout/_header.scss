@@ -1,7 +1,5 @@
 /*Header*/
 
-
-
 header {
     display: flex;
     justify-content: space-between;
@@ -32,7 +30,6 @@ header {
     height: 14px;
     order:2;
     z-index: 3;
-    
     @media screen and (min-width: 499px) {
         display:none;
     }
@@ -41,7 +38,10 @@ header {
 .menu {
     display:none;
     @media screen and (min-width: 499px) {
-        display:unset;
+        display:flex;
+        justify-content: space-between;
+
+
     }
 }
 .menu.display {
@@ -91,52 +91,93 @@ header {
 
 tspan .logo__text {
     font-size: 18px;
-    color: var(--primary-color);
+    color: $primary-color;
     word-spacing: 21px;
 }
 
 nav {
     display:flex;
-
+    @media screen and (min-width:499px) {
+        align-items: center;
+    }
 }
 
 nav ul {
-display:flex;
-margin-top: 36px;
-order: 1;
-
-
+    display:flex;
+    margin-top: 36px;
+    order: 1;
+    @media screen and (min-width:499px) {
+        order:0;
+    }
 }
 
+
+
 nav ul li {
+    display:flex;
     list-style: none;
     justify-content: space-between;
+    @media screen and (min-width:499px) {
+        display:flex;
+        margin-left: 50px;
+    }
 }
 
 nav ul li a {
     text-decoration: none;
-    color: green;
+    color: $primary-color;
     line-height: 60px;
     font-family: $primary-font;
+
+    @media screen and (min-width:499px) {
+        font-size: 13px;
+        font-weight: 700;
+    }
 }
 
+.floating-button-container {
+
+    @media screen and (min-width: 499px) {
+        margin-top: 23px;
+        margin-right: 156px;
+        margin-left: 53px;
+    }
+    
+}
 
 
 /*Floating Action Button*/
 .floating__button {
-  background-color:var(--primary-color);
-  width:60px;
-  height:60px;
-  border-radius:100%;
-  background:var(--primary-color);
-  border:none;
-  outline:none;
-  color:#FFF;
-  font-size:36px;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-  transition:.3s; 
-  display:none; 
-  -webkit-tap-highlight-color: rgba(0,0,0,0);
+    border-radius:100%;
+    background-color: white;
+    width:54px;
+    height:54px;
+    color: $primary-color;
+    outline:none;
+    border: 1px solid $primary-color;
+    display:none;
+
+//   background-color: white;
+//   width:60px;
+//   height:60px;
+//   border-radius:100%;
+//   background: white;
+//   color: $primary-color;
+//   color: $primary-color;
+//   font-size:30px;
+// //   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+//   transition:.3s; 
+//   display:none; 
+//   -webkit-tap-highlight-color: rgba(0,0,0,0);
+    @media screen and (min-width: 499px) {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 30px;
+        font-weight: 700;
+        cursor: pointer;
+    }
+  
 }
 .kc_fab_main_btn:focus {
   transform:scale(1.1);
@@ -158,6 +199,11 @@ nav ul li a {
     height: 130px;
     margin-bottom: -10px;
     margin-left:22px;
+    @media screen and (min-width:499px) {
+        width: 399px; 
+        height: 190px;
+        margin-left: 65px;
+    }
 }
 
 .hero__container {
@@ -173,6 +219,13 @@ nav ul li a {
         font-size: 25px;
         line-height: 33px;
         text-align:center;
+        @media screen and (min-width:499px) {
+            max-width: 600px;
+            height: 100px;
+            font-size: 35px;
+            line-height: 50px;
+            text-align: center;
+        }
     }
 
     .hero__container-gifos {
@@ -183,6 +236,9 @@ nav ul li a {
         position: relative;
         margin-left: 293px;
         margin-top: 15px;
+        @media screen and (min-width: 499px) {
+            margin-left: 510px;
+        }
     }
 
     }
@@ -195,6 +251,17 @@ nav ul li a {
     position: absolute;
     padding-left: 50px;
     border: $primary-color solid 1px;
+    @media screen and (min-width: 499px) {
+        width: 551px;
+    }
+}
+
+@media screen and (min-width: 499px) {
+    ::placeholder {
+        font-family: $secondary-font;
+        color: #9CAFC3;
+        font-size: $primary-size;
+    }
 }
 
 .hero__trending--text {
