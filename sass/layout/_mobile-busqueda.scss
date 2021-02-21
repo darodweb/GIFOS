@@ -1,0 +1,48 @@
+.mascotas-gif-container {
+    margin: 0 21px;
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(auto, 1fr);
+    gap: 21px;
+}
+
+.mascotas-container {
+    text-align: center;
+}
+
+.title-mascotas {
+    margin-bottom: 38px;;
+    font-size: 25px;
+
+}
+
+.ver-mas-container {
+    text-align: center;
+    margin: 78px auto;
+}
+
+.ver-mas {
+    border-radius: 25px;
+    border: 1px solid $primary-color;
+    width: 127px;
+    height: 50px;
+    font-family: $primary-font;
+    padding: 18px 31.5px 16px 32.5px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.separator-container {
+    display:flex;
+    justify-content: center;
+}
+
+.separator {
+    width:157px;
+    height: 1px;
+    text-align: center;
+    background-color: $light-gray;
+    opacity: .5;
+    margin-top: 35px;
+    margin-bottom: 43px;
+}

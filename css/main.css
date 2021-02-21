@@ -400,6 +400,61 @@ a, a:link, a:visited, a:active {
   margin-bottom: 46px;
 }
 
+.mascotas-gif-container {
+  margin: 0 21px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  -ms-grid-rows: (1fr)[auto];
+      grid-template-rows: repeat(auto, 1fr);
+  gap: 21px;
+}
+
+.mascotas-container {
+  text-align: center;
+}
+
+.title-mascotas {
+  margin-bottom: 38px;
+  font-size: 25px;
+}
+
+.ver-mas-container {
+  text-align: center;
+  margin: 78px auto;
+}
+
+.ver-mas {
+  border-radius: 25px;
+  border: 1px solid #572EE5;
+  width: 127px;
+  height: 50px;
+  font-family: "Montserrat", sans-serif;
+  padding: 18px 31.5px 16px 32.5px;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.separator-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.separator {
+  width: 157px;
+  height: 1px;
+  text-align: center;
+  background-color: #9CAFC3;
+  opacity: .5;
+  margin-top: 35px;
+  margin-bottom: 43px;
+}
+
 .trending-gifos {
   max-height: 430px;
   background-color: #F3F5F8;
