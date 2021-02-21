@@ -1,0 +1,31 @@
+.favoritos-gif-container {
+    margin: 0 21px;
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(auto, 1fr);
+    gap: 21px;
+}
+
+.favoritos-container {
+    text-align: center;
+}
+
+.title-favoritos {
+    margin-bottom: 46px;
+}
+
+.ver-mas-container {
+    text-align: center;
+    margin: 78px auto;
+}
+
+.ver-mas {
+    border-radius: 25px;
+    border: 1px solid $primary-color;
+    width: 127px;
+    height: 50px;
+    font-family: $primary-font;
+    padding: 18px 31.5px 16px 32.5px;
+    font-size: 13px;
+    font-weight: bold;
+}

@@ -1,5 +1,7 @@
 /*Header*/
 
+
+
 header {
     display: flex;
     justify-content: space-between;
@@ -9,13 +11,82 @@ header {
 }
 
 .logo__container {
-    margin-top:29px;
     margin-left: 22px;
+
+    svg {
+    margin-top: 29px;
+    margin-left: 22px;
+    }
 }
 
 .logo__desktop, .logo__desktop--noc {
     width: 68px;
     height: 60px;
+}
+
+/*Hamburguer Menu*/
+
+.hamburger {
+    width:15px;
+    margin: 47px 26px 34px 0;
+    height: 14px;
+    order:2;
+    z-index: 3;
+    
+    @media screen and (min-width: 499px) {
+        display:none;
+    }
+}
+
+.menu {
+    display:none;
+    @media screen and (min-width: 499px) {
+        display:unset;
+    }
+}
+.menu.display {
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: $primary-color;
+    opacity: .9;
+    z-index: 2;
+    margin-top:95px;
+    position:fixed;
+    top: 0;
+    left:0;
+    text-align: center;
+
+    li:first-child {
+        margin-top: -35rem;
+    }
+    
+    li a {
+        color:white;
+        text-decoration: none;
+        border-bottom: white 1px solid;
+        position:relative;
+        text-decoration: none;
+    }
+
+    li a::after {
+    background-color: #efefef; 
+    bottom: -24px;
+    content: '';
+    display: block;
+    height: 1px;
+    left: 60%;
+    position: absolute;
+    transform: translate(-60%,0);
+    width: 40px;
+    }
+
+    a:link, a:active, a:visited {
+        text-decoration: none;
+    }
+
 }
 
 tspan .logo__text {
@@ -32,16 +103,24 @@ nav {
 nav ul {
 display:flex;
 margin-top: 36px;
+order: 1;
+
 
 }
 
 nav ul li {
     list-style: none;
+    justify-content: space-between;
 }
 
 nav ul li a {
     text-decoration: none;
+    color: green;
+    line-height: 60px;
+    font-family: $primary-font;
 }
+
+
 
 /*Floating Action Button*/
 .floating__button {
@@ -106,8 +185,6 @@ nav ul li a {
         margin-top: 15px;
     }
 
-
-
     }
 
 .hero-search__input {
@@ -117,6 +194,7 @@ nav ul li a {
     padding-left: 50px;
     position: absolute;
     padding-left: 50px;
+    border: $primary-color solid 1px;
 }
 
 .hero__trending--text {
@@ -148,7 +226,8 @@ nav ul li a {
 }
 
 
-
-
+a, a:link, a:visited, a:active {
+    text-decoration: none;
+}
 
 
