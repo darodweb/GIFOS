@@ -1,0 +1,15 @@
+.mis-gifos-gif-container {
+    margin: 0 21px;
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(auto, 1fr);
+    gap: 21px;
+}
+
+.mis-gifos-container {
+    text-align: center;
+}
+
+.title-mis-gifos {
+    margin-bottom: 46px;
+}

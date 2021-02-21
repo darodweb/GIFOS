@@ -381,6 +381,25 @@ a, a:link, a:visited, a:active {
   font-weight: bold;
 }
 
+.mis-gifos-gif-container {
+  margin: 0 21px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  -ms-grid-rows: (1fr)[auto];
+      grid-template-rows: repeat(auto, 1fr);
+  gap: 21px;
+}
+
+.mis-gifos-container {
+  text-align: center;
+}
+
+.title-mis-gifos {
+  margin-bottom: 46px;
+}
+
 .trending-gifos {
   max-height: 430px;
   background-color: #F3F5F8;
