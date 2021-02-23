@@ -40,6 +40,12 @@ footer {
   border-bottom: solid #572EE5 5px;
 }
 
+@media screen and (min-width: 499px) {
+  footer {
+    width: 100%;
+  }
+}
+
 .footer {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -65,9 +71,10 @@ footer {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    margin-left: 156px;
-    margin-right: 158px;
-    max-width: 1440px;
+    margin-bottom: 51.5px;
+    width: 100%;
+    margin-top: 51.5px;
+    overflow: hidden;
   }
 }
 
@@ -79,6 +86,12 @@ footer {
       -ms-flex-pack: center;
           justify-content: center;
   margin-bottom: 47.8px;
+}
+
+@media screen and (min-width: 499px) {
+  .footer .footer__social-icons {
+    margin: auto 0;
+  }
 }
 
 .footer .footer__social-icons img {
@@ -93,6 +106,14 @@ footer {
   font-size: 15px;
 }
 
+@media screen and (min-width: 499px) {
+  .footer .footer-title {
+    margin-bottom: unset;
+    margin-top: unset;
+    margin-left: 156px;
+  }
+}
+
 .footer li {
   list-style: none;
 }
@@ -103,6 +124,25 @@ footer {
   font-family: "Roboto", sans-serif;
   font-size: 14px;
   line-height: 20px;
+}
+
+@media screen and (min-width: 499px) {
+  .footer .footer-copyright {
+    margin-bottom: unset;
+    margin-right: 158px;
+  }
+}
+
+@media screen and (min-width: 499px) {
+  .footer-wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    width: 100%;
+  }
 }
 
 /*Header*/
@@ -262,6 +302,7 @@ nav ul li {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  margin: 0 auto;
 }
 
 @media screen and (min-width: 499px) {
@@ -596,7 +637,7 @@ a, a:link, a:visited, a:active {
   max-height: 430px;
   background-color: #F3F5F8;
   margin: 0 auto;
-  width: 100vw;
+  width: 100%;
   margin-top: 46px;
 }
 
@@ -606,46 +647,33 @@ a, a:link, a:visited, a:active {
   }
 }
 
+.trending-gifos .arrow-container {
+  display: none;
+}
+
 .trending-gifos .trending-gifos-gif-container {
   margin-top: 32px;
   margin-left: 22px;
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   margin-bottom: 82px;
   overflow: hidden;
 }
 
+.trending-gifos .trending-gifos-gif-container img {
+  max-width: 243px;
+  height: 187px;
+}
+
 @media screen and (min-width: 499px) {
   .trending-gifos .trending-gifos-gif-container {
-    margin-left: 156px;
-    margin-right: 157px;
     margin-bottom: 182px;
   }
   .trending-gifos .trending-gifos-gif-container img {
-    max-width: 247px;
+    max-width: 357px;
     height: 275px;
-  }
-  .trending-gifos .trending-gifos-gif-container .arrow-container {
-    border: 1px solid #572EE5;
-    height: 40px;
-    width: 40px;
-    text-align: center;
-    margin: auto 0;
-    margin-left: 22px;
-    margin-right: 22px;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-  }
-  .trending-gifos .trending-gifos-gif-container .arrow {
-    margin: auto 0;
-    font-size: 16px;
-    color: #572EE5;
-    font-weight: 700;
+    margin-bottom: 182px;
   }
 }
 
@@ -653,11 +681,11 @@ a, a:link, a:visited, a:active {
   margin-left: 22px;
 }
 
-.trending-gifos-text {
+.trending-gifos .trending-gifos-text {
   text-align: center;
 }
 
-.trending-gifos-text .trending-gifos-text-title {
+.trending-gifos .trending-gifos-text .trending-gifos-text-title {
   line-height: 30px;
   font-family: "Montserrat", sans-serif;
   color: #572EE5;
@@ -666,16 +694,44 @@ a, a:link, a:visited, a:active {
   margin-bottom: 7px;
 }
 
-.trending-gifos-text .trending-gifos-text-text-content {
+.trending-gifos .trending-gifos-text .trending-gifos-text-text-content {
   line-height: 23px;
   font-family: "Roboto", sans-serif;
 }
 
 @media screen and (min-width: 499px) {
-  .trending-gifos-text-content-container {
+  .trending-gifos .trending-gifos-text-content-container {
     display: -webkit-inline-box;
     display: -ms-inline-flexbox;
     display: inline-flex;
   }
+}
+
+@media screen and (min-width: 499px) {
+  .trending-gifos .arrow-container-left, .trending-gifos .arrow-container-right {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    text-align: center;
+    margin-left: 22px;
+    margin-right: 22px;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    cursor: pointer;
+    height: 275px;
+  }
+}
+
+.trending-gifos .arrow-left, .trending-gifos .arrow-right {
+  margin: auto 0;
+  padding-top: 8px;
+  font-size: 16px;
+  color: #572EE5;
+  font-weight: 700;
+  height: 40px;
+  width: 40px;
+  border: 1px solid #572EE5;
 }
 /*# sourceMappingURL=main.css.map */

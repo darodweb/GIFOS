@@ -1,6 +1,8 @@
 footer {
     border-bottom: solid $primary-color 5px;
-
+    @media screen and (min-width: 499px) {
+        width: 100%;
+    }
 }
 
 .footer {
@@ -12,15 +14,20 @@ footer {
             display: inline-flex;
             flex-direction: row;
             align-items: center;
-            margin-left: 156px;
-            margin-right: 158px;
-            max-width: 1440px;
+            margin-bottom: 51.5px;
+            width: 100%;
+            // width: 1440px;
+            margin-top: 51.5px;
+            overflow: hidden;
         }
 
     .footer__social-icons {
         display:flex;
         justify-content: center;
         margin-bottom: 47.8px;
+        @media screen and (min-width: 499px) {
+            margin: auto 0;
+        }
 
         img {
             margin-left: 20px;
@@ -33,6 +40,11 @@ footer {
         margin-top: 47px;
         font-family: $secondary-font;
         font-size: 15px;
+        @media screen and (min-width: 499px) {
+            margin-bottom: unset;
+            margin-top: unset;
+            margin-left: 156px;
+        }
     }
 
     li {
@@ -45,5 +57,18 @@ footer {
         font-family: $secondary-font;
         font-size: $small-font-size;
         line-height: $large-font-size;
+        @media screen and (min-width: 499px) {
+            margin-bottom: unset;
+            margin-right: 158px
+
+        }
+    }
+}
+
+.footer-wrapper {
+    @media screen and (min-width: 499px) {
+        display: flex;
+        justify-content: flex-start;
+        width: 100%;
     }
 }

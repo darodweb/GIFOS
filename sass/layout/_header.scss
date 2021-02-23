@@ -6,6 +6,7 @@ header {
     border-top: solid $primary-color 5px;
     height: 95px;
     margin-bottom: 7px;
+    // width: 1440px;
 }
 
 .logo__container {
@@ -117,6 +118,7 @@ nav ul li {
     display:flex;
     list-style: none;
     justify-content: space-between;
+    margin: 0 auto;
     @media screen and (min-width:499px) {
         display:flex;
         margin-left: 50px;

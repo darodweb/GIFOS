@@ -2,55 +2,42 @@
     max-height: 430px;
     background-color: $background-color;
     margin: 0 auto;
-    width: 100vw;
+    width: 100%;
     margin-top: 46px;
     @media screen and (min-width:499px) {
         max-height: 640px;
+        // width: 1440px;
+    }
+
+    .arrow-container {
+        display:none;
     }
 
     .trending-gifos-gif-container {
-        // display:grid;
-        // grid-template-columns: repeat(auto, 1fr);
-        // grid-template-rows: 1fr;
-        // gap: 22px;
         margin-top:32px;
         margin-left: 22px;
-        display: inline-flex;
+        display: flex;
         margin-bottom: 82px;
         overflow: hidden;
+        
+        img {
+            max-width: 243px;
+            height: 187px;
+        } 
         @media screen and (min-width: 499px) {
-            margin-left: 156px;
-            margin-right: 157px;
             margin-bottom: 182px;
             img {
-                max-width: 247px;
+                max-width: 357px;
                 height: 275px;
+                margin-bottom: 182px;
             }
 
-            .arrow-container {
-                border: 1px solid $primary-color;
-                height: 40px;
-                width: 40px;
-                text-align: center;
-                margin: auto 0;
-                margin-left: 22px;
-                margin-right: 22px;
-                display:flex;
-                justify-content: center;
-            }
-
-            .arrow {
-                margin:auto 0;
-                font-size: 16px;
-                color: $primary-color;
-                font-weight: 700;
-            }
         }
         img {
             margin-left: 22px;
         }
     }
-}
+
 
 .trending-gifos-text {
     text-align: center;
@@ -75,5 +62,34 @@
 @media screen and (min-width: 499px) {
     .trending-gifos-text-content-container {
         display:inline-flex;
+        
     }
+}
+
+@media screen and (min-width: 499px) {
+
+    .arrow-container-left, .arrow-container-right {
+        display: flex;
+        text-align: center;
+        margin-left: 22px;
+        margin-right: 22px;
+        display:flex;
+        justify-content: center;
+        cursor: pointer;
+        height: 275px;
+        }
+    
+    }
+    
+        .arrow-left, .arrow-right {
+        margin:auto 0;
+        padding-top: 8px;;
+        font-size: 16px;
+        color: $primary-color;
+        font-weight: 700;
+        height: 40px;
+        width: 40px;
+        border: 1px solid $primary-color;
+        }
+
 }
