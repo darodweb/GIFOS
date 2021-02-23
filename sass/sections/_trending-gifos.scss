@@ -66,6 +66,11 @@
     }
 }
 
+.arrow-container-left, .arrow-container-right,
+.arrow-left, .arrow-right {
+    display:none;
+}
+
 @media screen and (min-width: 499px) {
 
     .arrow-container-left, .arrow-container-right {

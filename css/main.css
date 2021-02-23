@@ -707,6 +707,11 @@ a, a:link, a:visited, a:active {
   }
 }
 
+.trending-gifos .arrow-container-left, .trending-gifos .arrow-container-right,
+.trending-gifos .arrow-left, .trending-gifos .arrow-right {
+  display: none;
+}
+
 @media screen and (min-width: 499px) {
   .trending-gifos .arrow-container-left, .trending-gifos .arrow-container-right {
     display: -webkit-box;
