@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="./css/main.css">
     <title>GIFOS</title>
 </head>
@@ -69,7 +70,8 @@
             <img src="./assets/ilustra_header.svg" class="hero__image" alt="hero image">
             <div class="hero-search">
                 <input class="hero-search__input" type="text" placeholder="Busca GIFOS y más">
-                <img src="./assets/icon-search.svg" class="hero__search" alt="search box">
+                <button type="submit" id="hero__search"><i class="fa fa-search hero__search"></i></button>
+                <!-- <img src="./assets/icon-search.svg" class="hero__search" alt="search box"> -->
             </div>
         </div>
 
@@ -79,6 +81,10 @@
             <p class="hero__trending--text">Sports, Stickers, Artists</p>
         </div>
 
+    </section>
+
+    <section class="search-results-container">
+        <div class="search-results"></div>
     </section>
 
     <section class="trending-gifos" id="trending-gifos">

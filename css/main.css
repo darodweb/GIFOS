@@ -459,6 +459,9 @@ nav ul li a {
 @media screen and (min-width: 499px) {
   .hero__container .hero__search {
     margin-left: 510px;
+    cursor: pointer;
+    color: #572EE5;
+    font-size: 20px;
   }
 }
 
@@ -537,6 +540,13 @@ nav ul li a {
 
 a, a:link, a:visited, a:active {
   text-decoration: none;
+}
+
+@media screen and (min-width: 499px) {
+  #hero__search {
+    border: none;
+    background: transparent;
+  }
 }
 
 .favoritos-gif-container {
@@ -805,5 +815,29 @@ a, a:link, a:visited, a:active {
     margin-bottom: 182px;
     text-align: center;
   }
+}
+
+@media screen and (min-width: 499px) {
+  .search-results-container {
+    text-align: center;
+  }
+}
+
+@media screen and (min-width: 499px) {
+  .search-result {
+    display: -ms-grid;
+    display: grid;
+    margin: 60px 157px 96px 156px;
+    -ms-grid-columns: (200px)[4];
+        grid-template-columns: repeat(4, 200px);
+    grid-gap: 29px;
+    width: 260px;
+    height: 200px;
+  }
+}
+
+.search-result img {
+  width: 200px;
+  height: 260px;
 }
 /*# sourceMappingURL=main.css.map */

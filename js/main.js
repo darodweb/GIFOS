@@ -1,24 +1,21 @@
-import api_trending from './services.js';
+import { api } from './services.js';
+import { URLTrendings, URLSearchEndpoint, hamburger, menu, gifContainer, searchBtn, searchResults } from './constants.js';
 
-const URL = `https://api.giphy.com/v1/gifs/trending?api_key=vr7eliKrqbn1J94gIPNQhs9Gx7ZUM15l&limit=3`
+
 
 //Hamburger Menu
-
-const hamburger = document.getElementById('hamburger');
-const menu = document.getElementById('menu');
 
 hamburger.addEventListener('click', () => {
     menu.classList.toggle('display');
 })
 
-//Adding GIFs to markup
+//Querying Trending Gifs and adding to DOM
 
-const gifContainer = document.querySelector('.trending-gifos-gif');
 
 let gifs = [];
 
 const getTrendingGifs = () => {
-    api_trending.getGifs(URL)
+    api.getGifs(URLTrendings)
         .then(response => {
             gifs = [];
             for (let i = 0; i < response.data.length; i++) {
@@ -46,5 +43,53 @@ const insertedGif = () => {
 }
 
 getTrendingGifs();
+
+
+// QUERY THE SEARCH ENDPOINT AND PAINTING TO DOM
+
+let searchInputValue = document.querySelector('.hero-search__input').value;
+let URLSearchQuery = URLSearchEndpoint.concat(searchInputValue);
+
+
+const gifResultsMarkup = (gifSearchResults) => {
+    return `
+    <img src="${gifSearchResults}"
+    class="trending-gifos-gif" alt="gif">
+    `
+}
+
+let gifSearchResults = [];
+
+const SearchGifs = () => {
+
+    api.getGifs(URLSearchQuery)
+        .then(response => {
+            gifSearchResults = [];
+            for (let i = 0; i < response.data.length; i++) {
+                gifSearchResults.push(response.data[i].images.fixed_height_downsampled.url);
+            }
+            insertedGifSearchResults();
+        })
+        .catch(error => console.log(error))
+}
+
+const searchHandler = () => {
+    SearchGifs(searchInputValue);
+}
+
+const insertedGifSearchResults = () => {
+    let gifResultCards = "";
+    for (let i = 0; i < gifSearchResults.length; i++) {
+        gifResultCards += gifResultsMarkup(gifSearchResults[i]);
+    }
+    searchResults.innerHTML = gifResultCards;
+
+}
+
+searchBtn.addEventListener('click', () => {
+    // searchHandler();
+    console.log('click');
+    console.log(searchInputValue);
+});
 
 

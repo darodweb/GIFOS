@@ -159,19 +159,6 @@ nav ul li a {
     outline:none;
     border: 1px solid $primary-color;
     display:none;
-
-//   background-color: white;
-//   width:60px;
-//   height:60px;
-//   border-radius:100%;
-//   background: white;
-//   color: $primary-color;
-//   color: $primary-color;
-//   font-size:30px;
-// //   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-//   transition:.3s; 
-//   display:none; 
-//   -webkit-tap-highlight-color: rgba(0,0,0,0);
     @media screen and (min-width: 499px) {
         display: flex;
         justify-content: center;
@@ -251,8 +238,12 @@ nav ul li a {
         margin-top: 15px;
         @media screen and (min-width: 499px) {
             margin-left: 510px;
+            cursor: pointer;
+            color:$primary-color;
+            font-size:20px;
         }
     }
+
 
     }
 
@@ -311,3 +302,10 @@ a, a:link, a:visited, a:active {
 }
 
 
+#hero__search {
+    @media screen and (min-width: 499px) {
+        border:none;
+        background: transparent;
+    }
+    
+}

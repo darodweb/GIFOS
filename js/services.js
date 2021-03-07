@@ -1,4 +1,4 @@
-const api_trending = {
+const api = {
 
     getGifs: function (URL) {
         return (
@@ -11,4 +11,5 @@ const api_trending = {
     }
 };
 
-export default api_trending
+
+export { api };
