@@ -4,6 +4,10 @@
     grid-template-columns: 1fr 1fr;
     grid-template-rows: repeat(auto, 1fr);
     gap: 21px;
+
+    @media screen and (min-width: 499px) {
+        grid-template-columns: repeat(4, auto);
+    }
 }
 
 .favoritos-container {
@@ -28,4 +32,12 @@
     padding: 18px 31.5px 16px 32.5px;
     font-size: 13px;
     font-weight: bold;
+    }
+
+.ver-mas:hover {
+    background: $primary-color;
+    color:white;
+    transition: all ease 0.3s;
 }
+
+

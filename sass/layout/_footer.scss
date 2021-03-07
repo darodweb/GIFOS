@@ -29,8 +29,14 @@ footer {
             margin: auto 0;
         }
 
-        img {
+
+     img {
             margin-left: 20px;
+        }
+
+        .footer__social-icons li img:hover {
+            background: $primary-color;
+            transition: all ease 0.3s;
         }
     }
 
