@@ -22,3 +22,14 @@
         }
     
 }
+
+@media screen and (min-width: 499px) {
+    .search-title {
+        margin-top: 137px;
+        margin-bottom:60px;
+        font-size: 35px;
+        text-align: center;
+        color: $primary-color;
+        line-height: 30px; 
+    }
+}

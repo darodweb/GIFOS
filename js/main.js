@@ -1,5 +1,5 @@
 import { api } from './services.js';
-import { URLTrendings, URLSearchEndpoint, hamburger, menu, gifContainer, searchBtn, searchResults } from './constants.js';
+import { URLTrendings, URLSearchEndpoint, hamburger, menu, gifContainer, searchBtn, searchResults, searchTitle } from './constants.js';
 
 
 
@@ -75,6 +75,7 @@ const SearchGifs = () => {
 
 const searchHandler = () => {
     SearchGifs(searchInputValue);
+    searchTitle.textContent = searchInputValue;
 }
 
 const insertedGifSearchResults = () => {
@@ -87,9 +88,7 @@ const insertedGifSearchResults = () => {
 }
 
 searchBtn.addEventListener('click', () => {
-    // searchHandler();
-    console.log('click');
-    console.log(searchInputValue);
+    searchHandler();
 });
 
 

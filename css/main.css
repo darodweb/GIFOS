@@ -840,4 +840,15 @@ a, a:link, a:visited, a:active {
   width: 200px;
   height: 260px;
 }
+
+@media screen and (min-width: 499px) {
+  .search-title {
+    margin-top: 137px;
+    margin-bottom: 60px;
+    font-size: 35px;
+    text-align: center;
+    color: #572EE5;
+    line-height: 30px;
+  }
+}
 /*# sourceMappingURL=main.css.map */
