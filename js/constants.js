@@ -7,7 +7,7 @@ const URLTrendings = `https://api.giphy.com/v1/gifs/trending?api_key=vr7eliKrqbn
 const gifContainer = document.querySelector('.trending-gifos-gif');
 
 // Search GIFS  constants
-const searchBtn = document.querySelector('.hero__search');
+const searchBtn = document.querySelector('#hero__search');
 const URLSearchEndpoint = `https://api.giphy.com/v1/gifs/search?api_key=vr7eliKrqbn1J94gIPNQhs9Gx7ZUM15l&q=`;
 const searchResults = document.querySelector('.search-results');
 const searchTitle = document.querySelector('.search-title');
