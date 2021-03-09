@@ -48,7 +48,6 @@ getTrendingGifs();
 // QUERY THE SEARCH ENDPOINT AND PAINTING TO DOM
 
 let searchInputValue = document.querySelector('.hero-search__input');
-// let URLSearchQuery = URLSearchEndpoint.concat(searchInputValue);
 
 
 const gifResultsMarkup = (gifSearchResults) => {
@@ -88,6 +87,13 @@ const insertedGifSearchResults = () => {
 
 }
 
-searchBtn.addEventListener('click', () => {
-    searchHandler();
-});
+// Search for gifs after hitting Enter
+searchInputValue.addEventListener('keyup', (e) => {
+    if (e.keyCode === 13) {
+        searchBtn.click(() => searchHandler());
+
+    }
+})
+
+// Search for gifs after clicking search button
+searchBtn.addEventListener('click', searchHandler);
