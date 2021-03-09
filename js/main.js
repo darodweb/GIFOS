@@ -48,7 +48,7 @@ getTrendingGifs();
 // QUERY THE SEARCH ENDPOINT AND PAINTING TO DOM
 
 let searchInputValue = document.querySelector('.hero-search__input');
-let URLSearchQuery = URLSearchEndpoint.concat(searchInputValue);
+// let URLSearchQuery = URLSearchEndpoint.concat(searchInputValue);
 
 
 const gifResultsMarkup = (gifSearchResults) => {
@@ -61,7 +61,7 @@ const gifResultsMarkup = (gifSearchResults) => {
 let gifSearchResults = [];
 
 const SearchGifs = () => {
-
+    let URLSearchQuery = URLSearchEndpoint.concat(searchInputValue.value);
     api.getGifs(URLSearchQuery)
         .then(response => {
             gifSearchResults = [];
@@ -74,7 +74,7 @@ const SearchGifs = () => {
 }
 
 const searchHandler = () => {
-    SearchGifs(searchInputValue);
+    SearchGifs();
     searchTitle.textContent = searchInputValue.value;
     searchInputValue.value = "";
 }
