@@ -47,7 +47,7 @@ getTrendingGifs();
 
 // QUERY THE SEARCH ENDPOINT AND PAINTING TO DOM
 
-let searchInputValue = document.querySelector('.hero-search__input').value;
+let searchInputValue = document.querySelector('.hero-search__input');
 let URLSearchQuery = URLSearchEndpoint.concat(searchInputValue);
 
 
@@ -75,7 +75,8 @@ const SearchGifs = () => {
 
 const searchHandler = () => {
     SearchGifs(searchInputValue);
-    searchTitle.textContent = searchInputValue;
+    searchTitle.textContent = searchInputValue.value;
+    searchInputValue.value = "";
 }
 
 const insertedGifSearchResults = () => {
@@ -90,5 +91,3 @@ const insertedGifSearchResults = () => {
 searchBtn.addEventListener('click', () => {
     searchHandler();
 });
-
-
