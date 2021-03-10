@@ -125,14 +125,21 @@
 
 }
 
+.trending-gifos-gif {
+    display:flex;
+}
+
+
 @media screen and (min-width:499px) {
+
     .trending-gifos-enclosure {
         max-width:100%;
         height: 275px;
         display:flex;
         margin-bottom: 182px;
         text-align: center;
-        
     }
+
+
 }
 

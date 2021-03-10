@@ -1,5 +1,5 @@
 import { api } from './services.js';
-import { URLTrendings, URLSearchEndpoint, hamburger, menu, gifContainer, searchBtn, searchResults, searchTitle } from './constants.js';
+import { URLTrendings, URLSearchEndpoint, hamburger, menu, gifContainer, searchBtn, searchResults, searchTitle, URLAutocompleteEndpoint } from './constants.js';
 
 
 
@@ -45,7 +45,7 @@ const insertedGif = () => {
 getTrendingGifs();
 
 
-// QUERY THE SEARCH ENDPOINT AND PAINTING TO DOM
+// QUERY THE SEARCH ENDPOINT AND PAINT TO DOM
 
 let searchInputValue = document.querySelector('.hero-search__input');
 
@@ -97,3 +97,6 @@ searchInputValue.addEventListener('keyup', (e) => {
 
 // Search for gifs after clicking search button
 searchBtn.addEventListener('click', searchHandler);
+
+
+// Query to Autocomplete endpoint 
