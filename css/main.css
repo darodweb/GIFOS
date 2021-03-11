@@ -549,6 +549,27 @@ a, a:link, a:visited, a:active {
   }
 }
 
+@media screen and (min-width: 499px) {
+  #hero-search-live-search {
+    border: solid 1px #572EE5;
+    margin-top: 3.1rem;
+    width: 550px;
+    border: 1px solid #572EE5;
+    border-bottom-left-radius: 27px;
+    border-bottom-right-radius: 27px;
+    display: block;
+    padding: 3.4rem;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+  }
+  .live-search-icon {
+    color: #9CAFC3;
+    width: 15.8px;
+    height: 15.8px;
+    margin-right: 14.6px;
+  }
+}
+
 .favoritos-gif-container {
   margin: 0 21px;
   display: -ms-grid;
@@ -855,6 +876,9 @@ a, a:link, a:visited, a:active {
     text-align: center;
     color: #572EE5;
     line-height: 30px;
+  }
+  .hero-search-live-search p {
+    margin-bottom: 10px;
   }
 }
 /*# sourceMappingURL=main.css.map */

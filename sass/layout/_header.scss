@@ -309,3 +309,27 @@ a, a:link, a:visited, a:active {
     }
     
 }
+
+@media screen and (min-width: 499px) {
+
+    #hero-search-live-search {
+        border: solid 1px $primary-color;
+        margin-top: 3.1rem;
+        width: 550px;
+        border: 1px solid $primary-color;
+        border-bottom-left-radius: 27px;
+        border-bottom-right-radius: 27px;
+        display: block;
+        padding: 3.4rem;
+        border-top-left-radius: 30px;
+        border-top-right-radius: 30px;
+    }
+
+    .live-search-icon {
+        color: $light-gray;
+        width:15.8px;
+        height: 15.8px;
+        margin-right:14.6px;
+    }
+}
+

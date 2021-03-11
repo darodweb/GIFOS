@@ -1,5 +1,5 @@
 import { api } from './services.js';
-import { URLTrendings, URLSearchEndpoint, hamburger, menu, gifContainer, searchBtn, searchResults, searchTitle, URLAutocompleteEndpoint } from './constants.js';
+import { URLTrendings, URLSearchEndpoint, hamburger, menu, gifContainer, searchBtn, searchResults, searchTitle, URLAutocompleteEndpoint, liveSearchResultsContainer, searchSuggestionsContainer } from './constants.js';
 
 
 
@@ -9,7 +9,7 @@ hamburger.addEventListener('click', () => {
     menu.classList.toggle('display');
 })
 
-//Querying Trending Gifs and adding to DOM
+//Querying Trending Gifs and paint to DOM
 
 
 let gifs = [];
@@ -91,7 +91,6 @@ const insertedGifSearchResults = () => {
 searchInputValue.addEventListener('keyup', (e) => {
     if (e.keyCode === 13) {
         searchBtn.click(() => searchHandler());
-
     }
 })
 
@@ -99,4 +98,38 @@ searchInputValue.addEventListener('keyup', (e) => {
 searchBtn.addEventListener('click', searchHandler);
 
 
-// Query to Autocomplete endpoint 
+//Query Giphy's Autocomplete endpoint   
+
+let wordMatches = [];
+const searchGiphy = async () => {
+    let URLSearchAutocomplete = URLAutocompleteEndpoint.concat(searchInputValue.value);
+    const response = await fetch(URLSearchAutocomplete);
+    const results = await response.json();
+    let wordResults = []
+    wordMatches.push(results);
+    wordMatches.forEach(match => {
+        match.data.forEach(element => {
+            wordResults.push(element.name);
+        })
+    });
+    console.log(wordResults)
+    searchMatches(wordResults);
+}
+
+//Function to show word suggestions in DOM 
+const searchMatches = (wordResults) => {
+    if (wordMatches.length > 0) {
+
+        const htmlLiveSearch = wordResults.map(matches => `
+            <a href="${URLSearchEndpoint}${matches}" target="_blank"><p><i class="fa fa-search live-search-icon"></i>${matches}</p></a>
+        `)
+            .join('');
+        liveSearchResultsContainer.innerHTML = htmlLiveSearch;
+    }
+
+}
+
+//Live search event listener on search input
+searchInputValue.addEventListener('input', () => {
+    searchGiphy(searchInputValue.value);
+})
