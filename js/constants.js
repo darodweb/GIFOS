@@ -21,5 +21,20 @@ const liveSearchResultsContainer = document.getElementById('hero-search-live-sea
 const hamburger = document.getElementById('hamburger');
 const menu = document.getElementById('menu');
 
+//Dark Mode Constants
+const BORDER_TOP = document.querySelector('.border-top');
+const HEADER = document.querySelector('.header');
+const HERO = document.querySelector('.hero');
+const TRENDING_GIFOS = document.querySelector('.trending-gifos');
+const BORDER_BOTTOM = document.querySelector('.border-bottom');
+const DARK_MODE_TRIGGER = document.querySelector('#dark-mode');
+const FOOTER = document.querySelector('.footer');
+const DAY_MODE_MENU = document.querySelector('#day-mode');
 
-export { URLTrendings, hamburger, menu, gifContainer, searchBtn, searchResults, URLSearchEndpoint, searchTitle, URLAutocompleteEndpoint, liveSearchResultsContainer, searchSuggestionsContainer };
+
+export {
+    URLTrendings, hamburger, menu, gifContainer, searchBtn, searchResults,
+    URLSearchEndpoint, searchTitle, URLAutocompleteEndpoint, liveSearchResultsContainer,
+    searchSuggestionsContainer, HEADER, HERO, TRENDING_GIFOS, BORDER_TOP, BORDER_BOTTOM,
+    DARK_MODE_TRIGGER, FOOTER, DAY_MODE_MENU
+};

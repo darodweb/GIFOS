@@ -35,11 +35,6 @@
   max-width: 1440px;
 }
 
-/*Dark Modes*/
-footer {
-  border-bottom: solid #572EE5 5px;
-}
-
 @media screen and (min-width: 499px) {
   footer {
     width: 100%;
@@ -151,7 +146,15 @@ footer {
   }
 }
 
+.border-bottom {
+  border-bottom: solid #572EE5 5px;
+}
+
 /*Header*/
+.border-top {
+  border-top: solid #572EE5 5px;
+}
+
 header {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -159,9 +162,14 @@ header {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  border-top: solid #572EE5 5px;
   height: 95px;
   margin-bottom: 7px;
+}
+
+@media screen and (min-width: 499px) {
+  header {
+    margin-bottom: 0px;
+  }
 }
 
 .logo__container {
@@ -405,7 +413,7 @@ nav ul li a {
 .hero__image {
   width: 273px;
   height: 130px;
-  margin-bottom: -10px;
+  margin-bottom: -53px;
   margin-left: 22px;
 }
 
@@ -691,6 +699,82 @@ a, a:link, a:visited, a:active {
   opacity: .5;
   margin-top: 35px;
   margin-bottom: 43px;
+}
+
+/*Dark Mode*/
+#dark-mode-gray__header {
+  background-color: #37383C;
+}
+
+#dark-mode-gray__header svg #GIFOS {
+  fill: white;
+}
+
+#dark-mode-gray__header .floating__button {
+  border: none;
+}
+
+#dark-mode-gray__header a {
+  color: white;
+}
+
+#dark-mode-gray__hero {
+  background-color: #37383C;
+}
+
+#dark-mode-gray__hero h1, #dark-mode-gray__hero i, #dark-mode-gray__hero p, #dark-mode-gray__hero ul > li {
+  color: white;
+}
+
+#dark-mode-gray__hero #hero-search-live-search {
+  border: 1px solid white;
+}
+
+#dark-mode-gray__hero .hero-search__input {
+  background-color: #37383C;
+  border: 1px solid white;
+}
+
+#dark-mode-gray__footer {
+  background-color: #37383C;
+  margin-bottom: 0;
+  margin-top: 0;
+  height: 116px;
+}
+
+#dark-mode-gray__footer p, #dark-mode-gray__footer li {
+  color: white;
+}
+
+#dark-mode-gray__footer .footer {
+  margin-top: 0;
+  padding: 25px 0;
+  margin-bottom: 0;
+}
+
+#dark-mode-dark-gray__trending-gifos {
+  background-color: #222326;
+  margin-top: 0;
+}
+
+#dark-mode-dark-gray__trending-gifos h2, #dark-mode-dark-gray__trending-gifos p {
+  color: white;
+}
+
+#dark-mode-dark-gray__trending-gifos .trending-gifos-gif-container {
+  margin-bottom: 0px;
+}
+
+#dark-mode-dark-black__top-border {
+  border-top: solid black 5px;
+}
+
+#dark-mode-dark-black__bottom-border {
+  border-bottom: solid black 5px;
+}
+
+.text-white {
+  color: white;
 }
 
 .trending-gifos {

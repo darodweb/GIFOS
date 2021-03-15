@@ -1,5 +1,5 @@
 footer {
-    border-bottom: solid $primary-color 5px;
+    
     @media screen and (min-width: 499px) {
         width: 100%;
     }
@@ -77,4 +77,8 @@ footer {
         justify-content: flex-start;
         width: 100%;
     }
+}
+
+.border-bottom {
+    border-bottom: solid $primary-color 5px;
 }

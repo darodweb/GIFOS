@@ -1,5 +1,9 @@
 import { api } from './services.js';
-import { URLTrendings, URLSearchEndpoint, hamburger, menu, gifContainer, searchBtn, searchResults, searchTitle, URLAutocompleteEndpoint, liveSearchResultsContainer, searchSuggestionsContainer } from './constants.js';
+import {
+    URLTrendings, URLSearchEndpoint, hamburger, menu, gifContainer, searchBtn, searchResults,
+    searchTitle, URLAutocompleteEndpoint, liveSearchResultsContainer, searchSuggestionsContainer,
+    HEADER, HERO, TRENDING_GIFOS, BORDER_TOP, BORDER_BOTTOM, DARK_MODE_TRIGGER, FOOTER, DAY_MODE_MENU
+} from './constants.js';
 
 
 
@@ -45,10 +49,9 @@ const insertedGif = () => {
 getTrendingGifs();
 
 
-// QUERY THE SEARCH ENDPOINT AND PAINT TO DOM
+// // QUERY THE SEARCH ENDPOINT AND PAINT TO DOM
 
 let searchInputValue = document.querySelector('.hero-search__input');
-
 
 const gifResultsMarkup = (gifSearchResults) => {
     return `
@@ -133,3 +136,60 @@ const searchMatches = (wordResults) => {
 searchInputValue.addEventListener('input', () => {
     searchGiphy(searchInputValue.value);
 })
+
+
+//Dark Mode for HOME page
+
+const toggleBorderIds = () => {
+    if (BORDER_TOP.id === "" && BORDER_BOTTOM.id === "") {
+        BORDER_TOP.id += "dark-mode-dark-black__top-border"
+        BORDER_BOTTOM.id += "dark-mode-dark-black__bottom-border"
+    } else {
+        BORDER_TOP.removeAttribute('id');
+        BORDER_BOTTOM.removeAttribute('id');
+    }
+}
+
+const toggleHeaderHeroAndFooterId = () => {
+    if (HEADER.id === "" && HERO.id === "" && FOOTER.id === "") {
+        HEADER.id += "dark-mode-gray__header"
+        HERO.id += "dark-mode-gray__hero"
+        FOOTER.id += "dark-mode-gray__footer"
+
+    } else {
+        HEADER.removeAttribute('id');
+        HERO.removeAttribute('id');
+        FOOTER.removeAttribute('id');
+    }
+}
+
+const toggleTrendingGifosId = () => {
+    if (TRENDING_GIFOS.id === "") {
+        TRENDING_GIFOS.id += "dark-mode-dark-gray__trending-gifos"
+
+    } else {
+        TRENDING_GIFOS.removeAttribute('id');
+    }
+}
+
+//Function to change 'Modo Nocturno' text to 'Modo Diurno'
+//Add logic here*
+
+
+//Function to toggle classes on DOM sections
+
+const toogleIds = () => {
+    toggleBorderIds();
+    toggleHeaderHeroAndFooterId();
+    toggleTrendingGifosId();
+
+}
+
+
+//Event listerner to trigger dark mode
+
+DARK_MODE_TRIGGER.addEventListener('click', () => {
+    console.log('click');
+    toogleIds();
+})
+

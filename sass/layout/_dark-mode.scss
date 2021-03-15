@@ -1,0 +1,80 @@
+/*Dark Mode*/
+
+
+
+#dark-mode-gray__header {
+
+   svg #GIFOS {
+        fill:white;
+    }
+    background-color: $dark-mode-gray;
+
+    .floating__button {
+        border:none;
+    }
+
+    a {
+        color:white;
+    }
+
+}
+
+#dark-mode-gray__hero {
+background-color: $dark-mode-gray;
+    h1, i, p, ul>li {
+        color:white;
+    }
+
+    #hero-search-live-search {
+        border: 1px solid white;
+    }
+
+    .hero-search__input {
+        background-color: $dark-mode-gray;
+        border: 1px solid white
+    }
+}
+#dark-mode-gray__footer {
+background-color: $dark-mode-gray;
+margin-bottom: 0;
+margin-top: 0;
+
+height: 116px;
+
+    p, li {
+        color:white;
+    }
+
+    .footer {
+        margin-top: 0;
+        padding: 25px 0;
+        margin-bottom: 0;
+    }
+
+
+}
+
+#dark-mode-dark-gray__trending-gifos {
+background-color: $dark-mode-dark-gray;
+margin-top: 0;
+
+    h2, p {
+        color: white;
+    }
+    .trending-gifos-gif-container {
+        margin-bottom:0px;
+    }
+}
+
+#dark-mode-dark-black__top-border {
+border-top: solid $dark-mode-black 5px;
+
+}
+#dark-mode-dark-black__bottom-border {
+border-bottom: solid $dark-mode-black 5px;
+
+}
+
+.text-white {
+    color: white;
+}
