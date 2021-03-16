@@ -27,9 +27,9 @@ const HEADER = document.querySelector('.header');
 const HERO = document.querySelector('.hero');
 const TRENDING_GIFOS = document.querySelector('.trending-gifos');
 const BORDER_BOTTOM = document.querySelector('.border-bottom');
-const DARK_MODE_TRIGGER = document.querySelector('#dark-mode');
+const DARK_MODE_TRIGGER = document.querySelector('.dark-mode');
 const FOOTER = document.querySelector('.footer');
-const DAY_MODE_MENU = document.querySelector('#day-mode');
+const DAY_MODE_MENU = document.querySelector('.day-mode');
 
 
 export {

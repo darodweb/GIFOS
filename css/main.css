@@ -18,6 +18,10 @@
   display: none;
 }
 
+#hidden {
+  display: none;
+}
+
 .unhidden {
   display: block;
 }

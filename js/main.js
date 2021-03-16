@@ -173,7 +173,17 @@ const toggleTrendingGifosId = () => {
 }
 
 //Function to change 'Modo Nocturno' text to 'Modo Diurno'
-//Add logic here*
+const toogleMenuText = () => {
+
+    if (DARK_MODE_TRIGGER.id === "") {
+        DAY_MODE_MENU.removeAttribute('id');
+        DARK_MODE_TRIGGER.id += "hidden"
+    } else if (DAY_MODE_MENU.id === "") {
+        DAY_MODE_MENU.id += 'hidden';
+        DARK_MODE_TRIGGER.removeAttribute('id');
+    }
+
+}
 
 
 //Function to toggle classes on DOM sections
@@ -182,14 +192,16 @@ const toogleIds = () => {
     toggleBorderIds();
     toggleHeaderHeroAndFooterId();
     toggleTrendingGifosId();
-
+    toogleMenuText();
 }
 
 
 //Event listerner to trigger dark mode
 
 DARK_MODE_TRIGGER.addEventListener('click', () => {
-    console.log('click');
+    toogleIds();
+})
+DAY_MODE_MENU.addEventListener('click', () => {
     toogleIds();
 })
 
