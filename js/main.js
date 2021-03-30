@@ -32,8 +32,11 @@ const getTrendingGifs = () => {
 
 const gifMarkup = (gif) => {
     return `
-    <img src="${gif}"
-    class="trending-gifos-gif" alt="gif">
+    <div class="trending-gifos-gif__container">
+        <img src="${gif}"class="trending-gifos-gif" alt="gif">
+        <div class="trending-gifos-gif__overlay" id="trending-gifos-gif__overlay"></div>
+    </div>
+    
     `
 }
 
@@ -49,14 +52,16 @@ const insertedGif = () => {
 getTrendingGifs();
 
 
-// // QUERY THE SEARCH ENDPOINT AND PAINT TO DOM
+//  QUERY THE SEARCH ENDPOINT AND PAINT TO DOM
 
 let searchInputValue = document.querySelector('.hero-search__input');
 
 const gifResultsMarkup = (gifSearchResults) => {
     return `
-    <img src="${gifSearchResults}"
-    class="trending-gifos-gif" alt="gif">
+    <div class="search-results__gif-container">
+        <img src="${gifSearchResults}" class="search-results__gif" alt="gif">
+        <div className="search-results-overlay" id="search-results-overlay"></div>
+    </div>
     `
 }
 
