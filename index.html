@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="./css/main.css">
     <title>GIFOS</title>
+    <link rel="shortcut icon" type="image/jpg" href="./assets/Logo-modo-noc.svg" />
 </head>
 
 <body class="page-wrapper">
@@ -69,12 +70,19 @@
         <div class="hero__container">
             <h1>Inspírate, busca, guarda, y crea los mejores <span class="hero__container-gifos">GIFOS</span></h1>
             <img src="./assets/ilustra_header.svg" class="hero__image" alt="hero image">
-            <div class="hero-search">
-                <input class="hero-search__input" type="text" placeholder="Busca GIFOS y más">
-                <div id="hero-search-live-search"></div>
-                <button type="submit" id="hero__search"><i class="fa fa-search hero__search"></i></button>
-
+            <div class="hero-search-bar-container">
+                <div class="hero-search-bar">
+                    <input class="hero-search__input" type="text" placeholder="Busca GIFOS y más">
+                    <div class="search-bar-divider" id="search-bar-divider"></div>
+                    <ul id="hero-search__automcomplete-box">
+                        <!--Autocomplete suggestions-->
+                    </ul>
+                </div>
+                <!-- <button type="submit" id="hero__search"><i class="fa fa-search hero__search"></i></button> -->
             </div>
+            <i class="hero__search-icon" id="hero__search-icon"></i>
+            <i class="hero__search-toggle-icon" id="hero__search-toggle-icon"></i>
+            <i class="hero__cancel-search-icon" id="hero__cancel-search-icon"></i>
         </div>
 
         <div class="hero__trending">
