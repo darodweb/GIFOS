@@ -4,7 +4,7 @@ import {
     searchTitle, URLAutocompleteEndpoint, liveSearchResultsContainer, searchSuggestionsContainer,
     HEADER, HERO, TRENDING_GIFOS, BORDER_TOP, BORDER_BOTTOM, DARK_MODE_TRIGGER, FOOTER, DAY_MODE_MENU,
     SEARCH_INPUT, AUTOCOMPLETE_SEARCH_BOX, SEARCH_RESULTS_DIVIDER, CANCEL_SEARCH_ICON, SEARCH_TERM_ICON,
-    SEARCH_ICON, INPUT_LINE_SEPARATOR
+    SEARCH_ICON, INPUT_LINE_SEPARATOR, HERO_SEARCH_BAR, AUTOCOMPLETE_TERM_SUGGESTION
 } from './constants.js';
 
 
@@ -215,6 +215,26 @@ const toggleHeaderHeroAndFooterId = () => {
     }
 }
 
+const toggleInputId = () => {
+    if (HERO_SEARCH_BAR.id === "") {
+        HERO_SEARCH_BAR.id += "hero-search-bar";
+        HERO_SEARCH_BAR.style.backgroundColor = '#37383C';
+        HERO_SEARCH_BAR.style.border = '1px solid white';
+        SEARCH_INPUT.id += "hero-search__input";
+        SEARCH_INPUT.style.border = 'none';
+        SEARCH_ICON.style.backgroundImage = "url('../../assets/icon-search-modo-noct.svg')";
+        SEARCH_ICON.classList.add('hero__search--dark-mode-icon');
+        SEARCH_TERM_ICON.style.backgroundImage = "url('../../assets/icon-search-modo-noct.svg')";
+        style.listStyleImage = 'url("")';
+    } else {
+        HERO_SEARCH_BAR.removeAttribute('id');
+        HERO_SEARCH_BAR.style.backgroundColor = 'white';
+        SEARCH_INPUT.removeAttribute('id');
+        SEARCH_ICON.style.backgroundImage = "url('../../assets/icon-search.svg')"
+        SEARCH_ICON.classList.remove('hero__search--dark-mode-icon');
+    }
+}
+
 const toggleTrendingGifosId = () => {
     if (TRENDING_GIFOS.id === "") {
         TRENDING_GIFOS.id += "dark-mode-dark-gray__trending-gifos"
@@ -245,6 +265,7 @@ const toogleIds = () => {
     toggleHeaderHeroAndFooterId();
     toggleTrendingGifosId();
     toogleMenuText();
+    toggleInputId();
 }
 
 

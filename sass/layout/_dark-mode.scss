@@ -33,7 +33,23 @@ background-color: $dark-mode-gray;
         background-color: $dark-mode-gray;
         border: 1px solid white
     }
+
+    
+    #hero-search__input::placeholder {
+        color: $light-gray;
+    }
+
+    
 }
+
+.hero__search--dark-mode-icon {
+    background-image: url('../../assets/icon-search-modo-noct.svg');
+}
+
+#hero-search-bar {
+    border:none;
+}
+
 #dark-mode-gray__footer {
 background-color: $dark-mode-gray;
 margin-bottom: 0;
