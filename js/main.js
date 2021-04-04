@@ -4,7 +4,7 @@ import {
     searchTitle, URLAutocompleteEndpoint, liveSearchResultsContainer, searchSuggestionsContainer,
     HEADER, HERO, TRENDING_GIFOS, BORDER_TOP, BORDER_BOTTOM, DARK_MODE_TRIGGER, FOOTER, DAY_MODE_MENU,
     SEARCH_INPUT, AUTOCOMPLETE_SEARCH_BOX, SEARCH_RESULTS_DIVIDER, CANCEL_SEARCH_ICON, SEARCH_TERM_ICON,
-    SEARCH_ICON
+    SEARCH_ICON, INPUT_LINE_SEPARATOR
 } from './constants.js';
 
 
@@ -99,6 +99,7 @@ const searchHandler = () => {
     CANCEL_SEARCH_ICON.style.display = "none";
     SEARCH_TERM_ICON.style.display = "none";
     SEARCH_ICON.style.display = "unset";
+    INPUT_LINE_SEPARATOR.style.display = "block";
 }
 
 const insertedGifSearchResults = () => {
@@ -120,6 +121,7 @@ searchInputValue.addEventListener('keyup', (e) => {
         CANCEL_SEARCH_ICON.style.display = "none";
         SEARCH_TERM_ICON.style.display = "none";
         SEARCH_ICON.style.display = "unset";
+        INPUT_LINE_SEPARATOR.style.display = "block";
     }
 })
 
@@ -172,9 +174,17 @@ searchInputValue.addEventListener('input', () => {
         SEARCH_TERM_ICON.style.display = "none";
         SEARCH_ICON.style.display = "unset";
     }
+})
 
-
-
+// Event listener on CANCEL_SEARCH_ICON 
+CANCEL_SEARCH_ICON.addEventListener('click', () => {
+    SEARCH_INPUT.value = '';
+    wordMatches.length = 0;
+    AUTOCOMPLETE_SEARCH_BOX.innerHTML = "";
+    CANCEL_SEARCH_ICON.style.display = "none";
+    SEARCH_TERM_ICON.style.display = "none";
+    SEARCH_ICON.style.display = "unset";
+    INPUT_LINE_SEPARATOR.style.display = "none";
 })
 
 

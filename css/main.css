@@ -528,6 +528,7 @@ nav ul li a {
     font-size: 35px;
     line-height: 50px;
     text-align: center;
+    margin-top: 76px;
   }
 }
 
@@ -566,7 +567,7 @@ nav ul li a {
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
   font-size: 16px;
-  color: #9CAFC3;
+  color: black;
   text-align: left;
   border: none;
 }
@@ -685,8 +686,26 @@ nav ul li a {
   display: none;
 }
 
+.hero-search__separator {
+  position: relative;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  width: 300px;
+  opacity: 0.5;
+  height: 0.5px;
+  background-color: #222326;
+  display: none;
+}
+
 .hero__trending--text {
   text-align: center;
+}
+
+@media screen and (min-width: 499px) {
+  .hero__trending--text {
+    margin-bottom: 95px;
+  }
 }
 
 .hero__trending {
@@ -712,7 +731,7 @@ nav ul li a {
   color: #572EE5;
   text-align: center;
   font-weight: 700;
-  margin-top: 31px;
+  margin-top: 73px;
 }
 
 .hero__trending .hero__trending--text {

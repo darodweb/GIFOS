@@ -41,6 +41,7 @@
             font-size: 35px;
             line-height: 50px;
             text-align: center;
+            margin-top: 76px;
         }
     }
 
@@ -93,7 +94,7 @@
             font-family: 'Roboto', sans-serif;
             font-weight: 400;
             font-size: 16px;
-            color: #9CAFC3;
+            color: black;
             text-align: left;
             border:none;
 
@@ -203,9 +204,24 @@
     }
 }
 
+.hero-search__separator {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 300px;
+    opacity: 0.5;
+    height: 0.5px;
+    background-color: $dark-mode-dark-gray;
+    display: none;
+}
+                    
+
 
 .hero__trending--text {
     text-align: center;
+    @media screen and (min-width:499px) {
+        margin-bottom: 95px;
+    }
 }
 
 .hero__trending {
@@ -223,7 +239,7 @@
         color: $primary-color;
         text-align: center;
         font-weight: 700;
-        margin-top: 31px;
+        margin-top: 73px;
     }
 
     .hero__trending--text {
