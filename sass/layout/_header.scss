@@ -66,35 +66,70 @@ header {
     left:0;
     text-align: center;
 
-    li:first-child {
-        margin-top: -35rem;
-    }
+    // li:first-child {
+    //     margin-top: -35rem;
+    // }
     
-    li a {
-        color:white;
-        text-decoration: none;
-        border-bottom: white 1px solid;
-        position:relative;
-        text-decoration: none;
-    }
+    // li a {
+    //     color:white;
+    //     text-decoration: none;
+    //     border-bottom: white 1px solid;
+    //     position:relative;
+    //     text-decoration: none;
+    // }
 
-    li a::after {
-    background-color: #efefef; 
-    bottom: -24px;
-    content: '';
-    display: block;
-    height: 1px;
-    left: 60%;
-    position: absolute;
-    transform: translate(-60%,0);
-    width: 40px;
-    }
-
-    a:link, a:active, a:visited {
-        text-decoration: none;
-    }
+    // li a::after {
+    // background-color: $primary-color; 
+    // bottom: -24px;
+    // content: '';
+    // display: block;
+    // height: 1px;
+    // left: 60%;
+    // position: absolute;
+    // transform: translate(-60%,0);
+    // width: 40px;
+    // }
 
 }
+
+a {
+    color: white;
+    font-family: $primary-font;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0;
+    line-height: 60px;
+    text-decoration: none;
+    position: relative;
+    padding-bottom: 2px;
+
+    &::after {   
+        background: none repeat scroll 0 0 transparent;
+        bottom: 20px;
+        content: "";
+        display: block;
+        height: 2px;
+        left: 50%;
+        position: absolute;
+        background: $secundary-color;
+        transition: width 0.3s ease 0s, left 0.3s ease 0s;
+        width: 0;
+        }
+    
+    &:hover {
+        &::after { 
+            width: 100%; 
+            left: 0; 
+        }
+    }
+}
+
+a:link, a:visited {
+    text-decoration: none;
+}
+
+
+
 
 tspan .logo__text {
     font-size: 18px;

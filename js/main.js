@@ -121,7 +121,7 @@ searchInputValue.addEventListener('keyup', (e) => {
         CANCEL_SEARCH_ICON.style.display = "none";
         SEARCH_TERM_ICON.style.display = "none";
         SEARCH_ICON.style.display = "unset";
-        INPUT_LINE_SEPARATOR.style.display = "block";
+        INPUT_LINE_SEPARATOR.style.display = "unset";
     }
 })
 
@@ -169,10 +169,12 @@ searchInputValue.addEventListener('input', () => {
         CANCEL_SEARCH_ICON.style.display = "block";
         SEARCH_TERM_ICON.style.display = "block";
         SEARCH_ICON.style.display = "none";
+        INPUT_LINE_SEPARATOR.style.display = "block";
     } else {
         CANCEL_SEARCH_ICON.style.display = "none";
         SEARCH_TERM_ICON.style.display = "none";
         SEARCH_ICON.style.display = "unset";
+        INPUT_LINE_SEPARATOR.style.display = "none";
     }
 })
 

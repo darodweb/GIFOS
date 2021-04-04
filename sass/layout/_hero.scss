@@ -205,14 +205,17 @@
 }
 
 .hero-search__separator {
-    position: relative;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 300px;
-    opacity: 0.5;
-    height: 0.5px;
-    background-color: $dark-mode-dark-gray;
-    display: none;
+    @media screen and (min-width:499px) {
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 505px;
+        opacity: 0.5;
+        height: 0.5px;
+        background-color: $dark-mode-dark-gray;
+        display: none;
+    }
+
 }
                     
 
