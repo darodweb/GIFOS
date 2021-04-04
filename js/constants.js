@@ -7,15 +7,21 @@ const URLTrendings = `https://api.giphy.com/v1/gifs/trending?api_key=vr7eliKrqbn
 const gifContainer = document.querySelector('.trending-gifos-enclosure');
 
 // Search GIFS  constants
-const searchBtn = document.querySelector('#hero__search');
+const searchBtn = document.querySelector('#hero__search-toggle-icon');
 const URLSearchEndpoint = `https://api.giphy.com/v1/gifs/search?api_key=vr7eliKrqbn1J94gIPNQhs9Gx7ZUM15l&limit=12&q=`;
 const searchResults = document.querySelector('.search-results');
 const searchTitle = document.querySelector('.search-title');
 const searchSuggestionsContainer = document.querySelector('#hero-search-live-search');
+const SEARCH_RESULTS_DIVIDER = document.querySelector('#search-bar__line-divider');
 
 // Autocomplete Endpoint constants
 const URLAutocompleteEndpoint = `https://api.giphy.com/v1/gifs/search/tags?api_key=vr7eliKrqbn1J94gIPNQhs9Gx7ZUM15l&limit=1&q=`
-const liveSearchResultsContainer = document.getElementById('hero-search-live-search');
+const liveSearchResultsContainer = document.getElementById('hero-search__automcomplete-box');
+const SEARCH_INPUT = document.querySelector('.hero-search__input');
+const AUTOCOMPLETE_SEARCH_BOX = document.querySelector('#hero-search__automcomplete-box');
+const CANCEL_SEARCH_ICON = document.querySelector('#hero__cancel-search-icon');
+const SEARCH_TERM_ICON = document.querySelector('#hero__search-icon');
+const SEARCH_ICON = document.querySelector('#hero__search-toggle-icon');
 
 //Hamburger menu constants
 const hamburger = document.getElementById('hamburger');
@@ -36,5 +42,6 @@ export {
     URLTrendings, hamburger, menu, gifContainer, searchBtn, searchResults,
     URLSearchEndpoint, searchTitle, URLAutocompleteEndpoint, liveSearchResultsContainer,
     searchSuggestionsContainer, HEADER, HERO, TRENDING_GIFOS, BORDER_TOP, BORDER_BOTTOM,
-    DARK_MODE_TRIGGER, FOOTER, DAY_MODE_MENU
+    DARK_MODE_TRIGGER, FOOTER, DAY_MODE_MENU, SEARCH_INPUT, AUTOCOMPLETE_SEARCH_BOX,
+    SEARCH_RESULTS_DIVIDER, CANCEL_SEARCH_ICON, SEARCH_TERM_ICON, SEARCH_ICON
 };

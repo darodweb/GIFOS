@@ -2,7 +2,9 @@ import { api } from './services.js';
 import {
     URLTrendings, URLSearchEndpoint, hamburger, menu, gifContainer, searchBtn, searchResults,
     searchTitle, URLAutocompleteEndpoint, liveSearchResultsContainer, searchSuggestionsContainer,
-    HEADER, HERO, TRENDING_GIFOS, BORDER_TOP, BORDER_BOTTOM, DARK_MODE_TRIGGER, FOOTER, DAY_MODE_MENU
+    HEADER, HERO, TRENDING_GIFOS, BORDER_TOP, BORDER_BOTTOM, DARK_MODE_TRIGGER, FOOTER, DAY_MODE_MENU,
+    SEARCH_INPUT, AUTOCOMPLETE_SEARCH_BOX, SEARCH_RESULTS_DIVIDER, CANCEL_SEARCH_ICON, SEARCH_TERM_ICON,
+    SEARCH_ICON
 } from './constants.js';
 
 
@@ -84,6 +86,19 @@ const searchHandler = () => {
     SearchGifs();
     searchTitle.textContent = searchInputValue.value;
     searchInputValue.value = "";
+    SEARCH_RESULTS_DIVIDER.style.display = "block";
+    SEARCH_RESULTS_DIVIDER.style.height = "0.5px";
+    SEARCH_RESULTS_DIVIDER.style.backgroundColor = "#9CAFC3";
+    SEARCH_RESULTS_DIVIDER.style.width = "338px";
+    SEARCH_RESULTS_DIVIDER.style.marginTop = "140px";
+    SEARCH_RESULTS_DIVIDER.style.marginBottom = "84px";
+    SEARCH_RESULTS_DIVIDER.style.position = "relative";
+    SEARCH_RESULTS_DIVIDER.style.left = "50%";
+    SEARCH_RESULTS_DIVIDER.style.transform = "translateX(-50%)";
+    SEARCH_RESULTS_DIVIDER.style.opacity = "0.5";
+    CANCEL_SEARCH_ICON.style.display = "none";
+    SEARCH_TERM_ICON.style.display = "none";
+    SEARCH_ICON.style.display = "unset";
 }
 
 const insertedGifSearchResults = () => {
@@ -99,6 +114,12 @@ const insertedGifSearchResults = () => {
 searchInputValue.addEventListener('keyup', (e) => {
     if (e.keyCode === 13) {
         searchBtn.click(() => searchHandler());
+        SEARCH_INPUT.value = '';
+        wordMatches.length = 0;
+        AUTOCOMPLETE_SEARCH_BOX.innerHTML = "";
+        CANCEL_SEARCH_ICON.style.display = "none";
+        SEARCH_TERM_ICON.style.display = "none";
+        SEARCH_ICON.style.display = "unset";
     }
 })
 
@@ -122,6 +143,7 @@ const searchGiphy = async () => {
     });
     console.log(wordResults)
     searchMatches(wordResults);
+
 }
 
 //Function to show word suggestions in DOM 
@@ -129,17 +151,30 @@ const searchMatches = (wordResults) => {
     if (wordMatches.length > 0) {
 
         const htmlLiveSearch = wordResults.map(matches => `
-            <a href="${URLSearchEndpoint}${matches}" target="_blank"><p><i class="fa fa-search live-search-icon"></i>${matches}</p></a>
+            <li class="hero-search__autocomplete-suggestion">${matches}</li>
         `)
             .join('');
         liveSearchResultsContainer.innerHTML = htmlLiveSearch;
     }
+
 
 }
 
 //Live search event listener on search input
 searchInputValue.addEventListener('input', () => {
     searchGiphy(searchInputValue.value);
+    if (searchInputValue.value !== "") {
+        CANCEL_SEARCH_ICON.style.display = "block";
+        SEARCH_TERM_ICON.style.display = "block";
+        SEARCH_ICON.style.display = "none";
+    } else {
+        CANCEL_SEARCH_ICON.style.display = "none";
+        SEARCH_TERM_ICON.style.display = "none";
+        SEARCH_ICON.style.display = "unset";
+    }
+
+
+
 })
 
 

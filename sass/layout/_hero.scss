@@ -12,9 +12,11 @@
     margin-bottom: -53px;
     margin-left:22px;
     @media screen and (min-width:499px) {
+        position: relative;
+        top:53px;
         width: 399px; 
         height: 190px;
-        margin-left: 65px;
+        margin: 0 auto;
     }
 }
 
@@ -104,29 +106,107 @@
             // border: $primary-color solid 1px;
             @media screen and (min-width: 499px) {
                 max-width: 551px;
+                ::placeholder {
+                    font-family: $secondary-font;
+                    color: #9CAFC3;
+                    font-size: $primary-size;
+                }
             }
+
         }
-        
+
+        .search-bar__line-divider {
+            position: relative;
+            left: 50%;
+            transform: translateX(-50%);
+            opacity: 0.5;
+            height: 0.5px;
+            background-color: #9CAFC3;
+            display: none;
+            width: 338px;
+            margin-top: 74px;
+            margin-bottom: 84px;
+        }
+       
+        .hero-search__automcomplete-box {
+            overflow-y:auto;
+
+
+        }
+
+        .hero-search__autocomplete-suggestion {
+            font-family: $primary-font;
+            font-weight: 400;
+            font-size: 18px;
+            text-align: left;
+            padding: 8px 12px;
+            width: 105%;
+            border-radius: 3px;
+            cursor: default;
+            list-style-image: url('/assets/icon-search.svg');
+            opacity: 0.5;
+            cursor: default;
+            transform: scale(0.85);
+            color: black;
+
+            &:hover {
+                background-color: #efefef;
+            } 
     
-    }
-
-
-
-
-@media screen and (min-width: 499px) {
-    ::placeholder {
-        font-family: $secondary-font;
-        color: #9CAFC3;
-        font-size: $primary-size;
-    }
 }
 
+    .hero__search-icon {
+        position: absolute;
+        left: 20px;
+        top: 15px;
+        height: 20px;
+        width: 20px;
+        background-image: url('../../assets/icon-search.svg');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        opacity: 0.6;
+        display: none;
+        cursor: pointer;
+
+        &:active {
+            transform: scale(0.90);
+        }
+    }
+
+    .hero__search-toggle-icon {
+        position: absolute;
+        right: 20px;
+        top: 15px;
+        height: 20px;
+        width: 20px;
+        background-image: url('../../assets/icon-search.svg');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        cursor: pointer;
+    }
+
+    .hero__cancel-search-icon {
+        position: absolute;
+        right: 20px;
+        top: 15px;
+        height: 20px;
+        width: 20px;
+        background-image: url('../../assets/close.svg');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        transform: scale(0.90);
+        cursor: pointer;
+        display: none;
+    }
+}
 
 
 .hero__trending--text {
     text-align: center;
 }
-
 
 .hero__trending {
     display: flex;
