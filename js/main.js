@@ -282,6 +282,7 @@ const toggleInputId = () => {
         // AUTOCOMPLETE_TERM_SUGGESTION_LIST_STYLE.style.listStyleImage = 'url("../assets/icon-search-modo-noct.svg")';
     } else {
         HERO_SEARCH_BAR.removeAttribute('id');
+        HERO_SEARCH_BAR.style.border = '1px solid #572EE5';
         HERO_SEARCH_BAR.style.backgroundColor = 'white';
         SEARCH_INPUT.removeAttribute('id');
         SEARCH_ICON.style.backgroundImage = "url('../../assets/icon-search.svg')"
