@@ -1,10 +1,14 @@
 
 const URLTrendings = `https://api.giphy.com/v1/gifs/trending?api_key=vr7eliKrqbn1J94gIPNQhs9Gx7ZUM15l&limit=3`;
-
+const URL_TRENDING_SEARCH_TERMS = `https://api.giphy.com/v1/trending/searches?api_key=vr7eliKrqbn1J94gIPNQhs9Gx7ZUM15l`
 
 
 //Trending GIFs constants
 const gifContainer = document.querySelector('.trending-gifos-enclosure');
+
+
+//Trending Terms constants
+const TRENDING_TERMS_CONTAINER = document.querySelector('.hero__trending-terms-container')
 
 // Search GIFS  constants
 const searchBtn = document.querySelector('#hero__search-toggle-icon');
@@ -20,11 +24,13 @@ const liveSearchResultsContainer = document.getElementById('hero-search__automco
 const SEARCH_INPUT = document.querySelector('.hero-search__input');
 const AUTOCOMPLETE_SEARCH_BOX = document.querySelector('#hero-search__automcomplete-box');
 const AUTOCOMPLETE_TERM_SUGGESTION = document.querySelector('.hero-search__autocomplete-suggestion');
+
 const CANCEL_SEARCH_ICON = document.querySelector('#hero__cancel-search-icon');
 const SEARCH_TERM_ICON = document.querySelector('#hero__search-icon');
 const SEARCH_ICON = document.querySelector('#hero__search-toggle-icon');
 const INPUT_LINE_SEPARATOR = document.querySelector('#hero-search__separator');
 const HERO_SEARCH_BAR = document.querySelector('.hero-search-bar');
+
 
 //Hamburger menu constants
 const hamburger = document.getElementById('hamburger');
@@ -46,5 +52,6 @@ export {
     searchSuggestionsContainer, HEADER, HERO, TRENDING_GIFOS, BORDER_TOP, BORDER_BOTTOM,
     DARK_MODE_TRIGGER, FOOTER, DAY_MODE_MENU, SEARCH_INPUT, AUTOCOMPLETE_SEARCH_BOX,
     SEARCH_RESULTS_DIVIDER, CANCEL_SEARCH_ICON, SEARCH_TERM_ICON, SEARCH_ICON,
-    INPUT_LINE_SEPARATOR, HERO_SEARCH_BAR, AUTOCOMPLETE_TERM_SUGGESTION
+    INPUT_LINE_SEPARATOR, HERO_SEARCH_BAR, AUTOCOMPLETE_TERM_SUGGESTION, URL_TRENDING_SEARCH_TERMS,
+    TRENDING_TERMS_CONTAINER
 };

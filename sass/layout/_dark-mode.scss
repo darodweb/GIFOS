@@ -43,12 +43,17 @@ background-color: $dark-mode-gray;
 }
 
 .hero__search--dark-mode-icon {
-    background-image: url('../../assets/icon-search-modo-noct.svg');
+    list-style-image: var(--autocomplete-suggestion-list-style-image);
 }
 
 #hero-search-bar {
     border:none;
 }
+
+.hero-search__autocomplete-suggestion{
+    list-style-image: var(--autocomplete-suggestion-list-style-image)
+}
+
 
 #dark-mode-gray__footer {
 background-color: $dark-mode-gray;

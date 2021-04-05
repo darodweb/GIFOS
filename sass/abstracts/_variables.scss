@@ -20,3 +20,12 @@
     $dark-mode-dark-gray:  #222326;
     $light-gray: #9CAFC3;
 
+
+:root {
+    --autocomplete-suggestion-list-style-image: url("../../assets/icon-search.svg")
+}
+
+[data-theme="dark"] {
+--autocomplete-suggestion-list-style-image: url("../../assets/icon-search-modo-noct.svg");
+
+    }

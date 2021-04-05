@@ -4,7 +4,8 @@ import {
     searchTitle, URLAutocompleteEndpoint, liveSearchResultsContainer, searchSuggestionsContainer,
     HEADER, HERO, TRENDING_GIFOS, BORDER_TOP, BORDER_BOTTOM, DARK_MODE_TRIGGER, FOOTER, DAY_MODE_MENU,
     SEARCH_INPUT, AUTOCOMPLETE_SEARCH_BOX, SEARCH_RESULTS_DIVIDER, CANCEL_SEARCH_ICON, SEARCH_TERM_ICON,
-    SEARCH_ICON, INPUT_LINE_SEPARATOR, HERO_SEARCH_BAR, AUTOCOMPLETE_TERM_SUGGESTION
+    SEARCH_ICON, INPUT_LINE_SEPARATOR, HERO_SEARCH_BAR, AUTOCOMPLETE_TERM_SUGGESTION, URL_TRENDING_SEARCH_TERMS,
+    TRENDING_TERMS_CONTAINER
 } from './constants.js';
 
 
@@ -15,7 +16,7 @@ hamburger.addEventListener('click', () => {
     menu.classList.toggle('display');
 })
 
-//Querying Trending Gifs and paint to DOM
+//QUERY TRENDING Gifs AND RENDER TO DOM
 
 
 let gifs = [];
@@ -54,7 +55,58 @@ const insertedGif = () => {
 getTrendingGifs();
 
 
-//  QUERY THE SEARCH ENDPOINT AND PAINT TO DOM
+//QUERY TRENDING TERMS ENDPOINT AND RENDER TO DOM
+
+let trendingTerms = [];
+
+const getTrendingTerms = () => {
+    api.getGifs(URL_TRENDING_SEARCH_TERMS)
+        .then(response => {
+            for (let i = 0; i < response.data.length; i++) {
+                trendingTerms.push(response.data[i]);
+            }
+            insertedTrendingTerms();
+        })
+        .catch(error => console.log(error))
+
+}
+
+const trendingTermsMarkup = (terms) => {
+    return `
+    <span class="hero__trending-terms">${terms}</span><span>,</span>
+    `
+}
+
+const insertedTrendingTerms = () => {
+    let trendingTermsItems = "";
+    let finalTrendingTerms = trendingTerms.splice(1, 5);
+    for (let i = 0; i < finalTrendingTerms.length; i++) {
+        trendingTermsItems += trendingTermsMarkup(trendingTerms[i]);
+    }
+    TRENDING_TERMS_CONTAINER.innerHTML = trendingTermsItems;
+}
+
+
+getTrendingTerms();
+
+
+// Function to make search terms clickable and fill in the input upon click (Part of Query Trending Terms section)
+
+const addClickEventListener = (event, inputElement, classToSearch) => {
+    if (event.target.className === classToSearch) {
+        inputElement.value = event.target.innerHTML;
+
+        const changeEvent = new Event("change");
+        inputElement.dispatchEvent(changeEvent);
+
+        const searchEvent = new Event("search");
+        inputElement.dispatchEvent(searchEvent);
+    }
+}
+
+//------END OF QUERY TRENDING TERMS ENDPOINT AND RENDER TO DOM
+
+//  QUERY THE SEARCH ENDPOINT AND RENDER TO DOM
 
 let searchInputValue = document.querySelector('.hero-search__input');
 
@@ -164,6 +216,7 @@ const searchMatches = (wordResults) => {
 
 //Live search event listener on search input
 searchInputValue.addEventListener('input', () => {
+
     searchGiphy(searchInputValue.value);
     if (searchInputValue.value !== "") {
         CANCEL_SEARCH_ICON.style.display = "block";
@@ -216,6 +269,7 @@ const toggleHeaderHeroAndFooterId = () => {
 }
 
 const toggleInputId = () => {
+    const AUTOCOMPLETE_TERM_SUGGESTION_LIST_STYLE = document.querySelector('.hero-search__autocomplete-suggestion');
     if (HERO_SEARCH_BAR.id === "") {
         HERO_SEARCH_BAR.id += "hero-search-bar";
         HERO_SEARCH_BAR.style.backgroundColor = '#37383C';
@@ -225,7 +279,7 @@ const toggleInputId = () => {
         SEARCH_ICON.style.backgroundImage = "url('../../assets/icon-search-modo-noct.svg')";
         SEARCH_ICON.classList.add('hero__search--dark-mode-icon');
         SEARCH_TERM_ICON.style.backgroundImage = "url('../../assets/icon-search-modo-noct.svg')";
-        style.listStyleImage = 'url("")';
+        // AUTOCOMPLETE_TERM_SUGGESTION_LIST_STYLE.style.listStyleImage = 'url("../assets/icon-search-modo-noct.svg")';
     } else {
         HERO_SEARCH_BAR.removeAttribute('id');
         HERO_SEARCH_BAR.style.backgroundColor = 'white';
@@ -272,9 +326,13 @@ const toogleIds = () => {
 //Event listerner to trigger dark mode
 
 DARK_MODE_TRIGGER.addEventListener('click', () => {
+    const HTML = document.querySelector('#html')
+    HTML.setAttribute('data-theme', 'true');
     toogleIds();
 })
 DAY_MODE_MENU.addEventListener('click', () => {
+    const HTML = document.querySelector('#html')
+    HTML.removeAttribute('data-theme', 'true');
     toogleIds();
 })
 
