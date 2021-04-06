@@ -26,7 +26,7 @@ const getTrendingGifs = () => {
         .then(response => {
             gifs = [];
             for (let i = 0; i < response.data.length; i++) {
-                gifs.push(response.data[i].images.fixed_height_downsampled.url);
+                gifs.push(response.data[i]);
             }
             insertedGif();
         })
@@ -36,8 +36,18 @@ const getTrendingGifs = () => {
 const gifMarkup = (gif) => {
     return `
     <div class="trending-gifos-gif__container">
-        <img src="${gif}"class="trending-gifos-gif" alt="gif">
+        <img src="${gif.images.fixed_height_downsampled.url}"class="trending-gifos-gif" alt="gif">
         <div class="trending-gifos-gif__overlay" id="trending-gifos-gif__overlay"></div>
+        <div class="icon-container">
+            <i class="icon-fav-false" data-fav-id=${gif.id} title="Favorito"></i>
+            <i class="icon-download" data-download-url=${gif.url}
+                data-download-title=${gif.title}
+                title="Descargar"></i>
+            <i class="icon-expand" data-expand-url=${gif.images.fixed_height.url}
+            data-expand-username=${gif.username} data-expand-title=${gif.title}
+            data-expand-id=${gif.id}
+            title="Expandir"></i>
+        </div>
     </div>
     
     `
