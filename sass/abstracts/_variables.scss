@@ -21,11 +21,34 @@
     $light-gray: #9CAFC3;
 
 
-:root {
-    --autocomplete-suggestion-list-style-image: url("../../assets/icon-search.svg")
+// :root {
+//     --autocomplete-suggestion-list-style-image: url("../../assets/icon-search.svg")
+// }
+
+// [data-theme="dark"] {
+// --autocomplete-suggestion-list-style-image: url("../../assets/icon-search-modo-noct.svg");
+
+//     }
+
+@mixin loadSocialMediaIcon($url) {
+    height: 20px;
+    width: 20px;
+    background-image: $url;
+    background-color: transparent;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    cursor: pointer;
 }
 
-[data-theme="dark"] {
---autocomplete-suggestion-list-style-image: url("../../assets/icon-search-modo-noct.svg");
-
-    }
+@mixin loadGifIcon($url) {
+    height: 32px;
+    width: 32px;
+    background-image: url($url);
+    background-color: #cccccc; /* Used if the image is unavailable */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: contain; /* Resize the background image to cover the entire container */
+    border-radius: 6px;
+    cursor: pointer;
+}

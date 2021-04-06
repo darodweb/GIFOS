@@ -90,7 +90,7 @@ const insertedTrendingTerms = () => {
 getTrendingTerms();
 
 
-// Function to make search terms clickable and fill in the input upon click (Part of Query Trending Terms section)
+// Function to make trending search terms clickable and fill in the input upon click (Part of Query Trending Terms section)
 
 function addEventListenerToSearchTerms(event, inputElement, class_Name) {
     if (event.target.className === class_Name) {
@@ -104,31 +104,11 @@ TRENDING_TERMS_CONTAINER.addEventListener('click', (event) => {
         SEARCH_INPUT,
         "hero__trending-terms"
     )
-    searchBtn.click();
+    setTimeout(() => {
+        searchBtn.click();
+    }, 600);
+
 })
-
-
-// function addClickEventListener (event, inputElement, classToSearch) {
-//     if (event.target.className === classToSearch) {
-//         inputElement.value = event.target.innerHTML;
-
-//         const changeEvent = new Event("change");
-//         inputElement.dispatchEvent(changeEvent);
-
-//         const searchEvent = new Event("search");
-//         inputElement.dispatchEvent(searchEvent);
-//     }
-
-//     TRENDING_TERMS_CONTAINER.addEventListener("click", (event) => {
-//         getTrendingTerms.addClickEventListener(
-//             event,
-//             SEARCH_INPUT,
-//             "hero__trending-terms"
-//         );
-//     })
-// }
-
-
 
 
 //------END OF QUERY TRENDING TERMS ENDPOINT AND RENDER TO DOM
@@ -140,8 +120,19 @@ let searchInputValue = document.querySelector('.hero-search__input');
 const gifResultsMarkup = (gifSearchResults) => {
     return `
     <div class="search-results__gif-container">
-        <img src="${gifSearchResults}" class="search-results__gif" alt="gif">
+        <img src="${gifSearchResults.images.fixed_width_downsampled.url}"
+        class="search-results__gif" alt="${gifSearchResults.title}">
         <div className="search-results-overlay" id="search-results-overlay"></div>
+        <div class="icon-container">
+            <i class="icon-fav-false" data-fav-id=${gifSearchResults.id}title="Favorito"></i>
+            <i class="icon-download" data-download-url=${gifSearchResults.url}
+                data-download-title=${gifSearchResults.title}
+                title="Descargar"></i>
+            <i class="icon-expand" data-expand-url=${gifSearchResults.images.fixed_height.url}
+            data-expand-username=${gifSearchResults.username} data-expand-title=${gifSearchResults.title}
+            data-expand-id=${gifSearchResults.id}
+            title="Expandir"></i>
+        </div>
     </div>
     `
 }
@@ -154,12 +145,13 @@ const SearchGifs = () => {
         .then(response => {
             gifSearchResults = [];
             for (let i = 0; i < response.data.length; i++) {
-                gifSearchResults.push(response.data[i].images.fixed_height_downsampled.url);
+                gifSearchResults.push(response.data[i]);
             }
             insertedGifSearchResults();
         })
         .catch(error => console.log(error))
 }
+
 
 const searchHandler = () => {
     SearchGifs();
@@ -169,7 +161,7 @@ const searchHandler = () => {
     SEARCH_RESULTS_DIVIDER.style.height = "0.5px";
     SEARCH_RESULTS_DIVIDER.style.backgroundColor = "#9CAFC3";
     SEARCH_RESULTS_DIVIDER.style.width = "338px";
-    SEARCH_RESULTS_DIVIDER.style.marginTop = "140px";
+    SEARCH_RESULTS_DIVIDER.style.marginTop = "74px";
     SEARCH_RESULTS_DIVIDER.style.marginBottom = "84px";
     SEARCH_RESULTS_DIVIDER.style.position = "relative";
     SEARCH_RESULTS_DIVIDER.style.left = "50%";

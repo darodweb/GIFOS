@@ -34,6 +34,86 @@
     max-width: 1440px;
 }
 
+.icon-container {
+    display:flex;
+    position:absolute;
+    top: 10px;
+    right: 5px;
+    opacity:0;
+}
 
+.search-results__gif-container:hover .icon-container {
+    opacity:1;
+}
+
+
+.icon-fav-false {
+    @include loadGifIcon("../../assets/icon-fav.svg");
+    opacity: 0.7;
+    margin-left: 21px;
+
+    &:hover {
+        background-image: url("../../assets/icon-fav-hover.svg");
+        background-color: #FFFFFF;
+        opacity: 1;
+    }
+
+    &:active {
+        background-image: url("../../assets/icon-fav-active.svg");
+        background-color: #FFFFFF;
+        transform: scale(0.98);
+    }
+}
+
+.icon-fav-true {
+    @include loadGifIcon("../../assets/icon-fav-active.svg");
+    opacity: 0.9;
+    margin-left: 21px;
+
+    &:hover {
+        background-image: url("../../assets/icon-fav-active.svg");
+        background-color: #FFFFFF;
+        opacity: 1;
+    }
+
+    &:active {
+        background-image: url("../../assets/icon-fav.svg");
+        background-color: #FFFFFF;
+        transform: scale(0.98);
+    }
+}
+
+.icon-download {
+    @include loadGifIcon("../../assets/icon-download.svg");
+    opacity: 0.7;
+    margin-left: 11px;
+
+    &:hover {
+        background-image: url("../../assets/icon-download-hover.svg");
+        background-color: #FFFFFF;
+        opacity: 1;
+    }
+
+    &:active {
+        transform: scale(0.98);
+    }
+}
+
+.icon-expand {
+    @include loadGifIcon("../../assets/icon-max-normal.svg");
+    opacity: 0.7;
+    margin-right: 5px;
+    margin-left: 10px;
+
+    &:hover {
+        background-image: url("../../assets/icon-max-hover.svg");
+        background-color: #FFFFFF;
+        opacity: 1;
+    }
+
+    &:active {
+        transform: scale(0.98);
+    }
+}
 
 
