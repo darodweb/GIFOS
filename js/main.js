@@ -92,17 +92,44 @@ getTrendingTerms();
 
 // Function to make search terms clickable and fill in the input upon click (Part of Query Trending Terms section)
 
-const addClickEventListener = (event, inputElement, classToSearch) => {
-    if (event.target.className === classToSearch) {
-        inputElement.value = event.target.innerHTML;
-
-        const changeEvent = new Event("change");
-        inputElement.dispatchEvent(changeEvent);
-
-        const searchEvent = new Event("search");
-        inputElement.dispatchEvent(searchEvent);
+function addEventListenerToSearchTerms(event, inputElement, class_Name) {
+    if (event.target.className === class_Name) {
+        inputElement.value = event.target.textContent;
     }
 }
+
+TRENDING_TERMS_CONTAINER.addEventListener('click', (event) => {
+    addEventListenerToSearchTerms(
+        event,
+        SEARCH_INPUT,
+        "hero__trending-terms"
+    )
+    searchBtn.click();
+})
+
+
+// function addClickEventListener (event, inputElement, classToSearch) {
+//     if (event.target.className === classToSearch) {
+//         inputElement.value = event.target.innerHTML;
+
+//         const changeEvent = new Event("change");
+//         inputElement.dispatchEvent(changeEvent);
+
+//         const searchEvent = new Event("search");
+//         inputElement.dispatchEvent(searchEvent);
+//     }
+
+//     TRENDING_TERMS_CONTAINER.addEventListener("click", (event) => {
+//         getTrendingTerms.addClickEventListener(
+//             event,
+//             SEARCH_INPUT,
+//             "hero__trending-terms"
+//         );
+//     })
+// }
+
+
+
 
 //------END OF QUERY TRENDING TERMS ENDPOINT AND RENDER TO DOM
 
