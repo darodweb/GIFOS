@@ -48,6 +48,8 @@ const gifMarkup = (gif) => {
             data-expand-id=${gif.id}
             title="Expandir"></i>
         </div>
+        <p class="gif-user">${gif.username}</p>
+        <p class="gif-title">${gif.title}</p>
     </div>
     
     `
@@ -143,6 +145,8 @@ const gifResultsMarkup = (gifSearchResults) => {
             data-expand-id=${gifSearchResults.id}
             title="Expandir"></i>
         </div>
+        <p class="gif-user">${gifSearchResults.username}</p>
+        <p class="gif-title">${gifSearchResults.title}</p>
     </div>
     `
 }

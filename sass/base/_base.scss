@@ -42,9 +42,46 @@
     opacity:0;
 }
 
+.gif-user {
+    display: none;
+}
+
+.gif-title {
+    display: none;
+}
+
 .search-results__gif-container:hover .icon-container {
     opacity:1;
 }
+
+.search-results__gif-container:hover .gif-user  {
+    position: absolute;
+    bottom: 80px;
+    left: 18px;
+    font-family: $secondary-font;
+    font-weight: 400;
+    font-size: 15px;
+    color: #FFFFFF;
+    text-align: left;
+    opacity: 1;
+    display: block;
+}
+
+.search-results__gif-container:hover .gif-title  {
+    position: absolute;
+    bottom: 40px;
+    left: 18px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    color: #FFFFFF;
+    text-align: left;
+    opacity: 1;
+    height: 36px;
+    width: 80%;
+    display: block;
+}
+
 
 
 .icon-fav-false {
@@ -115,5 +152,6 @@
         transform: scale(0.98);
     }
 }
+
 
 
