@@ -5,7 +5,7 @@ import {
     HEADER, HERO, TRENDING_GIFOS, BORDER_TOP, BORDER_BOTTOM, DARK_MODE_TRIGGER, FOOTER, DAY_MODE_MENU,
     SEARCH_INPUT, AUTOCOMPLETE_SEARCH_BOX, SEARCH_RESULTS_DIVIDER, CANCEL_SEARCH_ICON, SEARCH_TERM_ICON,
     SEARCH_ICON, INPUT_LINE_SEPARATOR, HERO_SEARCH_BAR, AUTOCOMPLETE_TERM_SUGGESTION, URL_TRENDING_SEARCH_TERMS,
-    TRENDING_TERMS_CONTAINER, SHOW_MORE_HOME
+    TRENDING_TERMS_CONTAINER, SHOW_MORE_HOME, PREV_BUTTON, NEXT_BUTTON
 } from './constants.js';
 
 
@@ -107,6 +107,8 @@ getTrendingTerms();
 function addEventListenerToSearchTerms(event, inputElement, class_Name) {
     if (event.target.className === class_Name) {
         inputElement.value = event.target.textContent;
+        let SavedSearchTerm = event.target.textContent;
+        localStorage.setItem('searchTerm', `${SavedSearchTerm}`);
     }
 }
 
@@ -157,7 +159,9 @@ const gifResultsMarkup = (gifSearchResults) => {
 let gifSearchResults = [];
 
 const SearchGifs = () => {
-    let URLSearchQuery = URLSearchEndpoint.concat(searchInputValue.value);
+    let limitToDisplay = 12;
+    let URLSearchQuery = `${URLSearchEndpoint}${searchInputValue.value}&limit=${limitToDisplay}`
+
     api.getGifs(URLSearchQuery)
         .then(response => {
             gifSearchResults = [];
@@ -169,6 +173,39 @@ const SearchGifs = () => {
         .catch(error => console.log(error))
 }
 
+//----Function to load more gifs upon clicking the "Ver Mas" button.
+let offset = "";
+const LoadMoreGifs = () => {
+    let SearchWordToKeepLoading = localStorage.getItem('searchTerm');
+    offset = Number(offset + 12);
+    let limitToDisplay = 12;
+    let URL_LOAD_MORE = `${URLSearchEndpoint}${SearchWordToKeepLoading}&limit=${limitToDisplay}&offset=${offset}`
+
+    api.getGifs(URL_LOAD_MORE)
+        .then(response => {
+            gifSearchResults = gifSearchResults;
+            for (let i = 0; i < response.data.length; i++) {
+                gifSearchResults.push(response.data[i]);
+            }
+            insertedGifSearchResults();
+        })
+        .catch(error => console.log(error))
+
+}
+
+function showMoreHomePage() {
+    if (gifSearchResults.length > 0 && gifSearchResults.length <= 48) {
+        LoadMoreGifs();
+        insertedGifSearchResults();
+        console.log('clicked!')
+
+    } else { SHOW_MORE_HOME.classList.add('disabled') }
+}
+
+SHOW_MORE_HOME.addEventListener('click', () => {
+    showMoreHomePage();
+});
+//-------END of Function to load more gifs upon clicking the "Ver Mas" button.
 
 const searchHandler = () => {
     SearchGifs();
@@ -371,5 +408,23 @@ DAY_MODE_MENU.addEventListener('click', () => {
     const HTML = document.querySelector('#html')
     HTML.removeAttribute('data-theme', 'true');
     toogleIds();
+})
+
+
+// FUNCTION TO SCROLL SLIDER ON HOME PAGE
+function scrolltoLeft() {
+    gifContainer.scroll(-300, 0)
+}
+
+function scrolltoRight() {
+    gifContainer.scroll(300, 0);
+}
+
+PREV_BUTTON.addEventListener('click', () => {
+    scrolltoLeft();
+})
+
+NEXT_BUTTON.addEventListener('click', () => {
+    scrolltoRight();
 })
 

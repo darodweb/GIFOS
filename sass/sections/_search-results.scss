@@ -104,9 +104,12 @@ display: none;
         outline: none;
     }
 
-    &:disabled {
-        color: red;
-        border: 1px solid red;
-    }
 }
+
+.disabled {
+    opacity:0.2;
+    background: $primary-color;
+    color:white;
+}
+
 
