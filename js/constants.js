@@ -30,7 +30,7 @@ const SEARCH_TERM_ICON = document.querySelector('#hero__search-icon');
 const SEARCH_ICON = document.querySelector('#hero__search-toggle-icon');
 const INPUT_LINE_SEPARATOR = document.querySelector('#hero-search__separator');
 const HERO_SEARCH_BAR = document.querySelector('.hero-search-bar');
-
+const SHOW_MORE_HOME = document.querySelector('#show-more-home');
 
 //Hamburger menu constants
 const hamburger = document.getElementById('hamburger');
@@ -53,5 +53,5 @@ export {
     DARK_MODE_TRIGGER, FOOTER, DAY_MODE_MENU, SEARCH_INPUT, AUTOCOMPLETE_SEARCH_BOX,
     SEARCH_RESULTS_DIVIDER, CANCEL_SEARCH_ICON, SEARCH_TERM_ICON, SEARCH_ICON,
     INPUT_LINE_SEPARATOR, HERO_SEARCH_BAR, AUTOCOMPLETE_TERM_SUGGESTION, URL_TRENDING_SEARCH_TERMS,
-    TRENDING_TERMS_CONTAINER
+    TRENDING_TERMS_CONTAINER, SHOW_MORE_HOME
 };

@@ -5,7 +5,7 @@ import {
     HEADER, HERO, TRENDING_GIFOS, BORDER_TOP, BORDER_BOTTOM, DARK_MODE_TRIGGER, FOOTER, DAY_MODE_MENU,
     SEARCH_INPUT, AUTOCOMPLETE_SEARCH_BOX, SEARCH_RESULTS_DIVIDER, CANCEL_SEARCH_ICON, SEARCH_TERM_ICON,
     SEARCH_ICON, INPUT_LINE_SEPARATOR, HERO_SEARCH_BAR, AUTOCOMPLETE_TERM_SUGGESTION, URL_TRENDING_SEARCH_TERMS,
-    TRENDING_TERMS_CONTAINER
+    TRENDING_TERMS_CONTAINER, SHOW_MORE_HOME
 } from './constants.js';
 
 
@@ -130,6 +130,8 @@ TRENDING_TERMS_CONTAINER.addEventListener('click', (event) => {
 let searchInputValue = document.querySelector('.hero-search__input');
 
 const gifResultsMarkup = (gifSearchResults) => {
+    SHOW_MORE_HOME.style.display = "block";
+
     return `
     <div class="search-results__gif-container">
         <img src="${gifSearchResults.images.fixed_width_downsampled.url}"
@@ -149,6 +151,7 @@ const gifResultsMarkup = (gifSearchResults) => {
         <p class="gif-title">${gifSearchResults.title}</p>
     </div>
     `
+
 }
 
 let gifSearchResults = [];
