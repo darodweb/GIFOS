@@ -139,7 +139,7 @@ const gifResultsMarkup = (gifSearchResults) => {
         class="search-results__gif" alt="${gifSearchResults.title}">
         <div className="search-results-overlay" id="search-results-overlay"></div>
         <div class="icon-container">
-            <i class="icon-fav-false" data-fav-id=${gifSearchResults.id}title="Favorito"></i>
+            <i class="icon-fav-false" data-fav-id=${gifSearchResults.id} title="Favorito"></i>
             <i class="icon-download" data-download-url=${gifSearchResults.url}
                 data-download-title=${gifSearchResults.title}
                 title="Descargar"></i>
