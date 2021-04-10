@@ -1142,7 +1142,7 @@ a, a:link, a:visited, a:active {
   display: block;
   height: 42px;
   width: 42px;
-  margin-left: 15px;
+  margin-right: 15px;
   background-image: url("../../assets/button-slider-left.svg");
   background-repeat: no-repeat;
   background-size: cover;
@@ -1180,6 +1180,7 @@ a, a:link, a:visited, a:active {
       -ms-flex-pack: center;
           justify-content: center;
   position: relative;
+  margin-top: 53px;
 }
 
 .trending-gifos .trending-gifos-text {
@@ -1221,6 +1222,12 @@ a, a:link, a:visited, a:active {
     white-space: nowrap;
     overflow-x: auto;
     padding: 10px;
+    scroll-behavior: smooth;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .trending-gifos-slider-container::-webkit-scrollbar {
+    display: none;
   }
 }
 
@@ -1410,5 +1417,238 @@ a, a:link, a:visited, a:active {
   opacity: 0.2;
   background: #572EE5;
   color: white;
+}
+
+.modal {
+  display: none;
+  justify-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: fixed;
+  z-index: 9999;
+  padding: 160px 28px 50px 28px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: white;
+}
+
+.modal .close-modal-icon {
+  position: absolute;
+  top: 10%;
+  right: 28px;
+  background-image: url("../../assets/close.svg");
+  background-repeat: none;
+  background-size: contain;
+  height: 15.2px;
+  width: 15.2px;
+  cursor: pointer;
+}
+
+.modal .close-modal-icon:active {
+  -webkit-transform: scale(0.98);
+          transform: scale(0.98);
+}
+
+.modal .modal-img {
+  width: 100%;
+  height: 245px;
+}
+
+@media screen and (min-width: 499px) {
+  .modal .modal-img {
+    max-width: 60%;
+    min-width: 20%;
+    height: 385px;
+  }
+}
+
+.modal .modal-footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  width: 100%;
+  padding: 27px 0px;
+}
+
+@media screen and (min-width: 499px) {
+  .modal .modal-footer {
+    max-width: 60%;
+    min-width: 20%;
+  }
+}
+
+.modal .modal-footer .modal-titles-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.modal .modal-footer .modal-titles-container .modal-username {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  color: black;
+  text-align: left;
+}
+
+.modal .modal-footer .modal-titles-container .modal-title {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  color: black;
+  text-align: left;
+}
+
+.modal .modal-footer .modal-icons-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.modal .modal-footer .modal-icons-container .icon-delete {
+  height: 32px;
+  width: 32px;
+  background-image: url("../../assets/icon-trash-normal.svg");
+  background-color: #cccccc;
+  /* Used if the image is unavailable */
+  background-position: center;
+  /* Center the image */
+  background-repeat: no-repeat;
+  /* Do not repeat the image */
+  background-size: contain;
+  /* Resize the background image to cover the entire container */
+  border-radius: 6px;
+  cursor: pointer;
+  opacity: 0.7;
+  margin-right: 5px;
+}
+
+.modal .modal-footer .modal-icons-container .icon-delete:hover {
+  background-image: url("../../assets/icon-trash-hover.svg");
+  background-color: white;
+  opacity: 1;
+}
+
+.modal .modal-footer .modal-icons-container .icon-delete:active {
+  -webkit-transform: scale(0.98);
+          transform: scale(0.98);
+}
+
+.modal .modal-footer .modal-icons-container .icon-fav-false {
+  height: 32px;
+  width: 32px;
+  background-image: url("../../assets/icon-fav.svg");
+  background-color: #cccccc;
+  /* Used if the image is unavailable */
+  background-position: center;
+  /* Center the image */
+  background-repeat: no-repeat;
+  /* Do not repeat the image */
+  background-size: contain;
+  /* Resize the background image to cover the entire container */
+  border-radius: 6px;
+  cursor: pointer;
+  opacity: 0.7;
+  margin-left: 21px;
+}
+
+.modal .modal-footer .modal-icons-container .icon-fav-false:hover {
+  background-image: url("../../assets/icon-fav-hover.svg");
+  background-color: white;
+  opacity: 1;
+}
+
+.modal .modal-footer .modal-icons-container .icon-fav-false:active {
+  background-image: url("../../assets/icon-fav-active.svg");
+  background-color: white;
+  -webkit-transform: scale(0.98);
+          transform: scale(0.98);
+}
+
+.modal .modal-footer .modal-icons-container .icon-fav-true {
+  height: 32px;
+  width: 32px;
+  background-image: url("../../assets/icon-fav-active.svg");
+  background-color: #cccccc;
+  /* Used if the image is unavailable */
+  background-position: center;
+  /* Center the image */
+  background-repeat: no-repeat;
+  /* Do not repeat the image */
+  background-size: contain;
+  /* Resize the background image to cover the entire container */
+  border-radius: 6px;
+  cursor: pointer;
+  opacity: 0.9;
+  margin-left: 21px;
+}
+
+.modal .modal-footer .modal-icons-container .icon-fav-true:hover {
+  background-image: url("../../assets/icon-fav-active.svg");
+  background-color: white;
+  opacity: 1;
+}
+
+.modal .modal-footer .modal-icons-container .icon-fav-true:active {
+  background-image: url("../../assets/icon-fav.svg");
+  background-color: white;
+  -webkit-transform: scale(0.98);
+          transform: scale(0.98);
+}
+
+.modal .modal-footer .modal-icons-container .icon-download {
+  height: 32px;
+  width: 32px;
+  background-image: url("../../assets/icon-download.svg");
+  background-color: #cccccc;
+  /* Used if the image is unavailable */
+  background-position: center;
+  /* Center the image */
+  background-repeat: no-repeat;
+  /* Do not repeat the image */
+  background-size: contain;
+  /* Resize the background image to cover the entire container */
+  border-radius: 6px;
+  cursor: pointer;
+  opacity: 0.7;
+  margin-left: 21px;
+}
+
+.modal .modal-footer .modal-icons-container .icon-download:hover {
+  background-image: url("../../assets/icon-download-hover.svg");
+  background-color: white;
+  opacity: 1;
+}
+
+.modal .modal-footer .modal-icons-container .icon-download:active {
+  -webkit-transform: scale(0.98);
+          transform: scale(0.98);
 }
 /*# sourceMappingURL=main.css.map */

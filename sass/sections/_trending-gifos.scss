@@ -15,7 +15,7 @@
     display: block;
     height: 42px;
     width: 42px;
-    margin-left: 15px;
+    margin-right: 15px;
     background-image: url('../../assets/button-slider-left.svg');
     background-repeat: no-repeat;
     background-size: cover;
@@ -48,6 +48,7 @@
         align-items: center;
         justify-content: center;
         position: relative;
+        margin-top: 53px;
     }
 
 
@@ -100,6 +101,14 @@
         white-space: nowrap;
         overflow-x: auto;
         padding: 10px;
+        scroll-behavior: smooth;
+
+        -ms-overflow-style: none;  // hide scrollbar IE and Edge
+        scrollbar-width: none;  // hide scrollbar Firefox
+
+        &::-webkit-scrollbar {
+            display: none; // hide scrollbar Chrome, Safari, Opera
+        }
         
     }
 
@@ -119,6 +128,8 @@
     width: 357px;
     overflow: hidden;
     margin-right: 29px;
+
+    
 
     .trending-gifos-gif {
         width: 100%;

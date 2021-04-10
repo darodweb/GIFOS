@@ -115,3 +115,152 @@ display: none;
 }
 
 
+.modal {
+    display: none; 
+    justify-items: center;
+    align-items: center;
+    flex-direction: column;
+    position: fixed;
+    z-index: 9999;
+    padding: 160px 28px 50px 28px;
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: white;
+
+    .close-modal-icon {
+        position: absolute;
+        top: 10%;
+        right: 28px;
+        background-image: url('../../assets/close.svg');
+        background-repeat: none;
+        background-size: contain;
+        height: 15.2px;
+        width: 15.2px;
+        cursor: pointer;
+
+        &:active {
+            transform: scale(0.98);
+        }
+    }
+
+    .modal-img {
+        width: 100%;
+        height: 245px;
+        @media screen and (min-width:499px) {
+            max-width: 60%;
+            min-width: 20%;
+            height: 385px;  
+        }
+    }
+
+    .modal-footer {
+        display: flex;
+        justify-content: space-between;
+        align-content: center;
+        width: 100%;
+        padding: 27px 0px;
+        @media screen and (min-width:499px) {
+            max-width: 60%;
+            min-width: 20%; 
+        }
+
+        .modal-titles-container {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+
+            .modal-username {
+                font-family: $secondary-font;
+                font-weight: 400;
+                font-size: 15px;
+                color: black;
+                text-align: left;
+            }
+
+            .modal-title {
+                font-family: $secondary-font;
+                font-weight: 700;
+                font-size: 16px;
+                color: black;
+                text-align: left;
+            }
+        }
+
+        .modal-icons-container {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+
+            .icon-delete {
+                @include loadGifIcon("../../assets/icon-trash-normal.svg");
+                opacity: 0.7;
+                margin-right: 5px;
+        
+                &:hover {
+                    background-image: url("../../assets/icon-trash-hover.svg");
+                    background-color: white;
+                    opacity: 1;
+                }
+
+                &:active {
+                    transform: scale(0.98);
+                }
+            }
+    
+            .icon-fav-false {
+                @include loadGifIcon("../../assets/icon-fav.svg");
+                opacity: 0.7;
+                margin-left: 21px;
+        
+                &:hover {
+                    background-image: url("../../assets/icon-fav-hover.svg");
+                    background-color: white;
+                    opacity: 1;
+                }
+        
+                &:active {
+                    background-image: url("../../assets/icon-fav-active.svg");
+                    background-color: white;
+                    transform: scale(0.98);
+                }
+            }
+
+            .icon-fav-true {
+                @include loadGifIcon("../../assets/icon-fav-active.svg");
+                opacity: 0.9;
+                margin-left: 21px;
+        
+                &:hover {
+                    background-image: url("../../assets/icon-fav-active.svg");
+                    background-color: white;
+                    opacity: 1;
+                }
+        
+                &:active {
+                    background-image: url("../../assets/icon-fav.svg");
+                    background-color: white;
+                    transform: scale(0.98);
+                }
+            }
+
+            .icon-download {
+                @include loadGifIcon("../../assets/icon-download.svg");
+                opacity: 0.7;
+                margin-left: 21px;
+        
+                &:hover {
+                    background-image: url("../../assets/icon-download-hover.svg");
+                    background-color: white;
+                    opacity: 1;
+                }
+
+                &:active {
+                    transform: scale(0.98);
+                }
+            }
+        }
+    }
+}

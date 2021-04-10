@@ -1,11 +1,12 @@
 import { api } from './services.js';
+import { gif } from './favorites.js';
 import {
     URLTrendings, URLSearchEndpoint, hamburger, menu, gifContainer, searchBtn, searchResults,
     searchTitle, URLAutocompleteEndpoint, liveSearchResultsContainer, searchSuggestionsContainer,
     HEADER, HERO, TRENDING_GIFOS, BORDER_TOP, BORDER_BOTTOM, DARK_MODE_TRIGGER, FOOTER, DAY_MODE_MENU,
     SEARCH_INPUT, AUTOCOMPLETE_SEARCH_BOX, SEARCH_RESULTS_DIVIDER, CANCEL_SEARCH_ICON, SEARCH_TERM_ICON,
     SEARCH_ICON, INPUT_LINE_SEPARATOR, HERO_SEARCH_BAR, AUTOCOMPLETE_TERM_SUGGESTION, URL_TRENDING_SEARCH_TERMS,
-    TRENDING_TERMS_CONTAINER, SHOW_MORE_HOME, PREV_BUTTON, NEXT_BUTTON
+    TRENDING_TERMS_CONTAINER, SHOW_MORE_HOME, PREV_BUTTON, NEXT_BUTTON, SEARCH_RESULTS_CONTAINER, MODAL
 } from './constants.js';
 
 
@@ -122,9 +123,8 @@ TRENDING_TERMS_CONTAINER.addEventListener('click', (event) => {
     }, 600);
 
 })
-
-
 //------END OF QUERY TRENDING TERMS ENDPOINT AND RENDER TO DOM
+
 
 //  QUERY THE SEARCH ENDPOINT AND RENDER TO DOM
 
@@ -411,19 +411,94 @@ DAY_MODE_MENU.addEventListener('click', () => {
 
 
 // FUNCTION TO SCROLL SLIDER ON HOME PAGE
-function scrolltoLeft() {
-    gifContainer.scroll(-300, 0)
-}
 
-function scrolltoRight() {
-    gifContainer.scroll(300, 0);
-}
+function scrollToLeft(slider) {
+    slider.scrollLeft += 350;
+};
 
-PREV_BUTTON.addEventListener('click', () => {
-    scrolltoLeft();
-})
+function scrollToRight(slider) {
+    slider.scrollLeft -= 350;
+};
 
-NEXT_BUTTON.addEventListener('click', () => {
-    scrolltoRight();
-})
+PREV_BUTTON.addEventListener("click", () => {
+    scrollToRight(gifContainer);
+}, false);
 
+NEXT_BUTTON.addEventListener("click", () => {
+    scrollToLeft(gifContainer);
+}, false);
+
+//ADDING GIFS TO FAVORITOS
+
+MODAL.addEventListener("click", (event) => {
+    gif.closeModal(event, "close-modal-icon", MODAL);
+
+}, true);
+
+MODAL.addEventListener("click", (event) => {
+    gif.favorite(event, "icon-fav-false", "icon-fav-true");
+}, true);
+
+// Add download functionality to the download icon
+MODAL.addEventListener("click", (event) => {
+    gif.download(event, "icon-download");
+}, true);
+
+// Add expand functionality to the expand icon - or to the gif itself for mobile
+SEARCH_RESULTS_CONTAINER.addEventListener("click", (event) => {
+    gif.expand(
+        event,
+        "icon-expand",
+        MODAL,
+        "data-expand-url",
+        "data-expand-title",
+        "data-expand-username",
+        "data-expand-id"
+    );
+}, true);
+
+SEARCH_RESULTS_CONTAINER.addEventListener("click", (event) => {
+    gif.expand(
+        event,
+        "gif",
+        MODAL,
+        "data-gif-url",
+        "data-gif-title",
+        "data-gif-username",
+        "data-gif-id"
+    );
+}, true);
+
+gifContainer.addEventListener("click", (event) => {
+    gif.favorite(event, "icon-fav-false", "icon-fav-true");
+}, true);
+
+// Add download functionality to the download icon
+gifContainer.addEventListener("click", (event) => {
+    gif.download(event, "icon-download");
+}, true);
+
+// Add expand functionality to the expand icon - or to the gif itself for mobile
+gifContainer.addEventListener("click", (event) => {
+    gif.expand(
+        event,
+        "icon-expand",
+        MODAL,
+        "data-expand-url",
+        "data-expand-title",
+        "data-expand-username",
+        "data-expand-id"
+    );
+}, true);
+
+gifContainer.addEventListener("click", (event) => {
+    gif.expand(
+        event,
+        "gif",
+        MODAL,
+        "data-gif-url",
+        "data-gif-title",
+        "data-gif-username",
+        "data-gif-id"
+    );
+}, true);

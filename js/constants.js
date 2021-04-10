@@ -16,6 +16,7 @@ const URLSearchEndpoint = `https://api.giphy.com/v1/gifs/search?api_key=vr7eliKr
 const searchResults = document.querySelector('.search-results');
 const searchTitle = document.querySelector('.search-title');
 const searchSuggestionsContainer = document.querySelector('#hero-search-live-search');
+const SEARCH_RESULTS_CONTAINER = document.querySelector('.search-results-container');
 const SEARCH_RESULTS_DIVIDER = document.querySelector('#search-bar__line-divider');
 
 // Autocomplete Endpoint constants
@@ -25,17 +26,17 @@ const SEARCH_INPUT = document.querySelector('.hero-search__input');
 const AUTOCOMPLETE_SEARCH_BOX = document.querySelector('#hero-search__automcomplete-box');
 const AUTOCOMPLETE_TERM_SUGGESTION = document.querySelector('.hero-search__autocomplete-suggestion');
 
-
-//Slider contants
-const PREV_BUTTON = document.querySelector('.arrow-container-left');
-const NEXT_BUTTON = document.querySelector('.arrow-container-right');
-
 const CANCEL_SEARCH_ICON = document.querySelector('#hero__cancel-search-icon');
 const SEARCH_TERM_ICON = document.querySelector('#hero__search-icon');
 const SEARCH_ICON = document.querySelector('#hero__search-toggle-icon');
 const INPUT_LINE_SEPARATOR = document.querySelector('#hero-search__separator');
 const HERO_SEARCH_BAR = document.querySelector('.hero-search-bar');
 const SHOW_MORE_HOME = document.querySelector('#show-more-home');
+
+
+//Slider elements
+const PREV_BUTTON = document.querySelector('.arrow-left');
+const NEXT_BUTTON = document.querySelector('.arrow-right');
 
 //Hamburger menu constants
 const hamburger = document.getElementById('hamburger');
@@ -51,6 +52,11 @@ const DARK_MODE_TRIGGER = document.querySelector('.dark-mode');
 const FOOTER = document.querySelector('.footer');
 const DAY_MODE_MENU = document.querySelector('.day-mode');
 
+//Other elements
+const MODAL = document.querySelector('#modal');
+
+
+
 export {
     URLTrendings, hamburger, menu, gifContainer, searchBtn, searchResults,
     URLSearchEndpoint, searchTitle, URLAutocompleteEndpoint, liveSearchResultsContainer,
@@ -58,5 +64,5 @@ export {
     DARK_MODE_TRIGGER, FOOTER, DAY_MODE_MENU, SEARCH_INPUT, AUTOCOMPLETE_SEARCH_BOX,
     SEARCH_RESULTS_DIVIDER, CANCEL_SEARCH_ICON, SEARCH_TERM_ICON, SEARCH_ICON,
     INPUT_LINE_SEPARATOR, HERO_SEARCH_BAR, AUTOCOMPLETE_TERM_SUGGESTION, URL_TRENDING_SEARCH_TERMS,
-    TRENDING_TERMS_CONTAINER, SHOW_MORE_HOME, PREV_BUTTON, NEXT_BUTTON
+    TRENDING_TERMS_CONTAINER, SHOW_MORE_HOME, PREV_BUTTON, NEXT_BUTTON, SEARCH_RESULTS_CONTAINER, MODAL
 };
