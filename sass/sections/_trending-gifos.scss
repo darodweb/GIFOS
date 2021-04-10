@@ -1,7 +1,9 @@
 .trending-gifos {
-    max-height: 430px;
+    position:relative;
+    max-height: 640px;
     background-color: $background-color;
-    margin: 0 auto;
+    // margin: 0 auto;
+    padding-bottom:82px;
     width: 100%;
     margin-top: 46px;
     @media screen and (min-width:499px) {
@@ -39,13 +41,13 @@
     }
 
 
-
     .trending-gifos-gif-container {
         display:flex;
         text-align: center;
         align-content: center;
         align-items: center;
         justify-content: center;
+        position: relative;
     }
 
 
@@ -73,6 +75,7 @@
     .trending-gifos-text-content-container {
         display:inline-flex;
         
+        
     }
 }
 
@@ -91,7 +94,7 @@
 
 @media screen and (min-width:499px) {
 
-    .trending-gifos-enclosure {
+    .trending-gifos-slider-container {
         width:80%;
         scrollbar-width: none;
         white-space: nowrap;
@@ -112,10 +115,10 @@
 .trending-gifos-gif__container {
     display: inline-block;
     position: relative;
-    height: 187px;
-    width: 243px;
+    height: 275px;
+    width: 357px;
     overflow: hidden;
-    margin-right: 22px;
+    margin-right: 29px;
 
     .trending-gifos-gif {
         width: 100%;

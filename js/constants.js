@@ -4,7 +4,7 @@ const URL_TRENDING_SEARCH_TERMS = `https://api.giphy.com/v1/trending/searches?ap
 
 
 //Trending GIFs constants
-const gifContainer = document.querySelector('.trending-gifos-enclosure');
+const gifContainer = document.querySelector('.trending-gifos-slider-container');
 
 
 //Trending Terms constants

@@ -18,7 +18,6 @@ hamburger.addEventListener('click', () => {
 
 //QUERY TRENDING Gifs AND RENDER TO DOM
 
-
 let gifs = [];
 
 const getTrendingGifs = () => {
@@ -36,7 +35,7 @@ const getTrendingGifs = () => {
 const gifMarkup = (gif) => {
     return `
     <div class="trending-gifos-gif__container">
-        <img src="${gif.images.fixed_height_downsampled.url}"class="trending-gifos-gif" alt="gif">
+        <img src="${gif.images.fixed_height_downsampled.url}"class="trending-gifos-gif" alt="${gif.title}">
         <div class="trending-gifos-gif__overlay" id="trending-gifos-gif__overlay"></div>
         <div class="icon-container">
             <i class="icon-fav-false" data-fav-id=${gif.id} title="Favorito"></i>
@@ -136,7 +135,7 @@ const gifResultsMarkup = (gifSearchResults) => {
 
     return `
     <div class="search-results__gif-container">
-        <img src="${gifSearchResults.images.fixed_width_downsampled.url}"
+        <img src="${gifSearchResults.images.fixed_height_downsampled.url}"
         class="search-results__gif" alt="${gifSearchResults.title}">
         <div className="search-results-overlay" id="search-results-overlay"></div>
         <div class="icon-container">

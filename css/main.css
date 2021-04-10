@@ -36,7 +36,6 @@
 
 .page-wrapper {
   margin: 0 auto;
-  max-width: 1440px;
 }
 
 .icon-container {
@@ -1125,9 +1124,10 @@ a, a:link, a:visited, a:active {
 }
 
 .trending-gifos {
-  max-height: 430px;
+  position: relative;
+  max-height: 640px;
   background-color: #F3F5F8;
-  margin: 0 auto;
+  padding-bottom: 82px;
   width: 100%;
   margin-top: 46px;
 }
@@ -1179,6 +1179,7 @@ a, a:link, a:visited, a:active {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  position: relative;
 }
 
 .trending-gifos .trending-gifos-text {
@@ -1214,7 +1215,7 @@ a, a:link, a:visited, a:active {
 }
 
 @media screen and (min-width: 499px) {
-  .trending-gifos-enclosure {
+  .trending-gifos-slider-container {
     width: 80%;
     scrollbar-width: none;
     white-space: nowrap;
@@ -1232,10 +1233,10 @@ a, a:link, a:visited, a:active {
 .trending-gifos-gif__container {
   display: inline-block;
   position: relative;
-  height: 187px;
-  width: 243px;
+  height: 275px;
+  width: 357px;
   overflow: hidden;
-  margin-right: 22px;
+  margin-right: 29px;
 }
 
 .trending-gifos-gif__container .trending-gifos-gif {
@@ -1260,6 +1261,13 @@ a, a:link, a:visited, a:active {
 @media screen and (min-width: 499px) {
   .search-results-container {
     text-align: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
   }
   .search-results-container .search-results {
     display: -ms-grid;
@@ -1268,7 +1276,7 @@ a, a:link, a:visited, a:active {
         grid-template-columns: repeat(4, minmax(140px, 260px));
     -ms-grid-rows: (200px)[auto];
         grid-template-rows: repeat(auto, 200px);
-    padding: 0 140px;
+    margin: 0 auto;
     grid-gap: 25px;
   }
   .search-results-container .search-results .search-results__gif-container {

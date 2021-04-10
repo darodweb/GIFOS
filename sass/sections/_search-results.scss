@@ -1,12 +1,14 @@
 .search-results-container {
     @media screen and (min-width:499px) {
         text-align: center;
+        display:flex;
+        flex-direction: column;
         
         .search-results {
             display: grid;
             grid-template-columns: repeat(4, minmax(140px, 260px));
             grid-template-rows: repeat(auto, 200px);
-            padding: 0 140px;
+            margin: 0 auto;
             grid-gap: 25px;
 
             .search-results__gif-container {
