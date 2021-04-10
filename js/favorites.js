@@ -15,12 +15,12 @@ export const gif = (function () {
         const gifId = event.target.getAttribute("data-fav-id");
 
         if (event.target.className === classToAdd) {
-            if (!favGifs.includes(gifId) && gifId !== null) favGifs.push(gifId); // check if the gif is already a favorite
+            if (!favGifs.includes(gifId) && gifId !== null) favGifs.push(gifId);
             localStorage.setItem("favorites", JSON.stringify(favGifs));
             event.target.className = classToRemove;
         } else if (event.target.className === classToRemove) {
             const index = favGifs.indexOf(gifId);
-            favGifs.splice(index, 1); // if it is a favorite, remove it when clicking again
+            favGifs.splice(index, 1);
             localStorage.setItem("favorites", JSON.stringify(favGifs));
             event.target.className = classToAdd;
         }
@@ -29,7 +29,7 @@ export const gif = (function () {
     // Function to make url downloadable
     async function _downloadBlob(url, title) {
         const a = document.createElement("a");
-        const response = await fetch(url); // HTTP response by the browser
+        const response = await fetch(url);
         const file = await response.blob();
 
         a.download = title;
@@ -42,7 +42,7 @@ export const gif = (function () {
     // Adding download function to download icon
     function download(event, classToSearch) {
         if (event.target.className === classToSearch) {
-            const url = event.target.getAttribute("data-download-url"); // get custom attribute with data from the API
+            const url = event.target.getAttribute("data-download-url");
             const title = event.target.getAttribute("data-download-title");
             _downloadBlob(url, title);
         }
@@ -58,7 +58,7 @@ export const gif = (function () {
     // Adding functionality to expand icon
     function expand(event, classToSearch, modal, attrUrl, attrTitle, attrUsername, attrId) {
         if (event.target.className === classToSearch) {
-            const url = event.target.getAttribute(attrUrl); // get custom attribute with data from the API
+            const url = event.target.getAttribute(attrUrl);
             const title = event.target.getAttribute(attrTitle);
             const username = event.target.getAttribute(attrUsername);
             const id = event.target.getAttribute(attrId);
@@ -148,7 +148,6 @@ export const gif = (function () {
                 </div>`;
 
             modal.insertAdjacentHTML("beforeend", modalHtml);
-
             modal.style.display = "flex";
         }
     };
@@ -159,11 +158,8 @@ export const gif = (function () {
             myGifos = localStorage.getItem("myGifos") ? JSON.parse(localStorage.getItem("myGifos")) : [];
 
             const index = myGifos.indexOf(id);
-
             myGifos.splice(index, 1);
-
             localStorage.setItem("myGifos", JSON.stringify(myGifos));
-
             location.reload();
         }
     };
