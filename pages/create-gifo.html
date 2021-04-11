@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html id="html" lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <title>GIFOS</title>
+    <link rel="shortcut icon" type="image/jpg" href="../assets/Logo-modo-noc.svg" />
+</head>
+
+<body class="page-wrapper">
+    <div class="border-top"></div>
+    <header class="header">
+        <div class="logo__container">
+            <svg width="48.8px" height="48.8px" viewBox="0 0 63 60" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink">
+                <defs>
+                    <polygon id="path-1"
+                        points="0.494619458 0.526112695 58.2715334 0.526112695 58.2715334 24.1695652 0.494619458 24.1695652">
+                    </polygon>
+                </defs>
+                <g id="GIFOS" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                    <g id="00-UI-Kit" transform="translate(-156.000000, -2463.000000)">
+                        <g id="logo-desktop" transform="translate(156.000000, 2463.000000)">
+                            <g id="Group-5">
+                                <polygon id="Fill-1" fill="#5ED7C6"
+                                    points="0 -0.0002 0 59.1084314 59.1086314 59.1084314 59.1086314 46.4422961 54.8865863 46.4422961 54.8865863 54.8863863 4.2220451 54.8863863 4.2220451 4.2218451 42.220451 4.2218451 42.220451 16.8879804 54.8865863 16.8879804 54.8865863 25.332915 59.1086314 25.332915 59.1086314 12.6659353 46.4424961 -0.0002">
+                                </polygon>
+                                <g id="Group-4" transform="translate(9.000000, 20.000000)">
+                                    <mask id="mask-2" fill="white">
+                                        <use xlink:href="#path-1"></use>
+                                    </mask>
+                                    <g id="Clip-3"></g>
+                                    <text id="GIFOS" mask="url(#mask-2)" font-family="Roboto-Black, Roboto"
+                                        font-size="18" font-weight="700" fill="#572EE5">
+                                        <tspan x="3" y="21" class="logo__text">GIFOS</tspan>
+                                    </text>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </svg>
+            <!-- <img src="./assets/logo-desktop.svg" class="logo__desktop" alt="logo"> -->
+
+            <img src="../assets/Logo-modo-noc.svg" class="logo__desktop--noc hidden" alt="logo">
+        </div>
+        <nav>
+            <img class="hamburger" id="hamburger" src="../assets/burger.svg" alt="menu-button">
+
+
+            <ul class="menu" id="menu">
+                <li class="dark-mode"><a href="#">MODO NOCTURNO</a></li>
+                <li class="day-mode" id="hidden"><a href="#">MODO DIURNO</a></li>
+                <li><a href="/pages/favorites.html">FAVORITOS</a></li>
+                <li><a href="/pages/my-gifos.html">MIS GIFOS</a></li>
+            </ul>
+
+            <div class="floating-button-container">
+                <div class="floating__button">+</div>
+            </div>
+
+        </nav>
+
+    </header>
+
+    <main>
+        <div class="recording-section">
+            <div class="camera-column">
+                <div class="camera-container">
+                    <div class="camera-body" aria-label="Camera body"></div>
+                    <div class="camera-light" aria-label="Camera light"></div>
+                </div>
+            </div>
+            <div class="recording-column">
+                <div class="recording-container">
+                    <div class="corner top-left"></div>
+                    <div class="corner top-right"></div>
+                    <div class="corner bottom-left"></div>
+                    <div class="corner bottom-right"></div>
+
+                    <div class="recording-video-container" id="recording-video-container">
+                        <!-- Recording gif -->
+                        <p class="create-gif-title" id="create-gif-title">Aquí podrás <br> crear tus propios
+                            <span>GIFOS</span>
+                        </p>
+                        <p class="create-gif-message" id="create-gif-message">¡Crea tu GIFO en sólo 3 pasos!<br>(sólo
+                            necesitas una cámara para grabar un video)</p>
+                        <canvas class="canvas-container" id="canvas-container">
+                            <video class="record-video" id="record-video"></video>
+                        </canvas>
+                        <div class="upload-overlay" id="upload-overlay"></div>
+                        <div class="upload-loader" id="upload-loader"></div>
+                        <div class="upload-ok" id="upload-ok"></div>
+                        <p class="upload-message" id="upload-message">Estamos subiendo tu GIFO</p>
+                    </div>
+                </div>
+                <div class="recording-state-container">
+                    <div class="steps-container">
+                        <div class="step" id="step-1">1</div>
+                        <div class="step" id="step-2">2</div>
+                        <div class="step" id="step-3">3</div>
+                    </div>
+
+                    <p class="timer" id="timer">00:00:00</p>
+                    <p class="repeat-caption" id="repeat-caption">REPETIR CAPTURA</p>
+                </div>
+            </div>
+            <div class="tape-column">
+                <div class="tape-img" aria-label="Tape image"></div>
+            </div>
+        </div>
+        <div class="bottom-line-container">
+            <div class="bottom-line"></div>
+        </div>
+        <div class="record-button-container">
+            <button type="button" class="button start-button" id="start-button">COMENZAR</button>
+            <button type="button" class="button record-button" id="record-button">GRABAR</button>
+            <button type="button" class="button stop-button" id="stop-button">FINALIZAR</button>
+            <button type="button" class="button upload-button" id="upload-button">SUBIR GIFO</button>
+            <button type="button" class="button reset-button" id="reset-button">REINICIAR</button>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer">
+            <div class="footer-wrapper">
+                <p class="footer-title">Compartir en:</p>
+                <ul class="footer__social-icons">
+                    <li><img src="../assets/icon_facebook.svg" alt="facebook" width="20px" height="20px"></li>
+                    <li><img src="../assets/icon-twitter-hover.svg" alt="twitter" width="20px" height="100%"></li>
+                    <li><img src="../assets/icon_instagram.svg" alt="instagram" width="20px" height="100%"></li>
+                </ul>
+            </div>
+            <p class="footer-copyright">&copy;GIFOS 2020 All Rights Reserved</p>
+        </div>
+    </footer>
+
+    <div class="border-bottom"></div>
+
+    <script type="module" src="./js/createGifoIndex.js"></script>
+</body>
+
+</html>
