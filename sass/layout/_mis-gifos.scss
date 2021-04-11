@@ -1,15 +1,24 @@
+.my-gifos {
+    padding-top: 35px;
+}
+
+.my-gifos__title--container {
+    display:flex;
+    width: 100%;
+    align-items: center;
+    align-content: center;
+    flex-direction: column;
+}
+
 .mis-gifos-gif-container {
-    margin: 0 21px;
+    position: relative;
     display:grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: repeat(auto, 1fr);
-    gap: 21px;
+    grid-template-columns: repeat(4, minmax(220px, 330px));
+    gap: 30px;
+    padding: 0 156px;
+
+    @media screen and (min-width: 499px) {
+        grid-template-columns: repeat(4, auto);
+    }
 }
 
-.mis-gifos-container {
-    text-align: center;
-}
-
-.title-mis-gifos {
-    margin-bottom: 46px;
-}

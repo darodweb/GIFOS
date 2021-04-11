@@ -4,7 +4,6 @@ export const gif = (function () {
 
     function _isFavorite(id) {
         favGifs = localStorage.getItem("favorites") ? JSON.parse(localStorage.getItem("favorites")) : [];
-
         return favGifs.includes(id) ? true : false;
     };
 

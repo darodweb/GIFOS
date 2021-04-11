@@ -4,13 +4,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/main.css">
     <title>GIFOS</title>
+    <link rel="shortcut icon" type="image/jpg" href="../assets/Logo-modo-noc.svg" />
 </head>
 
 <body>
 
-    <header id="header">
+    <div class="border-top"></div>
+    <header class="header">
         <div class="logo__container">
             <svg width="48.8px" height="48.8px" viewBox="0 0 63 60" version="1.1" xmlns="http://www.w3.org/2000/svg"
                 xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -43,78 +46,78 @@
             </svg>
             <!-- <img src="./assets/logo-desktop.svg" class="logo__desktop" alt="logo"> -->
 
-            <img src="./assets/Logo-modo-noc.svg" class="logo__desktop--noc hidden" alt="logo">
+            <img src="../assets/Logo-modo-noc.svg" class="logo__desktop--noc hidden" alt="logo">
         </div>
         <nav>
-            <img class="hamburger" id="hamburger" src="./assets/burger.svg" alt="menu-button">
-            <!--Menu Large Screens-->
+            <img class="hamburger" id="hamburger" src="../assets/burger.svg" alt="menu-button">
+
+
             <ul class="menu" id="menu">
-                <li id="modo-nocturno"><a href="#">MODO NOCTURNO</a></li>
-                <li><a href="#">FAVORITOS</a></li>
-                <li><a href="#">MIS GIFOS</a></li>
+                <li class="dark-mode"><a href="#">MODO NOCTURNO</a></li>
+                <li class="day-mode" id="hidden"><a href="#">MODO DIURNO</a></li>
+                <li><a href="/pages/favorites.html">FAVORITOS</a></li>
+                <li><a href="/pages/my-gifos.html">MIS GIFOS</a></li>
             </ul>
-            <!--End of Menu Large Screensu-->
+
+            <div class="floating-button-container">
+                <div class="floating__button">+</div>
+            </div>
 
         </nav>
 
-        <button class="floating__button">+</button>
     </header>
 
     <section class="favoritos" id="favoritos">
-        <div class="favoritos-container">
-            <img src="./assets/icon-favoritos.svg" alt="">
+        <div class="favoritos__title--container">
+            <img src="../assets/icon-favoritos.svg" alt="">
             <h1 class="title title-favoritos">Favoritos</h1>
         </div>
 
-        <div class="favoritos-gif-container">
-            <img src="./assets/trending-gifos-placeholder_260x200.png" alt="placeholder">
-            <img src="./assets/trending-gifos-placeholder_260x200.png" alt="placeholder">
-            <img src="./assets/trending-gifos-placeholder_260x200.png" alt="placeholder">
-            <img src="./assets/trending-gifos-placeholder_260x200.png" alt="placeholder">
-            <img src="./assets/trending-gifos-placeholder_260x200.png" alt="placeholder">
-            <img src="./assets/trending-gifos-placeholder_260x200.png" alt="placeholder">
-            <img src="./assets/trending-gifos-placeholder_260x200.png" alt="placeholder">
-            <img src="./assets/trending-gifos-placeholder_260x200.png" alt="placeholder">
-            <img src="./assets/trending-gifos-placeholder_260x200.png" alt="placeholder">
-            <img src="./assets/trending-gifos-placeholder_260x200.png" alt="placeholder">
-            <img src="./assets/trending-gifos-placeholder_260x200.png" alt="placeholder">
-            <img src="./assets/trending-gifos-placeholder_260x200.png" alt="placeholder">
+        <div class="favorites-container"></div>
+
+        <div class="button-container">
+            <button id="show-more-favorites" class="show-more-favorites" type="button">VER MAS</button>
         </div>
 
-        <div class="ver-mas-container">
-            <a href="#" class="ver-mas">VER MAS</a>
-        </div>
-
-
+        <div class="modal" id="modal"></div>
 
     </section>
 
-    <section class="trending-gifos" id="trending-gifos">
+    <section class="trending-gifos">
         <div class="trending-gifos-text">
             <h2 class="trending-gifos-text-title">Trending GIFOS</h2>
-            <p class="trending-gifos-text-text-content">Mira los últimos</p>
-            <p class="trending-gifos-text-text-content">GIFOS de nuestra comunidad.</p>
+            <div class="trending-gifos-text-content-container">
+                <p class="trending-gifos-text-text-content">Mira los últimos &nbsp;</p>
+                <p class="trending-gifos-text-text-content"> GIFOS de nuestra comunidad.</p>
+            </div>
         </div>
 
         <div class="trending-gifos-gif-container">
-            <img src="./assets/trending-gifos-placeholder.png" alt="placeholder">
-            <img src="./assets/trending-gifos-placeholder.png" alt="placeholder">
+            <div class="arrow-left"></div>
+
+            <div class="trending-gifos-slider-container">
+                <!--Trending GIF results-->
+            </div>
+
+            <div class="arrow-right"></div>
         </div>
     </section>
 
-    <footer id="footer">
+    <footer class="footer">
         <div class="footer">
-            <p class="footer-title">Compartir en:</p>
-            <ul class="footer__social-icons">
-                <li><img src="./assets/icon_facebook.svg" alt="facebook"></li>
-                <li><img src="./assets/icon-twitter.svg" alt="twitter"></li>
-                <li><img src="./assets/icon_instagram.svg" alt="instagram"></li>
-            </ul>
+            <div class="footer-wrapper">
+                <p class="footer-title">Compartir en:</p>
+                <ul class="footer__social-icons">
+                    <li><img src="../assets/icon_facebook.svg" alt="facebook" width="20px" height="20px"></li>
+                    <li><img src="../assets/icon-twitter-hover.svg" alt="twitter" width="20px" height="100%"></li>
+                    <li><img src="../assets/icon_instagram.svg" alt="instagram" width="20px" height="100%"></li>
+                </ul>
+            </div>
             <p class="footer-copyright">&copy;GIFOS 2020 All Rights Reserved</p>
         </div>
     </footer>
 
-    <script src="/main.js"></script>
+    <script type="module" src="../js/favoriteIndex.js"></script>
 </body>
 
 </html>

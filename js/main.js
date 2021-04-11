@@ -1,12 +1,13 @@
 import { api } from './services.js';
-import { gif } from './favorites.js';
+import { gif } from './gif.js';
 import {
     URLTrendings, URLSearchEndpoint, hamburger, menu, gifContainer, searchBtn, searchResults,
     searchTitle, URLAutocompleteEndpoint, liveSearchResultsContainer, searchSuggestionsContainer,
     HEADER, HERO, TRENDING_GIFOS, BORDER_TOP, BORDER_BOTTOM, DARK_MODE_TRIGGER, FOOTER, DAY_MODE_MENU,
     SEARCH_INPUT, AUTOCOMPLETE_SEARCH_BOX, SEARCH_RESULTS_DIVIDER, CANCEL_SEARCH_ICON, SEARCH_TERM_ICON,
     SEARCH_ICON, INPUT_LINE_SEPARATOR, HERO_SEARCH_BAR, AUTOCOMPLETE_TERM_SUGGESTION, URL_TRENDING_SEARCH_TERMS,
-    TRENDING_TERMS_CONTAINER, SHOW_MORE_HOME, PREV_BUTTON, NEXT_BUTTON, SEARCH_RESULTS_CONTAINER, MODAL
+    TRENDING_TERMS_CONTAINER, SHOW_MORE_HOME, PREV_BUTTON, NEXT_BUTTON, SEARCH_RESULTS_CONTAINER, MODAL,
+    FAVORITES_CONTAINER
 } from './constants.js';
 
 
@@ -196,7 +197,6 @@ function showMoreHomePage() {
     if (gifSearchResults.length > 0 && gifSearchResults.length <= 48) {
         LoadMoreGifs();
         insertedGifSearchResults();
-        console.log('clicked!')
 
     } else { SHOW_MORE_HOME.classList.add('disabled') }
 }
@@ -473,6 +473,14 @@ gifContainer.addEventListener("click", (event) => {
     gif.favorite(event, "icon-fav-false", "icon-fav-true");
 }, true);
 
+SEARCH_RESULTS_CONTAINER.addEventListener("click", (event) => {
+    gif.favorite(event, "icon-fav-false", "icon-fav-true");
+});
+
+FAVORITES_CONTAINER.addEventListener("click", (event) => {
+    gif.favorite(event, "icon-fav-false", "icon-fav-true");
+}, true);
+
 // Add download functionality to the download icon
 gifContainer.addEventListener("click", (event) => {
     gif.download(event, "icon-download");
@@ -502,3 +510,6 @@ gifContainer.addEventListener("click", (event) => {
         "data-gif-id"
     );
 }, true);
+
+
+

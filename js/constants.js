@@ -1,7 +1,7 @@
 
 const URLTrendings = `https://api.giphy.com/v1/gifs/trending?api_key=vr7eliKrqbn1J94gIPNQhs9Gx7ZUM15l&limit=12`;
 const URL_TRENDING_SEARCH_TERMS = `https://api.giphy.com/v1/trending/searches?api_key=vr7eliKrqbn1J94gIPNQhs9Gx7ZUM15l`
-
+const URL_SEARCH_BY_ID = `https://api.giphy.com/v1/gifs?api_key=vr7eliKrqbn1J94gIPNQhs9Gx7ZUM15l&ids=`;
 
 //Trending GIFs constants
 const gifContainer = document.querySelector('.trending-gifos-slider-container');
@@ -34,6 +34,8 @@ const HERO_SEARCH_BAR = document.querySelector('.hero-search-bar');
 const SHOW_MORE_HOME = document.querySelector('#show-more-home');
 
 
+const MY_GIFOS_CONTAINER = document.querySelector('.mis-gifos-gif-container');
+
 //Slider elements
 const PREV_BUTTON = document.querySelector('.arrow-left');
 const NEXT_BUTTON = document.querySelector('.arrow-right');
@@ -56,6 +58,12 @@ const DAY_MODE_MENU = document.querySelector('.day-mode');
 const MODAL = document.querySelector('#modal');
 
 
+//FAVORITES constants
+const FAVORITES_CONTAINER = document.querySelector('.favorites-container');
+const FAVORITE_GIFS_CONTAINER = document.querySelector('.favorites-gif__container');
+
+
+
 
 export {
     URLTrendings, hamburger, menu, gifContainer, searchBtn, searchResults,
@@ -64,5 +72,6 @@ export {
     DARK_MODE_TRIGGER, FOOTER, DAY_MODE_MENU, SEARCH_INPUT, AUTOCOMPLETE_SEARCH_BOX,
     SEARCH_RESULTS_DIVIDER, CANCEL_SEARCH_ICON, SEARCH_TERM_ICON, SEARCH_ICON,
     INPUT_LINE_SEPARATOR, HERO_SEARCH_BAR, AUTOCOMPLETE_TERM_SUGGESTION, URL_TRENDING_SEARCH_TERMS,
-    TRENDING_TERMS_CONTAINER, SHOW_MORE_HOME, PREV_BUTTON, NEXT_BUTTON, SEARCH_RESULTS_CONTAINER, MODAL
+    TRENDING_TERMS_CONTAINER, SHOW_MORE_HOME, PREV_BUTTON, NEXT_BUTTON, SEARCH_RESULTS_CONTAINER, MODAL,
+    FAVORITES_CONTAINER, URL_SEARCH_BY_ID, MY_GIFOS_CONTAINER
 };

@@ -83,8 +83,6 @@
 
 
 
-
-
 .icon-fav-false {
     @include loadGifIcon("../../assets/icon-fav.svg");
     opacity: 0.7;
@@ -94,12 +92,16 @@
         background-image: url("../../assets/icon-fav-hover.svg");
         background-color: #FFFFFF;
         opacity: 1;
+        // height: 32px;
+        // width: 32px;
     }
 
     &:active {
         background-image: url("../../assets/icon-fav-active.svg");
         background-color: #FFFFFF;
         transform: scale(0.98);
+        // height: 32px;
+        // width: 32px;
     }
 }
 
@@ -118,6 +120,8 @@
         background-image: url("../../assets/icon-fav.svg");
         background-color: #FFFFFF;
         transform: scale(0.98);
+        // height: 32px;
+        // width: 32px;
     }
 }
 

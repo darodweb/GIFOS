@@ -576,15 +576,33 @@ nav ul li a {
   -webkit-transform: rotate(45deg);
 }
 
+.favoritos__title--container {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
 .favoritos-gif-container {
-  margin: 0 21px;
+  position: relative;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr 1fr;
-      grid-template-columns: 1fr 1fr;
-  -ms-grid-rows: (1fr)[auto];
-      grid-template-rows: repeat(auto, 1fr);
-  gap: 21px;
+  -ms-grid-columns: (minmax(220px, 330px))[4];
+      grid-template-columns: repeat(4, minmax(220px, 330px));
+  gap: 30px;
+  padding: 0 156px;
 }
 
 @media screen and (min-width: 499px) {
@@ -602,46 +620,149 @@ nav ul li a {
   margin-bottom: 46px;
 }
 
-.ver-mas-container {
-  text-align: center;
-  margin: 78px auto;
-}
-
-.ver-mas {
-  border-radius: 25px;
-  border: 1px solid #572EE5;
+.show-more-favorites {
   width: 127px;
   height: 50px;
+  border: 1px solid #572EE5;
+  border-radius: 25px;
   font-family: "Montserrat", sans-serif;
-  padding: 18px 31.5px 16px 32.5px;
+  font-weight: 700;
   font-size: 13px;
-  font-weight: bold;
+  background-color: white;
+  color: #572EE5;
+  letter-spacing: 0;
+  text-align: center;
+  display: none;
 }
 
-.ver-mas:hover {
-  background: #572EE5;
+.show-more-favorites:hover {
   color: white;
-  -webkit-transition: all ease 0.3s;
-  transition: all ease 0.3s;
+  background-color: #572EE5;
+  cursor: pointer;
+}
+
+.show-more-favorites:active {
+  -webkit-transform: scale(0.98);
+          transform: scale(0.98);
+}
+
+.show-more-favorites:focus {
+  outline: none;
+}
+
+.no-results-container {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 5;
+  grid-column: 1 / span 5;
+  margin-top: 100px;
+  margin-bottom: 150px;
+}
+
+.no-results-container img {
+  height: 150px;
+  width: 100%;
+}
+
+.no-results-container p {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 22px;
+  color: #5ED7C6;
+  text-align: center;
+  line-height: 25px;
+  margin-top: 30px;
+}
+
+.favorites-container {
+  display: -ms-grid;
+  display: grid;
+  position: relative;
+  gap: 30px;
+  -ms-grid-columns: (minmax(220px, 330px))[4];
+      grid-template-columns: repeat(4, minmax(220px, 330px));
+  padding: 0 156px;
+}
+
+.favorites-gif__container {
+  position: relative;
+  height: 200px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.favorites-gif__container:hover .trending-gifos-gif__overlay {
+  opacity: 0.7;
+  width: 100%;
+  height: 100%;
+}
+
+.favorites-gif__container:hover .icon-container {
+  opacity: 1;
+}
+
+.favorites-gif__container:hover .gif-user {
+  position: absolute;
+  bottom: 80px;
+  left: 18px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  color: #FFFFFF;
+  text-align: left;
+  opacity: 1;
+  display: block;
+}
+
+.favorites-gif__container:hover .gif-title {
+  position: absolute;
+  bottom: 40px;
+  left: 18px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  color: #FFFFFF;
+  text-align: left;
+  opacity: 1;
+  height: 36px;
+  width: 80%;
+  display: block;
+}
+
+.my-gifos {
+  padding-top: 35px;
+}
+
+.my-gifos__title--container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .mis-gifos-gif-container {
-  margin: 0 21px;
+  position: relative;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr 1fr;
-      grid-template-columns: 1fr 1fr;
-  -ms-grid-rows: (1fr)[auto];
-      grid-template-rows: repeat(auto, 1fr);
-  gap: 21px;
+  -ms-grid-columns: (minmax(220px, 330px))[4];
+      grid-template-columns: repeat(4, minmax(220px, 330px));
+  gap: 30px;
+  padding: 0 156px;
 }
 
-.mis-gifos-container {
-  text-align: center;
-}
-
-.title-mis-gifos {
-  margin-bottom: 46px;
+@media screen and (min-width: 499px) {
+  .mis-gifos-gif-container {
+    -ms-grid-columns: (auto)[4];
+        grid-template-columns: repeat(4, auto);
+  }
 }
 
 /* Hero Section*/

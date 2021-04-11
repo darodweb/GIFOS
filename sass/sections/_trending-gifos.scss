@@ -80,13 +80,8 @@
     }
 }
 
-
-   
-
     }
     
-        
-
 
 .trending-gifos-gif {
     display:flex;
@@ -103,15 +98,14 @@
         padding: 10px;
         scroll-behavior: smooth;
 
-        -ms-overflow-style: none;  // hide scrollbar IE and Edge
-        scrollbar-width: none;  // hide scrollbar Firefox
+        -ms-overflow-style: none;  
+        scrollbar-width: none;  
 
         &::-webkit-scrollbar {
-            display: none; // hide scrollbar Chrome, Safari, Opera
+            display: none; 
         }
         
     }
-
 
 }
 
