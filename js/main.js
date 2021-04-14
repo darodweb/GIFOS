@@ -41,7 +41,7 @@ const gifMarkup = (gif) => {
         <div class="trending-gifos-gif__overlay" id="trending-gifos-gif__overlay"></div>
         <div class="icon-container">
             <i class="icon-fav-false" data-fav-id=${gif.id} title="Favorito"></i>
-            <i class="icon-download" data-download-url=${gif.url}
+            <i class="icon-download" data-download-url=${gif.images.fixed_height_downsampled.url}
                 data-download-title=${gif.title}
                 title="Descargar"></i>
             <i class="icon-expand" data-expand-url=${gif.images.fixed_height.url}
@@ -141,7 +141,7 @@ const gifResultsMarkup = (gifSearchResults) => {
         <div className="search-results-overlay" id="search-results-overlay"></div>
         <div class="icon-container">
             <i class="icon-fav-false" data-fav-id=${gifSearchResults.id} title="Favorito"></i>
-            <i class="icon-download" data-download-url=${gifSearchResults.url}
+            <i class="icon-download" data-download-url=${gifSearchResults.images.fixed_height_downsampled.url}
                 data-download-title=${gifSearchResults.title}
                 title="Descargar"></i>
             <i class="icon-expand" data-expand-url=${gifSearchResults.images.fixed_height.url}
