@@ -1,13 +1,13 @@
 import { api } from './services.js';
 import { gif } from './gif.js';
 import {
-    URLTrendings, URLSearchEndpoint, hamburger, menu, gifContainer, searchBtn, searchResults,
+    URLTrendings, URLSearchEndpoint, hamburger, menu, GIF_SLIDER_CONTAINER, searchBtn, searchResults,
     searchTitle, URLAutocompleteEndpoint, liveSearchResultsContainer, searchSuggestionsContainer,
     HEADER, HERO, TRENDING_GIFOS, BORDER_TOP, BORDER_BOTTOM, DARK_MODE_TRIGGER, FOOTER, DAY_MODE_MENU,
     SEARCH_INPUT, AUTOCOMPLETE_SEARCH_BOX, SEARCH_RESULTS_DIVIDER, CANCEL_SEARCH_ICON, SEARCH_TERM_ICON,
     SEARCH_ICON, INPUT_LINE_SEPARATOR, HERO_SEARCH_BAR, AUTOCOMPLETE_TERM_SUGGESTION, URL_TRENDING_SEARCH_TERMS,
     TRENDING_TERMS_CONTAINER, SHOW_MORE_HOME, PREV_BUTTON, NEXT_BUTTON, SEARCH_RESULTS_CONTAINER, MODAL,
-    FAVORITES_CONTAINER
+    FAVORITES_CONTAINER, TRENDING_GIFS_CONTAINER
 } from './constants.js';
 
 
@@ -61,7 +61,7 @@ const insertedGif = () => {
     for (let i = 0; i < gifs.length; i++) {
         gifCards += gifMarkup(gifs[i]);
     }
-    gifContainer.innerHTML = gifCards;
+    GIF_SLIDER_CONTAINER.innerHTML = gifCards;
 
 }
 
@@ -421,11 +421,11 @@ function scrollToRight(slider) {
 };
 
 PREV_BUTTON.addEventListener("click", () => {
-    scrollToRight(gifContainer);
+    scrollToRight(GIF_SLIDER_CONTAINER);
 }, false);
 
 NEXT_BUTTON.addEventListener("click", () => {
-    scrollToLeft(gifContainer);
+    scrollToLeft(GIF_SLIDER_CONTAINER);
 }, false);
 
 //ADDING GIFS TO FAVORITOS
@@ -444,8 +444,9 @@ MODAL.addEventListener("click", (event) => {
     gif.download(event, "icon-download");
 }, true);
 
+
 // Add expand functionality to the expand icon - or to the gif itself for mobile
-SEARCH_RESULTS_CONTAINER.addEventListener("click", (event) => {
+searchResults.addEventListener("click", (event) => {
     gif.expand(
         event,
         "icon-expand",
@@ -457,59 +458,45 @@ SEARCH_RESULTS_CONTAINER.addEventListener("click", (event) => {
     );
 }, true);
 
-SEARCH_RESULTS_CONTAINER.addEventListener("click", (event) => {
+searchResults.addEventListener("click", (event) => {
+    gif.download(event, "icon-download");
+}, true);
+
+
+GIF_SLIDER_CONTAINER.addEventListener("click", (event) => {
     gif.expand(
         event,
-        "gif",
+        "icon-expand",
         MODAL,
-        "data-gif-url",
-        "data-gif-title",
-        "data-gif-username",
-        "data-gif-id"
+        "data-expand-url",
+        "data-expand-title",
+        "data-expand-username",
+        "data-expand-id"
     );
 }, true);
 
-gifContainer.addEventListener("click", (event) => {
+GIF_SLIDER_CONTAINER.addEventListener("click", (event) => {
     gif.favorite(event, "icon-fav-false", "icon-fav-true");
 }, true);
 
-SEARCH_RESULTS_CONTAINER.addEventListener("click", (event) => {
-    gif.favorite(event, "icon-fav-false", "icon-fav-true");
-});
 
-FAVORITES_CONTAINER.addEventListener("click", (event) => {
-    gif.favorite(event, "icon-fav-false", "icon-fav-true");
-}, true);
+
+
+
+
+// FAVORITES_CONTAINER.addEventListener("click", (event) => {
+//     gif.favorite(event, "icon-fav-false", "icon-fav-true");
+// }, true);
 
 // Add download functionality to the download icon
-gifContainer.addEventListener("click", (event) => {
+GIF_SLIDER_CONTAINER.addEventListener("click", (event) => {
     gif.download(event, "icon-download");
 }, true);
 
 // Add expand functionality to the expand icon - or to the gif itself for mobile
-gifContainer.addEventListener("click", (event) => {
-    gif.expand(
-        event,
-        "icon-expand",
-        MODAL,
-        "data-expand-url",
-        "data-expand-title",
-        "data-expand-username",
-        "data-expand-id"
-    );
-}, true);
 
-gifContainer.addEventListener("click", (event) => {
-    gif.expand(
-        event,
-        "gif",
-        MODAL,
-        "data-gif-url",
-        "data-gif-title",
-        "data-gif-username",
-        "data-gif-id"
-    );
-}, true);
+
+
 
 
 
