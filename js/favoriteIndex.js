@@ -1,7 +1,7 @@
 import { api } from './services.js';
 import { gif } from './gif.js';
 import {
-    URLTrendings, hamburger, menu, gifContainer, searchBtn, searchResults,
+    URLTrendings, hamburger, menu, TRENDING_GIFS_CONTAINER, searchBtn, searchResults,
     searchTitle, HEADER, HERO, TRENDING_GIFOS, BORDER_TOP, BORDER_BOTTOM, DARK_MODE_TRIGGER, FOOTER, DAY_MODE_MENU,
     SEARCH_RESULTS_DIVIDER, SHOW_MORE_HOME, PREV_BUTTON, NEXT_BUTTON, SEARCH_RESULTS_CONTAINER, MODAL,
     FAVORITES_CONTAINER, URL_SEARCH_BY_ID
@@ -117,7 +117,7 @@ const insertedGif = () => {
     for (let i = 0; i < gifs.length; i++) {
         gifCards += gifMarkup(gifs[i]);
     }
-    gifContainer.innerHTML = gifCards;
+    TRENDING_GIFS_CONTAINER.innerHTML = gifCards;
 
 }
 
@@ -134,11 +134,11 @@ function scrollToRight(slider) {
 };
 
 PREV_BUTTON.addEventListener("click", () => {
-    scrollToRight(gifContainer);
+    scrollToRight(TRENDING_GIFS_CONTAINER);
 }, false);
 
 NEXT_BUTTON.addEventListener("click", () => {
-    scrollToLeft(gifContainer);
+    scrollToLeft(TRENDING_GIFS_CONTAINER);
 }, false);
 
 //ADDING GIFS TO FAVORITOS
@@ -182,17 +182,17 @@ FAVORITES_CONTAINER.addEventListener("click", (event) => {
     );
 }, true);
 
-gifContainer.addEventListener("click", (event) => {
+TRENDING_GIFS_CONTAINER.addEventListener("click", (event) => {
     gif.favorite(event, "icon-fav-false", "icon-fav-true");
 }, true);
 
 // Add download functionality to the download icon
-gifContainer.addEventListener("click", (event) => {
+TRENDING_GIFS_CONTAINER.addEventListener("click", (event) => {
     gif.download(event, "icon-download");
 }, true);
 
 // Add expand functionality to the expand icon - or to the gif itself for mobile
-gifContainer.addEventListener("click", (event) => {
+TRENDING_GIFS_CONTAINER.addEventListener("click", (event) => {
     gif.expand(
         event,
         "icon-expand",
@@ -204,7 +204,7 @@ gifContainer.addEventListener("click", (event) => {
     );
 }, true);
 
-gifContainer.addEventListener("click", (event) => {
+TRENDING_GIFS_CONTAINER.addEventListener("click", (event) => {
     gif.expand(
         event,
         "gif",

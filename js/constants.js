@@ -2,6 +2,14 @@
 const URLTrendings = `https://api.giphy.com/v1/gifs/trending?api_key=vr7eliKrqbn1J94gIPNQhs9Gx7ZUM15l&limit=12`;
 const URL_TRENDING_SEARCH_TERMS = `https://api.giphy.com/v1/trending/searches?api_key=vr7eliKrqbn1J94gIPNQhs9Gx7ZUM15l`
 const URL_SEARCH_BY_ID = `https://api.giphy.com/v1/gifs?api_key=vr7eliKrqbn1J94gIPNQhs9Gx7ZUM15l&ids=`;
+const UPLOAD_URL = `https://upload.giphy.com/v1/gifs?api_key=vr7eliKrqbn1J94gIPNQhs9Gx7ZUM15l`
+
+
+const GIF_ID_URL = `https://api.giphy.com/v1/gifs/`;
+const LABEL_API_KEY = `api_key`;
+const API_KEY = `vr7eliKrqbn1J94gIPNQhs9Gx7ZUM15l`;
+
+
 
 //Trending GIFs constants
 const GIF_SLIDER_CONTAINER = document.querySelector('.trending-gifos-slider-container');
@@ -57,6 +65,21 @@ const DAY_MODE_MENU = document.querySelector('.day-mode');
 //Other elements
 const MODAL = document.querySelector('#modal');
 
+//Create Gif Page constants
+const CREATE_GIF_TITLE = document.querySelector('#create-gif-title');
+const CREATE_GIF_MESSAGE = document.querySelector('#create-gif-message');
+const START_BUTTON = document.querySelector('#start-button');
+const STOP_BUTTON = document.querySelector('#stop-button');
+const UPLOAD_BUTTON = document.querySelector('#upload-button');
+const TIMER = document.querySelector('#timer');
+const RECORD_BUTTON = document.querySelector('#record-button');
+const RECORD_VIDEO = document.querySelector('#record-video');
+const RECORDING_VIDEO_CONTAINER = document.querySelector('#recording-video-container');
+const CANVAS_CONTAINER = document.querySelector('#canvas-container');
+const STEP_1 = document.querySelector('#step-1');
+const STEP_2 = document.querySelector('#step-2');
+const REPEAT_CAPTION = document.querySelector('#repeat-caption');
+const RESET_BUTTON = document.querySelector('#reset-button');
 
 //FAVORITES constants
 const FAVORITES_CONTAINER = document.querySelector('.favorites-container');
@@ -73,5 +96,8 @@ export {
     SEARCH_RESULTS_DIVIDER, CANCEL_SEARCH_ICON, SEARCH_TERM_ICON, SEARCH_ICON,
     INPUT_LINE_SEPARATOR, HERO_SEARCH_BAR, AUTOCOMPLETE_TERM_SUGGESTION, URL_TRENDING_SEARCH_TERMS,
     TRENDING_TERMS_CONTAINER, SHOW_MORE_HOME, PREV_BUTTON, NEXT_BUTTON, SEARCH_RESULTS_CONTAINER, MODAL,
-    FAVORITES_CONTAINER, URL_SEARCH_BY_ID, MY_GIFOS_CONTAINER, TRENDING_GIFS_CONTAINER
+    FAVORITES_CONTAINER, URL_SEARCH_BY_ID, MY_GIFOS_CONTAINER, TRENDING_GIFS_CONTAINER,
+    CREATE_GIF_TITLE, CREATE_GIF_MESSAGE, START_BUTTON, RECORD_BUTTON, RECORD_VIDEO, CANVAS_CONTAINER,
+    STEP_1, STEP_2, STOP_BUTTON, UPLOAD_BUTTON, TIMER, REPEAT_CAPTION, UPLOAD_URL,
+    RESET_BUTTON, RECORDING_VIDEO_CONTAINER, GIF_ID_URL, LABEL_API_KEY, API_KEY
 };

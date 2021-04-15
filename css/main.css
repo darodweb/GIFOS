@@ -1244,6 +1244,612 @@ a, a:link, a:visited, a:active {
   color: white;
 }
 
+.recording-section {
+  padding-top: 107px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.recording-section .camera-column {
+  display: none;
+}
+
+.recording-section .recording-column {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-flex: 100%;
+      -ms-flex: 100%;
+          flex: 100%;
+  max-width: 100%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 22px;
+}
+
+.recording-section .recording-column .recording-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+  height: 390px;
+  width: 100%;
+  border: 1px solid #572EE5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.recording-section .recording-column .recording-container .corner {
+  position: absolute;
+  height: 25px;
+  width: 25px;
+}
+
+.recording-section .recording-column .recording-container .top-left {
+  border-top: 1px solid #5ED7C6;
+  border-left: 1px solid #5ED7C6;
+  top: 20px;
+  left: 20px;
+}
+
+.recording-section .recording-column .recording-container .top-right {
+  border-top: 1px solid #5ED7C6;
+  border-right: 1px solid #5ED7C6;
+  top: 20px;
+  right: 20px;
+}
+
+.recording-section .recording-column .recording-container .bottom-left {
+  border-bottom: 1px solid #5ED7C6;
+  border-left: 1px solid #5ED7C6;
+  bottom: 20px;
+  left: 20px;
+}
+
+.recording-section .recording-column .recording-container .bottom-right {
+  border-bottom: 1px solid #5ED7C6;
+  border-right: 1px solid #5ED7C6;
+  bottom: 20px;
+  right: 20px;
+}
+
+.recording-section .recording-column .recording-container .recording-video-container {
+  position: relative;
+  height: 82%;
+  width: 70%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.recording-section .recording-column .recording-container .recording-video-container .create-gif-title {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 22px;
+  color: #572EE5;
+  text-align: center;
+  line-height: 35px;
+}
+
+.recording-section .recording-column .recording-container .recording-video-container .create-gif-title span {
+  color: #5ED7C6;
+}
+
+.recording-section .recording-column .recording-container .recording-video-container .create-gif-message {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  color: black;
+  text-align: center;
+  line-height: 29px;
+}
+
+.recording-section .recording-column .recording-container .recording-video-container .canvas-container {
+  width: 100%;
+  height: 100%;
+  display: none;
+}
+
+.recording-section .recording-column .recording-container .recording-video-container img {
+  width: 100%;
+  height: 100%;
+}
+
+.recording-section .recording-column .recording-container .recording-video-container .upload-overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0.6;
+  -webkit-transition: .2s ease;
+  transition: .2s ease;
+  background-color: #572EE5;
+  display: none;
+}
+
+.recording-section .recording-column .recording-container .recording-video-container .upload-loader {
+  position: absolute;
+  top: 40%;
+  background-image: url("../../assets/loader.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 24px;
+  width: 24px;
+  -webkit-animation: spin 2s linear infinite;
+          animation: spin 2s linear infinite;
+  display: none;
+}
+
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+.recording-section .recording-column .recording-container .recording-video-container .upload-ok {
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  top: 40%;
+  background-image: url("../../assets/ok.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 24px;
+  width: 24px;
+  display: none;
+}
+
+.recording-section .recording-column .recording-container .recording-video-container .upload-message {
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  top: 50%;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  color: white;
+  text-align: center;
+  display: none;
+}
+
+.recording-section .recording-column .recording-container .recording-video-container .icon-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  top: 10px;
+  right: 5px;
+  opacity: 1;
+}
+
+.recording-section .recording-column .recording-container .recording-video-container .icon-container .icon-download {
+  height: 32px;
+  width: 32px;
+  background-image: url("../../../assets/images/icon/icon-download.svg");
+  background-color: #cccccc;
+  /* Used if the image is unavailable */
+  background-position: center;
+  /* Center the image */
+  background-repeat: no-repeat;
+  /* Do not repeat the image */
+  background-size: contain;
+  /* Resize the background image to cover the entire container */
+  border-radius: 6px;
+  cursor: pointer;
+  opacity: 0.7;
+  margin-right: 10px;
+}
+
+.recording-section .recording-column .recording-container .recording-video-container .icon-container .icon-download:hover {
+  background-image: url("../../../assets/images/icon/icon-download-hover.svg");
+  background-color: #FFFFFF;
+  opacity: 1;
+}
+
+.recording-section .recording-column .recording-container .recording-video-container .icon-container .icon-download:active {
+  -webkit-transform: scale(0.98);
+          transform: scale(0.98);
+}
+
+.recording-section .recording-column .recording-container .recording-video-container .icon-container .icon-link {
+  height: 32px;
+  width: 32px;
+  background-image: url("../../../assets/images/icon/icon-link-normal.svg");
+  background-color: #cccccc;
+  /* Used if the image is unavailable */
+  background-position: center;
+  /* Center the image */
+  background-repeat: no-repeat;
+  /* Do not repeat the image */
+  background-size: contain;
+  /* Resize the background image to cover the entire container */
+  border-radius: 6px;
+  cursor: pointer;
+  opacity: 0.7;
+  margin-right: 5px;
+}
+
+.recording-section .recording-column .recording-container .recording-video-container .icon-container .icon-link:hover {
+  background-image: url("../../../assets/images/icon/icon-link-hover.svg");
+  background-color: #FFFFFF;
+  opacity: 1;
+}
+
+.recording-section .recording-column .recording-container .recording-video-container .icon-container .icon-link:active {
+  -webkit-transform: scale(0.98);
+          transform: scale(0.98);
+}
+
+.recording-section .recording-column .recording-state-container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+  width: 100%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 24px;
+}
+
+.recording-section .recording-column .recording-state-container .steps-container {
+  -ms-grid-column: 1;
+      grid-column-start: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+@media screen and (min-width: 499px) {
+  .recording-section .recording-column .recording-state-container .steps-container {
+    -ms-grid-column: 2;
+        grid-column-start: 2;
+  }
+}
+
+.recording-section .recording-column .recording-state-container .steps-container .step {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 32px;
+  width: 32px;
+  border-radius: 50%;
+  border: 1px solid #572EE5;
+  background-color: white;
+  color: #572EE5;
+  font-family: "Roboto", sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  text-align: center;
+}
+
+.recording-section .recording-column .recording-state-container .steps-container #step-1 {
+  margin-right: 15px;
+}
+
+.recording-section .recording-column .recording-state-container .steps-container #step-2 {
+  margin-right: 15px;
+}
+
+.recording-section .recording-column .recording-state-container .steps-container .active {
+  background-color: var(--step-active-bg);
+  color: var(--step-active-color);
+}
+
+.recording-section .recording-column .recording-state-container .timer {
+  -ms-grid-column: 3;
+      grid-column-start: 3;
+  margin-left: auto;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  color: #572EE5;
+  letter-spacing: 0;
+  text-align: center;
+  line-height: 22px;
+  display: none;
+}
+
+.recording-section .recording-column .recording-state-container .repeat-caption {
+  -ms-grid-column: 3;
+      grid-column-start: 3;
+  margin-left: auto;
+  position: relative;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 13px;
+  color: #572EE5;
+  letter-spacing: 0;
+  text-align: center;
+  cursor: pointer;
+  display: none;
+}
+
+.recording-section .recording-column .recording-state-container .repeat-caption::after {
+  background: none repeat scroll 0 0 transparent;
+  content: "";
+  display: block;
+  height: 2px;
+  left: 50%;
+  position: absolute;
+  background: #5ED7C6;
+  -webkit-transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  width: 0;
+}
+
+.recording-section .recording-column .recording-state-container .repeat-caption:hover::after {
+  width: 100%;
+  left: 0;
+}
+
+.recording-section .recording-column .recording-state-container .repeat-caption:active {
+  color: #9CAFC3;
+}
+
+.recording-section .tape-column {
+  display: none;
+}
+
+.bottom-line-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-flex: 100%;
+      -ms-flex: 100%;
+          flex: 100%;
+  padding: 0px 22px;
+  margin: 20px 0px;
+}
+
+.bottom-line-container .bottom-line {
+  width: 100%;
+  height: 7px;
+  border-radius: 10px;
+  background-color: #572EE5;
+}
+
+.record-button-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-flex: 100%;
+      -ms-flex: 100%;
+          flex: 100%;
+  padding-bottom: 10px;
+}
+
+.record-button-container .button {
+  width: 127px;
+  height: 50px;
+  border: 1px solid #572EE5;
+  border-radius: 25px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 13px;
+  background-color: white;
+  color: #572EE5;
+  letter-spacing: 0;
+  text-align: center;
+}
+
+.record-button-container .button:hover {
+  color: white;
+  background-color: #572EE5;
+  cursor: pointer;
+}
+
+.record-button-container .button:active {
+  -webkit-transform: scale(0.98);
+          transform: scale(0.98);
+}
+
+.record-button-container .button:focus {
+  outline: none;
+}
+
+.record-button-container .start-button {
+  display: block;
+}
+
+.record-button-container .record-button {
+  display: none;
+}
+
+.record-button-container .stop-button {
+  display: none;
+}
+
+.record-button-container .upload-button {
+  display: none;
+}
+
+.record-button-container .reset-button {
+  display: none;
+}
+
+@media screen and (min-width: 499px) {
+  .recording-section {
+    padding-left: 22px;
+    padding-right: 22px;
+  }
+  .recording-section .camera-column {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-flex: 20%;
+        -ms-flex: 20%;
+            flex: 20%;
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .recording-section .camera-column .camera-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    justify-items: center;
+  }
+  .recording-section .camera-column .camera-container .camera-body {
+    height: 162px;
+    width: 123px;
+    background-image: url("../../assets/camara.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+  }
+  .recording-section .camera-column .camera-container .camera-light {
+    height: 140px;
+    width: 91px;
+    background-image: url("../../assets/element-luz-camara.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+  }
+  .recording-section .recording-column {
+    -webkit-box-flex: 60%;
+        -ms-flex: 60%;
+            flex: 60%;
+    padding: 0;
+  }
+  .recording-section .recording-column .recording-container {
+    height: 390px;
+    width: 100%;
+  }
+  .recording-section .recording-column .recording-container .recording-video-container .create-gif-title {
+    font-size: 25px;
+  }
+  .recording-section .recording-column .recording-container .recording-video-container .create-gif-message {
+    font-size: 16px;
+  }
+  .recording-section .recording-column .recording-state-container {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .recording-section .tape-column {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-flex: 20%;
+        -ms-flex: 20%;
+            flex: 20%;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .recording-section .tape-column .tape-img {
+    background-image: url(../../assets/pelicula.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 142px;
+    height: 88px;
+  }
+  .bottom-line-container .bottom-line {
+    width: 70%;
+  }
+}
+
 .trending-gifos {
   position: relative;
   max-height: 640px;
