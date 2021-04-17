@@ -48,7 +48,8 @@ const MyGifosGifMarkup = (gif) => {
         <img src="${gif.images.fixed_height_downsampled.url}"class="trending-gifos-gif" alt="${gif.title}">
         <div class="trending-gifos-gif__overlay" id="trending-gifos-gif__overlay"></div>
         <div class="icon-container">
-            <i class="icon-fav-true" data-fav-id=${gif.id} title="Favorito"></i>
+            <i class="icon-delete" data-delete-id=${gif.id}
+                title="Borrar"></i>
             <i class="icon-download" data-download-url=${gif.url}
                 data-download-title=${gif.title}
                 title="Descargar"></i>
