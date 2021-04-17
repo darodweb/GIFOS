@@ -171,12 +171,12 @@
                     opacity: 1;
 
                     .icon-download {
-                        @include loadGifIcon("../../../assets/images/icon/icon-download.svg");
+                        @include loadGifIcon("../../assets/icon-download.svg");
                         opacity: 0.7;
                         margin-right: 10px;
                 
                         &:hover {
-                            background-image: url("../../../assets/images/icon/icon-download-hover.svg");
+                            background-image: url("../../assets/icon-download-hover.svg");
                             background-color: #FFFFFF;
                             opacity: 1;
                         }
@@ -187,12 +187,12 @@
                     }
                 
                     .icon-link {
-                        @include loadGifIcon("../../../assets/images/icon/icon-link-normal.svg");
+                        @include loadGifIcon("../../assets/icon-link-normal.svg");
                         opacity: 0.7;
                         margin-right: 5px;
                 
                         &:hover {
-                            background-image: url("../../../assets/images/icon/icon-link-hover.svg");
+                            background-image: url("../../assets/icon-link-hover.svg");
                             background-color: #FFFFFF;
                             opacity: 1;
                         }
@@ -247,8 +247,8 @@
                 }
     
                 .active {
-                    background-color: var(--step-active-bg);
-                    color: var(--step-active-color);
+                    background-color: $primary-color;
+                    color: white;
                 }
             }
 

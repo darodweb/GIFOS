@@ -1,4 +1,4 @@
-const recordRTC = (function () {
+export const recordRTC = (function () {
     let _mirror = true;
     let _stream = null;
     let _canvasStream = null;
@@ -153,9 +153,9 @@ const recordRTC = (function () {
     };
 
     // upload gif
-    async function upload(uploadOverlay, uploadLoader, uploadOk, uploadMessage, step2, step3, uploadButton, resetButton, repeatCaption, url, paramApiKey, apiKey, recordingVideoContainer) {
+    async function upload(uploadOverlay, uploadLoader, uploadOk, uploadMessage, step2, step3, uploadButton, resetButton, repeatCaption, url, recordingVideoContainer) {
         try {
-            const endpoint = url + paramApiKey + apiKey;
+            const endpoint = url;
 
             uploadOverlay.style.display = "block";
             uploadOverlay.style.opacity = "0.6";
@@ -194,7 +194,7 @@ const recordRTC = (function () {
                 return;
             }
 
-            throw new Error("Request failed");
+            throw new Error("No se pudo subir tu gif");
         } catch (error) {
             console.log(error.message);
             alert(error.message);
@@ -311,4 +311,3 @@ const recordRTC = (function () {
     }
 })();
 
-export default recordRTC;

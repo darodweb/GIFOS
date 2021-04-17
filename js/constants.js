@@ -4,11 +4,10 @@ const URL_TRENDING_SEARCH_TERMS = `https://api.giphy.com/v1/trending/searches?ap
 const URL_SEARCH_BY_ID = `https://api.giphy.com/v1/gifs?api_key=vr7eliKrqbn1J94gIPNQhs9Gx7ZUM15l&ids=`;
 const UPLOAD_URL = `https://upload.giphy.com/v1/gifs?api_key=vr7eliKrqbn1J94gIPNQhs9Gx7ZUM15l`
 
-
+const GIF_BY_ID_URL = `https://api.giphy.com/v1/gifs/`;
 const GIF_ID_URL = `https://api.giphy.com/v1/gifs/`;
-const LABEL_API_KEY = `api_key`;
+const LABEL_API_KEY = `api_key=`;
 const API_KEY = `vr7eliKrqbn1J94gIPNQhs9Gx7ZUM15l`;
-
 
 
 //Trending GIFs constants
@@ -78,8 +77,13 @@ const RECORDING_VIDEO_CONTAINER = document.querySelector('#recording-video-conta
 const CANVAS_CONTAINER = document.querySelector('#canvas-container');
 const STEP_1 = document.querySelector('#step-1');
 const STEP_2 = document.querySelector('#step-2');
+const STEP_3 = document.querySelector('#step-3');
 const REPEAT_CAPTION = document.querySelector('#repeat-caption');
 const RESET_BUTTON = document.querySelector('#reset-button');
+const UPLOAD_OVERLAY = document.querySelector("#upload-overlay");
+const UPLOAD_LOADER = document.querySelector("#upload-loader");
+const UPLOAD_OK = document.querySelector("#upload-ok");
+const UPLOAD_MESSAGE = document.querySelector("#upload-message");
 
 //FAVORITES constants
 const FAVORITES_CONTAINER = document.querySelector('.favorites-container');
@@ -99,5 +103,6 @@ export {
     FAVORITES_CONTAINER, URL_SEARCH_BY_ID, MY_GIFOS_CONTAINER, TRENDING_GIFS_CONTAINER,
     CREATE_GIF_TITLE, CREATE_GIF_MESSAGE, START_BUTTON, RECORD_BUTTON, RECORD_VIDEO, CANVAS_CONTAINER,
     STEP_1, STEP_2, STOP_BUTTON, UPLOAD_BUTTON, TIMER, REPEAT_CAPTION, UPLOAD_URL,
-    RESET_BUTTON, RECORDING_VIDEO_CONTAINER, GIF_ID_URL, LABEL_API_KEY, API_KEY
+    RESET_BUTTON, RECORDING_VIDEO_CONTAINER, GIF_ID_URL, LABEL_API_KEY, API_KEY,
+    UPLOAD_OVERLAY, UPLOAD_LOADER, UPLOAD_OK, UPLOAD_MESSAGE, STEP_3, GIF_BY_ID_URL
 };

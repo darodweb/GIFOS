@@ -1,7 +1,7 @@
 import { api } from './services.js';
 import { gif } from './gif.js';
 import {
-    URLTrendings, hamburger, menu, gifContainer, searchBtn, searchResults,
+    URLTrendings, hamburger, menu, GIF_SLIDER_CONTAINER, searchBtn, searchResults,
     searchTitle, HEADER, HERO, TRENDING_GIFOS, BORDER_TOP, BORDER_BOTTOM, DARK_MODE_TRIGGER, FOOTER, DAY_MODE_MENU,
     SEARCH_RESULTS_DIVIDER, SHOW_MORE_HOME, PREV_BUTTON, NEXT_BUTTON, MODAL,
     FAVORITES_CONTAINER, URL_SEARCH_BY_ID, MY_GIFOS_CONTAINER
@@ -14,8 +14,7 @@ import {
 
 let myGifos = [];
 const getMyGifosGifs = () => {
-    let myGifos = localStorage.getItem("favorites") ? JSON.parse(localStorage.getItem('favorites')) : [];
-
+    let myGifos = localStorage.getItem("myGifos") ? JSON.parse(localStorage.getItem('myGifos')) : [];
 
     if (myGifos.length > 0) {
         myGifos = myGifos.join(",");
@@ -69,7 +68,7 @@ const MyGifosInsertedGif = () => {
     for (let i = 0; i < gifs.length; i++) {
         gifCards += MyGifosGifMarkup(gifs[i]);
     }
-    FAVORITES_CONTAINER.innerHTML = gifCards;
+    MY_GIFOS_CONTAINER.innerHTML = gifCards;
 
 }
 
@@ -116,7 +115,7 @@ const insertedGif = () => {
     for (let i = 0; i < gifs.length; i++) {
         gifCards += gifMarkup(gifs[i]);
     }
-    gifContainer.innerHTML = gifCards;
+    GIF_SLIDER_CONTAINER.innerHTML = gifCards;
 
 }
 
@@ -133,11 +132,11 @@ function scrollToRight(slider) {
 };
 
 PREV_BUTTON.addEventListener("click", () => {
-    scrollToRight(gifContainer);
+    scrollToRight(GIF_SLIDER_CONTAINER);
 }, false);
 
 NEXT_BUTTON.addEventListener("click", () => {
-    scrollToLeft(gifContainer);
+    scrollToLeft(GIF_SLIDER_CONTAINER);
 }, false);
 
 //ADDING GIFS TO FAVORITOS
@@ -181,17 +180,17 @@ MY_GIFOS_CONTAINER.addEventListener("click", (event) => {
     );
 }, true);
 
-gifContainer.addEventListener("click", (event) => {
+GIF_SLIDER_CONTAINER.addEventListener("click", (event) => {
     gif.favorite(event, "icon-fav-false", "icon-fav-true");
 }, true);
 
 // Add download functionality to the download icon
-gifContainer.addEventListener("click", (event) => {
+GIF_SLIDER_CONTAINER.addEventListener("click", (event) => {
     gif.download(event, "icon-download");
 }, true);
 
 // Add expand functionality to the expand icon - or to the gif itself for mobile
-gifContainer.addEventListener("click", (event) => {
+GIF_SLIDER_CONTAINER.addEventListener("click", (event) => {
     gif.expand(
         event,
         "icon-expand",
@@ -203,7 +202,7 @@ gifContainer.addEventListener("click", (event) => {
     );
 }, true);
 
-gifContainer.addEventListener("click", (event) => {
+GIF_SLIDER_CONTAINER.addEventListener("click", (event) => {
     gif.expand(
         event,
         "gif",

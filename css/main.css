@@ -1478,7 +1478,7 @@ a, a:link, a:visited, a:active {
 .recording-section .recording-column .recording-container .recording-video-container .icon-container .icon-download {
   height: 32px;
   width: 32px;
-  background-image: url("../../../assets/images/icon/icon-download.svg");
+  background-image: url("../../assets/icon-download.svg");
   background-color: #cccccc;
   /* Used if the image is unavailable */
   background-position: center;
@@ -1494,7 +1494,7 @@ a, a:link, a:visited, a:active {
 }
 
 .recording-section .recording-column .recording-container .recording-video-container .icon-container .icon-download:hover {
-  background-image: url("../../../assets/images/icon/icon-download-hover.svg");
+  background-image: url("../../assets/icon-download-hover.svg");
   background-color: #FFFFFF;
   opacity: 1;
 }
@@ -1507,7 +1507,7 @@ a, a:link, a:visited, a:active {
 .recording-section .recording-column .recording-container .recording-video-container .icon-container .icon-link {
   height: 32px;
   width: 32px;
-  background-image: url("../../../assets/images/icon/icon-link-normal.svg");
+  background-image: url("../../assets/icon-link-normal.svg");
   background-color: #cccccc;
   /* Used if the image is unavailable */
   background-position: center;
@@ -1523,7 +1523,7 @@ a, a:link, a:visited, a:active {
 }
 
 .recording-section .recording-column .recording-container .recording-video-container .icon-container .icon-link:hover {
-  background-image: url("../../../assets/images/icon/icon-link-hover.svg");
+  background-image: url("../../assets/icon-link-hover.svg");
   background-color: #FFFFFF;
   opacity: 1;
 }
@@ -1600,8 +1600,8 @@ a, a:link, a:visited, a:active {
 }
 
 .recording-section .recording-column .recording-state-container .steps-container .active {
-  background-color: var(--step-active-bg);
-  color: var(--step-active-color);
+  background-color: #572EE5;
+  color: white;
 }
 
 .recording-section .recording-column .recording-state-container .timer {
