@@ -194,21 +194,7 @@ display: none;
             flex-direction: row;
             align-items: center;
 
-            .icon-delete {
-                @include loadGifIcon("../../assets/icon-trash-normal.svg");
-                opacity: 0.7;
-                margin-right: 5px;
-        
-                &:hover {
-                    background-image: url("../../assets/icon-trash-hover.svg");
-                    background-color: white;
-                    opacity: 1;
-                }
-
-                &:active {
-                    transform: scale(0.98);
-                }
-            }
+            
     
             .icon-fav-false {
                 @include loadGifIcon("../../assets/icon-fav.svg");
@@ -262,5 +248,31 @@ display: none;
                 }
             }
         }
+    }
+}
+
+.icon-delete {
+    @include loadGifIcon("../../assets/icon-trash-normal.svg");
+    opacity: 0.7;
+    margin-right: 5px;
+    background-color: #cccccc;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    border-radius: 6px;
+    cursor: pointer;
+    opacity: 0.7;
+    margin-right: 5px;
+    height: 32px;
+    width: 32px;
+
+    &:hover {
+        background-image: url("../../assets/icon-trash-hover.svg");
+        background-color: white;
+        opacity: 1;
+    }
+
+    &:active {
+        transform: scale(0.98);
     }
 }

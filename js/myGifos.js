@@ -96,7 +96,7 @@ const gifMarkup = (gif) => {
         <div class="trending-gifos-gif__overlay" id="trending-gifos-gif__overlay"></div>
         <div class="icon-container">
             <i class="icon-fav-false" data-fav-id=${gif.id} title="Favorito"></i>
-            <i class="icon-download" data-download-url=${gif.url}
+            <i class="icon-download" data-download-url=${gif.images.fixed_height_downsampled.url}
                 data-download-title=${gif.title}
                 title="Descargar"></i>
             <i class="icon-expand" data-expand-url=${gif.images.fixed_height.url}
@@ -181,6 +181,14 @@ MY_GIFOS_CONTAINER.addEventListener("click", (event) => {
     );
 }, true);
 
+MY_GIFOS_CONTAINER.addEventListener("click", (event) => {
+    gif.deleteMyGifo(event, "icon-delete");
+}, true);
+
+MY_GIFOS_CONTAINER.addEventListener("click", (event) => {
+    gif.download(event, "icon-download");
+}, true);
+
 GIF_SLIDER_CONTAINER.addEventListener("click", (event) => {
     gif.favorite(event, "icon-fav-false", "icon-fav-true");
 }, true);
@@ -214,3 +222,4 @@ GIF_SLIDER_CONTAINER.addEventListener("click", (event) => {
         "data-gif-id"
     );
 }, true);
+

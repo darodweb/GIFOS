@@ -2259,35 +2259,6 @@ a, a:link, a:visited, a:active {
           align-items: center;
 }
 
-.modal .modal-footer .modal-icons-container .icon-delete {
-  height: 32px;
-  width: 32px;
-  background-image: url("../../assets/icon-trash-normal.svg");
-  background-color: #cccccc;
-  /* Used if the image is unavailable */
-  background-position: center;
-  /* Center the image */
-  background-repeat: no-repeat;
-  /* Do not repeat the image */
-  background-size: contain;
-  /* Resize the background image to cover the entire container */
-  border-radius: 6px;
-  cursor: pointer;
-  opacity: 0.7;
-  margin-right: 5px;
-}
-
-.modal .modal-footer .modal-icons-container .icon-delete:hover {
-  background-image: url("../../assets/icon-trash-hover.svg");
-  background-color: white;
-  opacity: 1;
-}
-
-.modal .modal-footer .modal-icons-container .icon-delete:active {
-  -webkit-transform: scale(0.98);
-          transform: scale(0.98);
-}
-
 .modal .modal-footer .modal-icons-container .icon-fav-false {
   height: 32px;
   width: 32px;
@@ -2375,6 +2346,45 @@ a, a:link, a:visited, a:active {
 }
 
 .modal .modal-footer .modal-icons-container .icon-download:active {
+  -webkit-transform: scale(0.98);
+          transform: scale(0.98);
+}
+
+.icon-delete {
+  height: 32px;
+  width: 32px;
+  background-image: url("../../assets/icon-trash-normal.svg");
+  background-color: #cccccc;
+  /* Used if the image is unavailable */
+  background-position: center;
+  /* Center the image */
+  background-repeat: no-repeat;
+  /* Do not repeat the image */
+  background-size: contain;
+  /* Resize the background image to cover the entire container */
+  border-radius: 6px;
+  cursor: pointer;
+  opacity: 0.7;
+  margin-right: 5px;
+  background-color: #cccccc;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  border-radius: 6px;
+  cursor: pointer;
+  opacity: 0.7;
+  margin-right: 5px;
+  height: 32px;
+  width: 32px;
+}
+
+.icon-delete:hover {
+  background-image: url("../../assets/icon-trash-hover.svg");
+  background-color: white;
+  opacity: 1;
+}
+
+.icon-delete:active {
   -webkit-transform: scale(0.98);
           transform: scale(0.98);
 }

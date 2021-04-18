@@ -14,7 +14,6 @@ let favGifs = [];
 const getFavGifs = () => {
     let favGifs = localStorage.getItem("favorites") ? JSON.parse(localStorage.getItem('favorites')) : [];
 
-
     if (favGifs.length > 0) {
         favGifs = favGifs.join(",");
 
@@ -48,7 +47,7 @@ const favGifMarkup = (gif) => {
         <div class="trending-gifos-gif__overlay" id="trending-gifos-gif__overlay"></div>
         <div class="icon-container">
             <i class="icon-fav-true" data-fav-id=${gif.id} title="Favorito"></i>
-            <i class="icon-download" data-download-url=${gif.url}
+            <i class="icon-download" data-download-url=${gif.images.fixed_height_downsampled.url}
                 data-download-title=${gif.title}
                 title="Descargar"></i>
             <i class="icon-expand" data-expand-url=${gif.images.fixed_height.url}
@@ -97,7 +96,7 @@ const gifMarkup = (gif) => {
         <div class="trending-gifos-gif__overlay" id="trending-gifos-gif__overlay"></div>
         <div class="icon-container">
             <i class="icon-fav-false" data-fav-id=${gif.id} title="Favorito"></i>
-            <i class="icon-download" data-download-url=${gif.url}
+            <i class="icon-download" data-download-url=${gif.images.fixed_height_downsampled.url}
                 data-download-title=${gif.title}
                 title="Descargar"></i>
             <i class="icon-expand" data-expand-url=${gif.images.fixed_height.url}
@@ -108,7 +107,7 @@ const gifMarkup = (gif) => {
         <p class="gif-user">${gif.username}</p>
         <p class="gif-title">${gif.title}</p>
     </div>
-    
+
     `
 }
 
@@ -171,6 +170,14 @@ FAVORITES_CONTAINER.addEventListener("click", (event) => {
 }, true);
 
 FAVORITES_CONTAINER.addEventListener("click", (event) => {
+    gif.favorite(event, "icon-fav-false", "icon-fav-true");
+}, true);
+
+FAVORITES_CONTAINER.addEventListener("click", (event) => {
+    gif.download(event, "icon-download");
+}, true);
+
+FAVORITES_CONTAINER.addEventListener("click", (event) => {
     gif.expand(
         event,
         "gif",
@@ -181,6 +188,8 @@ FAVORITES_CONTAINER.addEventListener("click", (event) => {
         "data-gif-id"
     );
 }, true);
+
+
 
 TRENDING_GIFS_CONTAINER.addEventListener("click", (event) => {
     gif.favorite(event, "icon-fav-false", "icon-fav-true");

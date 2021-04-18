@@ -25,7 +25,6 @@ START_BUTTON.addEventListener("click", (event) => {
 }, false);
 
 
-
 RECORD_BUTTON.addEventListener("click", () => {
     recordRTC.record(
         RECORD_BUTTON,
@@ -80,6 +79,17 @@ RECORDING_VIDEO_CONTAINER.addEventListener("click", (event) => {
     recordRTC.download(
         event,
         "icon-download",
+        GIF_BY_ID_URL,
+        LABEL_API_KEY,
+        API_KEY
+    );
+}, true);
+
+
+RECORDING_VIDEO_CONTAINER.addEventListener("click", (event) => {
+    recordRTC.copyLink(
+        event,
+        "icon-link",
         GIF_BY_ID_URL,
         LABEL_API_KEY,
         API_KEY

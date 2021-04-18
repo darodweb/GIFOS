@@ -263,13 +263,13 @@ export const recordRTC = (function () {
     };
 
     function _copyToClipboard(text) {
-        const dummy = document.createElement("textarea");
-        document.body.appendChild(dummy);
-        dummy.value = text;
-        dummy.select();
-        dummy.setSelectionRange(0, 99999); // for mobile devices
+        const aux = document.createElement("textarea");
+        document.body.appendChild(aux);
+        aux.value = text;
+        aux.select();
+        aux.setSelectionRange(0, 99999); // for mobile devices
         document.execCommand("copy");
-        document.body.removeChild(dummy);
+        document.body.removeChild(aux);
         alert("Link copiado!");
     }
 

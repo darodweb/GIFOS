@@ -462,6 +462,10 @@ searchResults.addEventListener("click", (event) => {
     gif.download(event, "icon-download");
 }, true);
 
+searchResults.addEventListener("click", (event) => {
+    gif.favorite(event, "icon-fav-false", "icon-fav-true");
+}, true);
+
 
 GIF_SLIDER_CONTAINER.addEventListener("click", (event) => {
     gif.expand(
