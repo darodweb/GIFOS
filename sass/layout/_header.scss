@@ -9,7 +9,7 @@ header {
     justify-content: space-between;
     height: 95px;
     margin-bottom: 7px;
-    @media screen and (min-width: 499px) {
+    @media screen and (min-width: 980px) {
         margin-bottom: 0px;
     }
     // width: 1440px;
@@ -37,14 +37,14 @@ header {
     height: 14px;
     order:2;
     z-index: 3;
-    @media screen and (min-width: 499px) {
+    @media screen and (min-width: 980px) {
         display:none;
     }
 }
 
 .menu {
     display:none;
-    @media screen and (min-width: 499px) {
+    @media screen and (min-width: 980px) {
         display:flex;
         justify-content: space-between;
 
@@ -59,7 +59,7 @@ header {
     height: 100vh;
     background-color: $primary-color;
     opacity: .9;
-    z-index: 2;
+    z-index: 100;
     margin-top:95px;
     position:fixed;
     top: 0;
@@ -139,7 +139,7 @@ tspan .logo__text {
 
 nav {
     display:flex;
-    @media screen and (min-width:499px) {
+    @media screen and (min-width:980px) {
         align-items: center;
     }
 }
@@ -148,7 +148,7 @@ nav ul {
     display:flex;
     margin-top: 36px;
     order: 1;
-    @media screen and (min-width:499px) {
+    @media screen and (min-width:980px) {
         order:0;
     }
 }
@@ -160,7 +160,7 @@ nav ul li {
     list-style: none;
     justify-content: space-between;
     margin: 0 auto;
-    @media screen and (min-width:499px) {
+    @media screen and (min-width:980px) {
         display:flex;
         margin-left: 50px;
     }
@@ -172,7 +172,7 @@ nav ul li a {
     line-height: 60px;
     font-family: $primary-font;
 
-    @media screen and (min-width:499px) {
+    @media screen and (min-width:980px) {
         font-size: 13px;
         font-weight: 700;
     }
@@ -180,7 +180,7 @@ nav ul li a {
 
 .floating-button-container {
 
-    @media screen and (min-width: 499px) {
+    @media screen and (min-width: 980px) {
         margin-top: 23px;
         margin-right: 156px;
         margin-left: 53px;
@@ -200,7 +200,7 @@ nav ul li a {
     outline:none;
     border: 1px solid $primary-color;
     display:none;
-    @media screen and (min-width: 499px) {
+    @media screen and (min-width: 980px) {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -212,7 +212,7 @@ nav ul li a {
 }
 
 .floating__button:hover {
-    @media screen and (min-width: 499px) {
+    @media screen and (min-width: 980px) {
         background-color: $primary-color;
         color: white;
         transition: all ease 0.3s; 
