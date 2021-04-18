@@ -1,6 +1,5 @@
 @import "abstracts/variables";
-
-
+@import "abstracts/media-queries";
 @import "base/base";
 
 @import "layout/footer";
@@ -12,8 +11,6 @@
 @import "layout/mobile-busqueda";
 @import "layout/dark-mode";
 @import "layout/create-gifo";
-
-
 
 @import "sections/trending-gifos";
 @import "sections/search-results";
