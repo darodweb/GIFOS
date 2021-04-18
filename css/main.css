@@ -209,6 +209,10 @@
           transform: scale(0.98);
 }
 
+footer {
+  border-bottom: 5px solid #572EE5;
+}
+
 .footer-social-container h3 {
   font-family: "Roboto", sans-serif;
   font-weight: 400;
@@ -230,6 +234,7 @@
   text-align: center;
   width: 100px;
   padding-top: 24px;
+  margin: 0 auto;
 }
 
 .footer-social-container .social-icon-container a {
@@ -279,6 +284,18 @@
 
 .footer-social-container .social-icon-container .instagram-icon:hover {
   background-image: url("../../assets/icon_instagram-hover.svg");
+}
+
+.brand-container h3 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  color: black;
+  letter-spacing: 0;
+  line-height: 20px;
+  text-align: center;
+  padding-top: 46px;
+  padding-bottom: 12px;
 }
 
 /*Header*/
@@ -911,17 +928,33 @@ nav ul li a {
 }
 
 .hero-search-bar-container .search-bar__line-divider {
+  display: block;
+  height: 0.5px;
+  background-color: #9cafc3;
+  width: 157px;
+  margin-top: 119px;
+  margin-bottom: 43px;
   position: relative;
   left: 50%;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
   opacity: 0.5;
-  height: 0.5px;
-  background-color: #9CAFC3;
-  display: none;
-  width: 338px;
-  margin-top: 74px;
-  margin-bottom: 84px;
+}
+
+@media screen and (min-width: 600px) {
+  .hero-search-bar-container .search-bar__line-divider {
+    position: relative;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+    opacity: 0.5;
+    height: 0.5px;
+    background-color: #9CAFC3;
+    display: none;
+    width: 338px;
+    margin-top: 74px;
+    margin-bottom: 84px;
+  }
 }
 
 .hero-search-bar-container .hero-search__automcomplete-box {
@@ -1974,20 +2007,19 @@ a, a:link, a:visited, a:active {
   display: flex;
 }
 
-@media screen and (min-width: 499px) {
-  .trending-gifos-slider-container {
-    width: 100%;
-    scrollbar-width: none;
-    white-space: nowrap;
-    overflow-x: auto;
-    padding: 10px;
-    scroll-behavior: smooth;
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-  }
-  .trending-gifos-slider-container::-webkit-scrollbar {
-    display: none;
-  }
+.trending-gifos-slider-container {
+  width: 100%;
+  scrollbar-width: none;
+  white-space: nowrap;
+  overflow-x: auto;
+  padding: 10px;
+  scroll-behavior: smooth;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.trending-gifos-slider-container::-webkit-scrollbar {
+  display: none;
 }
 
 .trending-gifos-gif__container:hover .trending-gifos-gif__overlay {
@@ -2056,6 +2088,15 @@ a, a:link, a:visited, a:active {
   display: block;
 }
 
+.search-results {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(120px, 250px))[2];
+      grid-template-columns: repeat(2, minmax(120px, 250px));
+  gap: 25px;
+  padding: 0 20px;
+}
+
 @media screen and (min-width: 499px) {
   .search-results-container {
     text-align: center;
@@ -2070,18 +2111,37 @@ a, a:link, a:visited, a:active {
   .search-results-container .search-results {
     display: -ms-grid;
     display: grid;
-    -ms-grid-columns: (minmax(140px, 260px))[4];
-        grid-template-columns: repeat(4, minmax(140px, 260px));
+    -ms-grid-columns: (minmax(120px, 250px))[2];
+        grid-template-columns: repeat(2, minmax(120px, 250px));
     -ms-grid-rows: (200px)[auto];
         grid-template-rows: repeat(auto, 200px);
     margin: 0 auto;
     grid-gap: 25px;
   }
   .search-results-container .search-results .search-results__gif-container {
-    position: relative;
-    height: 200px;
+    height: 120px;
     width: 100%;
+    position: relative;
+    overflow: hidden;
   }
+}
+
+@media screen and (min-width: 499px) and (min-width: 600px) {
+  .search-results-container .search-results .search-results__gif-container {
+    height: 200px;
+  }
+}
+
+.search-title {
+  display: block;
+  position: relative;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 1.5625em;
+  color: #572EE5;
+  text-align: center;
+  line-height: 40px;
+  margin-bottom: 38px;
 }
 
 @media screen and (min-width: 499px) {
@@ -2092,15 +2152,17 @@ a, a:link, a:visited, a:active {
     color: #572EE5;
     line-height: 30px;
   }
-  .hero-search-live-search p {
-    margin-bottom: 10px;
-  }
+}
+
+.search-title .hero-search-live-search p {
+  margin-bottom: 10px;
 }
 
 .search-results__gif-container {
   position: relative;
-  height: 200px;
+  height: 120px;
   width: 100%;
+  overflow: hidden;
 }
 
 .search-results__gif-container:hover #search-results-overlay {

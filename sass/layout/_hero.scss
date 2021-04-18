@@ -136,16 +136,29 @@
         }
 
         .search-bar__line-divider {
+            display: block;
+            height: 0.5px;
+            background-color: rgb(156, 175, 195);
+            width: 157px;
+            margin-top: 119px;
+            margin-bottom: 43px;
             position: relative;
             left: 50%;
             transform: translateX(-50%);
             opacity: 0.5;
-            height: 0.5px;
-            background-color: #9CAFC3;
-            display: none;
-            width: 338px;
-            margin-top: 74px;
-            margin-bottom: 84px;
+            @media screen and (min-width: 600px) {
+                position: relative;
+                left: 50%;
+                transform: translateX(-50%);
+                opacity: 0.5;
+                height: 0.5px;
+                background-color: #9CAFC3;
+                display: none;
+                width: 338px;
+                margin-top: 74px;
+                margin-bottom: 84px;
+            }
+
         }
        
         .hero-search__automcomplete-box {
