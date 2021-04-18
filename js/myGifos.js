@@ -44,13 +44,13 @@ const getMyGifosGifs = () => {
 
 const MyGifosGifMarkup = (gif) => {
     return `
-    <div class="favorites-gif__container">
+    <div class="mis-gifos-gif__container">
         <img src="${gif.images.fixed_height_downsampled.url}"class="trending-gifos-gif" alt="${gif.title}">
         <div class="trending-gifos-gif__overlay" id="trending-gifos-gif__overlay"></div>
         <div class="icon-container">
             <i class="icon-delete" data-delete-id=${gif.id}
                 title="Borrar"></i>
-            <i class="icon-download" data-download-url=${gif.url}
+            <i class="icon-download" data-download-url=${gif.images.fixed_height_downsampled.url}
                 data-download-title=${gif.title}
                 title="Descargar"></i>
             <i class="icon-expand" data-expand-url=${gif.images.fixed_height.url}
@@ -84,7 +84,7 @@ const getTrendingGifs = () => {
             for (let i = 0; i < response.data.length; i++) {
                 gifs.push(response.data[i]);
             }
-            insertedGif();
+            insertedTrendingGif();
         })
         .catch(error => console.log(error))
 }
@@ -111,7 +111,7 @@ const gifMarkup = (gif) => {
     `
 }
 
-const insertedGif = () => {
+const insertedTrendingGif = () => {
     let gifCards = "";
     for (let i = 0; i < gifs.length; i++) {
         gifCards += gifMarkup(gifs[i]);
@@ -156,9 +156,45 @@ MODAL.addEventListener("click", (event) => {
     gif.download(event, "icon-download");
 }, true);
 
+MODAL.addEventListener("click", (event) => {
+    gif.deleteMyGifo(event, "icon-delete");
+}, true);
+
 // Add expand functionality to the expand icon - or to the gif itself for mobile
+// MY_GIFOS_CONTAINER.addEventListener("click", (event) => {
+//     gif.expand(
+//         event,
+//         "icon-expand",
+//         MODAL,
+//         "data-expand-url",
+//         "data-expand-title",
+//         "data-expand-username",
+//         "data-expand-id"
+//     );
+// }, true);
+
+// MY_GIFOS_CONTAINER.addEventListener("click", (event) => {
+//     gif.expand(
+//         event,
+//         "gif",
+//         MODAL,
+//         "data-gif-url",
+//         "data-gif-title",
+//         "data-gif-username",
+//         "data-gif-id"
+//     );
+// }, true);
+
 MY_GIFOS_CONTAINER.addEventListener("click", (event) => {
-    gif.expand(
+    gif.deleteMyGifo(event, "icon-delete");
+}, true);
+
+MY_GIFOS_CONTAINER.addEventListener("click", (event) => {
+    gif.download(event, "icon-download");
+}, true);
+
+MY_GIFOS_CONTAINER.addEventListener("click", (event) => {
+    gif.expandMyGifo(
         event,
         "icon-expand",
         MODAL,
@@ -169,25 +205,6 @@ MY_GIFOS_CONTAINER.addEventListener("click", (event) => {
     );
 }, true);
 
-MY_GIFOS_CONTAINER.addEventListener("click", (event) => {
-    gif.expand(
-        event,
-        "gif",
-        MODAL,
-        "data-gif-url",
-        "data-gif-title",
-        "data-gif-username",
-        "data-gif-id"
-    );
-}, true);
-
-MY_GIFOS_CONTAINER.addEventListener("click", (event) => {
-    gif.deleteMyGifo(event, "icon-delete");
-}, true);
-
-MY_GIFOS_CONTAINER.addEventListener("click", (event) => {
-    gif.download(event, "icon-download");
-}, true);
 
 GIF_SLIDER_CONTAINER.addEventListener("click", (event) => {
     gif.favorite(event, "icon-fav-false", "icon-fav-true");
@@ -222,4 +239,5 @@ GIF_SLIDER_CONTAINER.addEventListener("click", (event) => {
         "data-gif-id"
     );
 }, true);
+
 
