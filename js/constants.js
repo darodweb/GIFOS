@@ -50,6 +50,7 @@ const NEXT_BUTTON = document.querySelector('.arrow-right');
 //Hamburger menu constants
 const hamburger = document.getElementById('hamburger');
 const menu = document.getElementById('menu');
+const CLOSE_HAMBURGER_BUTTON = document.querySelector('.hamburger-close');
 
 //Dark Mode Constants
 const BORDER_TOP = document.querySelector('.border-top');
@@ -93,7 +94,7 @@ const FAVORITE_GIFS_CONTAINER = document.querySelector('.favorites-gif__containe
 
 
 export {
-    URLTrendings, hamburger, menu, GIF_SLIDER_CONTAINER, searchBtn, searchResults,
+    URLTrendings, hamburger, CLOSE_HAMBURGER_BUTTON, menu, GIF_SLIDER_CONTAINER, searchBtn, searchResults,
     URLSearchEndpoint, searchTitle, URLAutocompleteEndpoint, liveSearchResultsContainer,
     searchSuggestionsContainer, HEADER, HERO, TRENDING_GIFOS, BORDER_TOP, BORDER_BOTTOM,
     DARK_MODE_TRIGGER, FOOTER, DAY_MODE_MENU, SEARCH_INPUT, AUTOCOMPLETE_SEARCH_BOX,

@@ -7,15 +7,37 @@ import {
     SEARCH_INPUT, AUTOCOMPLETE_SEARCH_BOX, SEARCH_RESULTS_DIVIDER, CANCEL_SEARCH_ICON, SEARCH_TERM_ICON,
     SEARCH_ICON, INPUT_LINE_SEPARATOR, HERO_SEARCH_BAR, AUTOCOMPLETE_TERM_SUGGESTION, URL_TRENDING_SEARCH_TERMS,
     TRENDING_TERMS_CONTAINER, SHOW_MORE_HOME, PREV_BUTTON, NEXT_BUTTON, SEARCH_RESULTS_CONTAINER, MODAL,
-    FAVORITES_CONTAINER, TRENDING_GIFS_CONTAINER
+    FAVORITES_CONTAINER, TRENDING_GIFS_CONTAINER, CLOSE_HAMBURGER_BUTTON
 } from './constants.js';
 
 
 
 //Hamburger Menu
 
+// function hamburgerChange(event) {
+//     if (event.target.className !== "hamburger-close__display") {
+//         hamburger.backgroundImage = `url('../assets/close.svg')`;
+//     } else {
+//         hamburger.backgroundImage = url('../assets/burger.svg');
+//     }
+
+// }
+
+
+let burgerCloseButtonState = false;
+
 hamburger.addEventListener('click', () => {
+    burgerCloseButtonState = !burgerCloseButtonState
+
     menu.classList.toggle('display');
+
+    if (burgerCloseButtonState !== false) {
+        hamburger.style.backgroundImage = `url('../assets/close.svg')`;
+
+    } else if (burgerCloseButtonState === false) {
+        hamburger.style.backgroundImage = `url('../assets/burger.svg')`;
+    }
+
 })
 
 //QUERY TRENDING Gifs AND RENDER TO DOM

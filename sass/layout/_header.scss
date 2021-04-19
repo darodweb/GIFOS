@@ -32,15 +32,42 @@ header {
 /*Hamburguer Menu*/
 
 .hamburger {
+    background-image: url('../../assets/burger.svg');
     width:15px;
     margin: 47px 26px 34px 0;
     height: 14px;
     order:2;
-    z-index: 3;
+    z-index: 2000;
     @media screen and (min-width: 980px) {
         display:none;
     }
 }
+
+
+
+.hamburger.hamburger-close {
+    display: block;
+    background-image: url('../../assets/close.svg');
+    width:15px;
+    margin: 47px 26px 34px 0;
+    height: 14px;
+    order:2;
+    z-index: 2000;
+    position: relative;
+    top: -61px;
+    @media screen and (min-width: 980px) {
+        display:none;
+    }
+}
+
+.unhide {
+    display:block;
+}
+
+.hide {
+    display:none;
+}
+
 
 .menu {
     display:none;
@@ -57,12 +84,12 @@ header {
     justify-content: center;
     width: 100vw;
     height: 100vh;
+    max-height: 100vh;
     background-color: $primary-color;
     opacity: .9;
     z-index: 100;
-    margin-top:95px;
-    position:fixed;
-    top: 0;
+    top:95px;
+    position:absolute;
     left:0;
     text-align: center;
 
@@ -90,6 +117,34 @@ header {
     // width: 40px;
     // }
 
+}
+
+ul#menu li a {
+    
+    color: #FFFFFF;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0;
+    line-height: 60px;
+    text-decoration: none;
+    position: relative;
+    padding-bottom: 2px;
+
+}
+
+ul#menu a, a:active, .menu-separator {
+    position: relative;
+    top: -10rem;
+}
+
+.menu-separator {
+    opacity: 0.5;
+    border: 1px solid white;
+    width: 41px;
+    background-color: white;
+    list-style-type: none;
+    margin: 0 auto;
 }
 
 a {
@@ -131,52 +186,52 @@ a:link, a:visited {
 
 
 
-tspan .logo__text {
-    font-size: 18px;
-    color: $primary-color;
-    word-spacing: 21px;
-}
+// tspan .logo__text {
+//     font-size: 18px;
+//     color: $primary-color;
+//     word-spacing: 21px;
+// }
 
-nav {
-    display:flex;
-    @media screen and (min-width:980px) {
-        align-items: center;
-    }
-}
+// nav {
+//     display:flex;
+//     @media screen and (min-width:980px) {
+//         align-items: center;
+//     }
+// }
 
-nav ul {
-    display:flex;
-    margin-top: 36px;
-    order: 1;
-    @media screen and (min-width:980px) {
-        order:0;
-    }
-}
+// nav ul {
+//     display:flex;
+//     margin-top: 36px;
+//     order: 1;
+//     @media screen and (min-width:980px) {
+//         order:0;
+//     }
+// }
 
 
 
-nav ul li {
-    display:flex;
-    list-style: none;
-    justify-content: space-between;
-    margin: 0 auto;
-    @media screen and (min-width:980px) {
-        display:flex;
-        margin-left: 50px;
-    }
-}
+// nav ul li {
+//     display:flex;
+//     list-style: none;
+//     justify-content: space-between;
+//     margin: 0 auto;
+//     @media screen and (min-width:980px) {
+//         display:flex;
+//         margin-left: 50px;
+//     }
+// }
 
-nav ul li a {
-    text-decoration: none;
-    color: $primary-color;
-    line-height: 60px;
-    font-family: $primary-font;
+// nav ul li a {
+//     text-decoration: none;
+//     color: $primary-color;
+//     line-height: 60px;
+//     font-family: $primary-font;
 
-    @media screen and (min-width:980px) {
-        font-size: 13px;
-        font-weight: 700;
-    }
-}
+//     @media screen and (min-width:980px) {
+//         font-size: 13px;
+//         font-weight: 700;
+//     }
+// }
 
 .floating-button-container {
 

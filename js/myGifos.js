@@ -8,6 +8,22 @@ import {
 } from './constants.js';
 
 
+//Hamburger
+let burgerCloseButtonState = false;
+
+hamburger.addEventListener('click', () => {
+    burgerCloseButtonState = !burgerCloseButtonState
+
+    menu.classList.toggle('display');
+
+    if (burgerCloseButtonState !== false) {
+        hamburger.style.backgroundImage = `url('../assets/close.svg')`;
+
+    } else if (burgerCloseButtonState === false) {
+        hamburger.style.backgroundImage = `url('../assets/burger.svg')`;
+    }
+
+})
 
 
 // Get MyGifos Gifs

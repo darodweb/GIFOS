@@ -49,14 +49,20 @@
             <img src="../assets/Logo-modo-noc.svg" class="logo__desktop--noc hidden" alt="logo">
         </div>
         <nav>
-            <img class="hamburger" id="hamburger" src="../assets/burger.svg" alt="menu-button">
+            <div class="hamburger" id="hamburger"></div>
+            <div class="hamburger-close"></div>
 
 
             <ul class="menu" id="menu">
-                <li class="dark-mode"><a href="#">MODO NOCTURNO</a></li>
-                <li class="day-mode" id="hidden"><a href="#">MODO DIURNO</a></li>
+                <li class="dark-mode"><a href="javascript:void(0)">MODO NOCTURNO</a></li>
+                <li class="menu-separator"></li>
+                <li class="day-mode" id="hidden"><a href="javascript:void(0)">MODO DIURNO</a></li>
+                <li class="menu-separator mobile-separator"></li>
                 <li><a href="/pages/favorites.html">FAVORITOS</a></li>
+                <li class="menu-separator mobile-separator"></li>
                 <li><a href="/pages/my-gifos.html">MIS GIFOS</a></li>
+                <li class="menu-separator mobile-separator"></li>
+                <li class="mobile"><a href="/pages/create-gifo.html">CREAR GIFOS</a></li>
             </ul>
 
             <a href="create-gifo.html">

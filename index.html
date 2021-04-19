@@ -48,15 +48,48 @@
             <img src="./assets/Logo-modo-noc.svg" class="logo__desktop--noc hidden" alt="logo">
         </div>
         <nav>
-            <img class="hamburger" id="hamburger" src="./assets/burger.svg" alt="menu-button">
+            <!-- <img class="hamburger" id="hamburger" src="./assets/burger.svg" alt="menu-button"> -->
+            <div class="hamburger" id="hamburger"></div>
+            <div class="hamburger-close"></div>
 
 
             <ul class="menu" id="menu">
-                <li class="dark-mode"><a href="#">MODO NOCTURNO</a></li>
-                <li class="day-mode" id="hidden"><a href="#">MODO DIURNO</a></li>
+                <li class="dark-mode"><a href="javascript:void(0)">MODO NOCTURNO</a></li>
+                <li class="menu-separator"></li>
+                <li class="day-mode" id="hidden"><a href="javascript:void(0)">MODO DIURNO</a></li>
+                <li class="menu-separator mobile-separator"></li>
                 <li><a href="/pages/favorites.html">FAVORITOS</a></li>
+                <li class="menu-separator mobile-separator"></li>
                 <li><a href="/pages/my-gifos.html">MIS GIFOS</a></li>
+                <li class="menu-separator mobile-separator"></li>
+                <li class="mobile"><a href="/pages/create-gifo.html">CREAR GIFOS</a></li>
             </ul>
+
+            <!-- <ul>
+                <li class="link link-mobile"><a href="javascript:void(0)" id="nocturne-mode-mobile">Modo Nocturno</a>
+                </li>
+                <li class="link link-desktop"><a href="javascript:void(0)" id="nocturne-mode-desktop">MODO NOCTURNO</a>
+                </li>
+
+                <li class="menu-separator"></li>
+
+                <li class="link link-mobile"><a href="./pages/favorites.html">Favoritos</a></li>
+                <li class="link link-desktop"><a href="./pages/favorites.html">FAVORITOS</a></li>
+
+                <li class="menu-separator"></li>
+
+                <li class="link link-mobile"><a href="./pages/my-gifos.html">Mis GIFOS</a></li>
+                <li class="link link-desktop"><a href="./pages/my-gifos.html">MIS GIFOS</a></li>
+
+                <li class="menu-separator"></li>
+
+                <li class="link link-mobile"><a href="./pages/create-gifo.html">Crear GIFO</a></li>
+
+                <li class="menu-separator"></li>
+
+                <li class="button-link"><a href="./pages/create-gifo.html" class="create-gifo-button"
+                        aria-label="Crear gifo"></a></li>
+            </ul> -->
 
             <a href="./pages/create-gifo.html">
                 <div class="floating-button-container">
