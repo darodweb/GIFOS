@@ -59,8 +59,13 @@ const HERO = document.querySelector('.hero');
 const TRENDING_GIFOS = document.querySelector('.trending-gifos');
 const BORDER_BOTTOM = document.querySelector('.border-bottom');
 const DARK_MODE_TRIGGER = document.querySelector('.dark-mode');
+const DARK_MODE_MENU = document.querySelector('.dark-mode-text');
 const FOOTER = document.querySelector('.footer');
 const DAY_MODE_MENU = document.querySelector('.day-mode');
+const BODY = document.querySelector('body');
+const LOGO_DARK_MODE = document.querySelector('.logo__desktop--noc');
+const LOGO_DARK_LIGHT_MODE = document.querySelector('#logo-desktop__light-mode');
+
 
 //Other elements
 const MODAL = document.querySelector('#modal');
@@ -105,5 +110,6 @@ export {
     CREATE_GIF_TITLE, CREATE_GIF_MESSAGE, START_BUTTON, RECORD_BUTTON, RECORD_VIDEO, CANVAS_CONTAINER,
     STEP_1, STEP_2, STOP_BUTTON, UPLOAD_BUTTON, TIMER, REPEAT_CAPTION, UPLOAD_URL,
     RESET_BUTTON, RECORDING_VIDEO_CONTAINER, GIF_ID_URL, LABEL_API_KEY, API_KEY,
-    UPLOAD_OVERLAY, UPLOAD_LOADER, UPLOAD_OK, UPLOAD_MESSAGE, STEP_3, GIF_BY_ID_URL
+    UPLOAD_OVERLAY, UPLOAD_LOADER, UPLOAD_OK, UPLOAD_MESSAGE, STEP_3, GIF_BY_ID_URL, BODY,
+    DARK_MODE_MENU, LOGO_DARK_MODE, LOGO_DARK_LIGHT_MODE
 };

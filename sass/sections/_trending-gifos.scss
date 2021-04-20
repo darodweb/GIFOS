@@ -1,11 +1,10 @@
 .trending-gifos {
     position:relative;
     max-height: 640px;
-    background-color: $background-color;
+    background-color: var(--background-trending-section);
     // margin: 0 auto;
     padding-bottom:82px;
     width: 100%;
-    margin-top: 46px;
     @media screen and (min-width:499px) {
         max-height: 640px;
         // width: 1440px;
@@ -64,7 +63,7 @@
     .trending-gifos-text-title {
         line-height: 30px;
         font-family: $primary-font;
-        color: $primary-color;
+        color: var(--primary-color);
         font-weight: 700;
         padding-top: 46px;
         margin-bottom: 7px;
@@ -74,6 +73,7 @@
     .trending-gifos-text-text-content {
         line-height: 23px;
         font-family: $secondary-font;
+        color: var(--standard-text-color);
         
     }
 }

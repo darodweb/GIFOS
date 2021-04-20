@@ -5,6 +5,49 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 /*bold*/
 /*regular*/
+:root {
+  --top-bottom-borders: #572EE5;
+  --background-main-color: white;
+  --primary-color: #572EE5;
+  --primary-color-menu-display: var(--primary-color);
+  --primary-text-color: var(--primary-color);
+  --trending-terms-color: var(--primary-color);
+  --input-background: white;
+  --input-text-color: black;
+  --background-trending-section: #F3F5F8;
+  --standard-text-color: black;
+  --search-icon: url('../../assets/icon-search.svg');
+  --input-close-button: url('../../assets/close.svg');
+  --hamburger: url('../../assets/burger.svg');
+  --close-hamburger: url('../../assets/close.svg');
+  --desktop-logo: url('../../assets/logo-desktop.svg');
+  --hero-search-separator: #222326;
+  --border: #572EE5;
+  --button-background: white;
+}
+
+.dark-mode {
+  --top-bottom-borders: black;
+  --background-main-color: #37383C;
+  --primary-color: white;
+  --primary-color-menu-display: black;
+  --primary-text-color: var(--primary-color);
+  --trending-terms-color: var(--primary-color);
+  --input-background: var(--background-main-color);
+  --input-text-color: var(--primary-color);
+  --auto-complete-text: var(--primary-color);
+  --background-trending-section: #222326;
+  --standard-text-color: var(--primary-color);
+  --search-icon: url('../../assets/icon-search-modo-noct.svg');
+  --input-close-button: url('../../assets/close-modo-noct.svg');
+  --hamburger: url('../../assets/burger-modo-noct.svg');
+  --close-hamburger: url('../../assets/close-modo-noct.svg');
+  --hero-search-separator: white;
+  --desktop-logo: url('../../assets/Logo-modo-noc.svg');
+  --border: white;
+  --button-background: #37383C;
+}
+
 /*Resets */
 *, html {
   margin: 0;
@@ -210,14 +253,19 @@
 }
 
 footer {
-  border-bottom: 5px solid #572EE5;
+  border-bottom: 5px solid var(--top-bottom-borders);
+  background-color: var(--background-main-color);
+}
+
+.footer-social-container {
+  padding-top: 46px;
 }
 
 .footer-social-container h3 {
   font-family: "Roboto", sans-serif;
   font-weight: 400;
   font-size: 15px;
-  color: black;
+  color: var(--standard-text-color);
   letter-spacing: 0;
   text-align: center;
 }
@@ -290,7 +338,7 @@ footer {
   font-family: "Roboto", sans-serif;
   font-weight: 400;
   font-size: 14px;
-  color: black;
+  color: var(--standard-text-color);
   letter-spacing: 0;
   line-height: 20px;
   text-align: center;
@@ -300,7 +348,7 @@ footer {
 
 /*Header*/
 .border-top {
-  border-top: solid #572EE5 5px;
+  border-top: solid var(--top-bottom-borders) 5px;
 }
 
 header {
@@ -311,13 +359,11 @@ header {
       -ms-flex-pack: justify;
           justify-content: space-between;
   height: 95px;
-  margin-bottom: 7px;
+  background-color: var(--background-main-color);
 }
 
-@media screen and (min-width: 980px) {
-  header {
-    margin-bottom: 0px;
-  }
+.header {
+  background-color: var(--background-main-color);
 }
 
 .logo__container {
@@ -336,7 +382,7 @@ header {
 
 /*Hamburguer Menu*/
 .hamburger {
-  background-image: url("../../assets/burger.svg");
+  background-image: var(--hamburger);
   width: 15px;
   margin: 47px 26px 34px 0;
   height: 14px;
@@ -354,7 +400,7 @@ header {
 
 .hamburger.hamburger-close {
   display: block;
-  background-image: url("../../assets/close.svg");
+  background-image: var(--close-hamburger);
   width: 15px;
   margin: 47px 26px 34px 0;
   height: 14px;
@@ -409,8 +455,8 @@ header {
   width: 100vw;
   height: 100vh;
   max-height: 100vh;
-  background-color: #572EE5;
-  opacity: .9;
+  background-color: var(--primary-color-menu-display);
+  opacity: 1;
   z-index: 100;
   top: 95px;
   position: absolute;
@@ -458,8 +504,8 @@ a {
 
 a::after {
   background: none repeat scroll 0 0 transparent;
-  bottom: 20px;
   content: "";
+  bottom: 0;
   display: block;
   height: 2px;
   left: 50%;
@@ -493,9 +539,9 @@ a:link, a:visited {
   background-color: white;
   width: 54px;
   height: 54px;
-  color: #572EE5;
+  color: var(--primary-color);
   outline: none;
-  border: 1px solid #572EE5;
+  border: 1px solid var(--primary-color);
   display: none;
 }
 
@@ -518,7 +564,7 @@ a:link, a:visited {
 
 @media screen and (min-width: 980px) {
   .floating__button:hover {
-    background-color: #572EE5;
+    background-color: var(--primary-color);
     color: white;
     -webkit-transition: all ease 0.3s;
     transition: all ease 0.3s;
@@ -779,6 +825,7 @@ a:link, a:visited {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  background-color: var(--background-main-color);
 }
 
 .hero__image {
@@ -817,7 +864,7 @@ a:link, a:visited {
   font-family: "Montserrat", sans-serif;
   font-weight: 700;
   font-size: 25px;
-  color: #572EE5;
+  color: var(--primary-color);
   text-align: center;
   line-height: 33px;
   width: 286px;
@@ -863,9 +910,9 @@ a:link, a:visited {
 
 .hero-search-bar-container .hero-search-bar {
   position: absolute;
-  background-color: white;
+  background-color: var(--input-background);
   width: 100%;
-  border: 1px solid #572EE5;
+  border: 1px solid var(--primary-color);
   border-radius: 27px;
 }
 
@@ -879,7 +926,7 @@ a:link, a:visited {
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
   font-size: 16px;
-  color: black;
+  color: var(--input-text-color);
   text-align: left;
   border: none;
 }
@@ -953,12 +1000,12 @@ a:link, a:visited {
   width: 105%;
   border-radius: 3px;
   cursor: default;
-  list-style-image: url("../../assets/icon-search.svg");
+  list-style-image: var(--search-icon);
   opacity: 0.5;
   cursor: default;
   -webkit-transform: scale(0.85);
           transform: scale(0.85);
-  color: black;
+  color: var(--auto-complete-text);
 }
 
 .hero-search-bar-container .hero-search__autocomplete-suggestion:hover {
@@ -971,7 +1018,7 @@ a:link, a:visited {
   top: 15px;
   height: 20px;
   width: 20px;
-  background-image: url("../../assets/icon-search.svg");
+  background-image: var(--search-icon);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -991,7 +1038,7 @@ a:link, a:visited {
   top: 15px;
   height: 20px;
   width: 20px;
-  background-image: url("../../assets/icon-search.svg");
+  background-image: var(--search-icon);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -1004,7 +1051,7 @@ a:link, a:visited {
   top: 15px;
   height: 20px;
   width: 20px;
-  background-image: url("../../assets/close.svg");
+  background-image: var(--input-close-button);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -1023,7 +1070,7 @@ a:link, a:visited {
     width: 300px;
     opacity: 0.5;
     height: 0.5px;
-    background-color: #222326;
+    background-color: var(--hero-search-separator);
     display: none;
   }
 }
@@ -1033,7 +1080,7 @@ a:link, a:visited {
   font-family: "Montserrat", sans-serif;
   font-weight: 500;
   font-size: 14px;
-  color: #572EE5;
+  color: var(--primary-color);
   text-align: center;
   line-height: 25px;
   cursor: pointer;
@@ -1047,7 +1094,7 @@ a:link, a:visited {
     font-family: "Montserrat", sans-serif;
     font-weight: 500;
     font-size: 16px;
-    color: #572EE5;
+    color: var(--trending-terms-color);
     text-align: center;
     line-height: 25px;
     cursor: pointer;
@@ -1077,17 +1124,10 @@ a:link, a:visited {
 
 .hero__trending .hero__trending--title {
   font-family: "Montserrat", sans-serif;
-  color: #572EE5;
+  color: var(--primary-color);
   text-align: center;
   font-weight: 700;
   margin-top: 58px;
-}
-
-.hero__trending .hero__trending--text {
-  text-align: center;
-  font-size: 14px;
-  color: #572EE5;
-  font-family: "Montserrat", sans-serif;
 }
 
 a, a:link, a:visited, a:active {
@@ -1103,10 +1143,10 @@ a, a:link, a:visited, a:active {
 
 @media screen and (min-width: 499px) {
   #hero-search-live-search {
-    border: solid 1px #572EE5;
+    border: solid 1px var(--primary-color);
     margin-top: 3.1rem;
     width: 550px;
-    border: 1px solid #572EE5;
+    border: 1px solid var(--primary-color);
     border-bottom-left-radius: 27px;
     border-bottom-right-radius: 27px;
     display: block;
@@ -1891,10 +1931,9 @@ a, a:link, a:visited, a:active {
 .trending-gifos {
   position: relative;
   max-height: 640px;
-  background-color: #F3F5F8;
+  background-color: var(--background-trending-section);
   padding-bottom: 82px;
   width: 100%;
-  margin-top: 46px;
 }
 
 @media screen and (min-width: 499px) {
@@ -1965,7 +2004,7 @@ a, a:link, a:visited, a:active {
 .trending-gifos .trending-gifos-text .trending-gifos-text-title {
   line-height: 30px;
   font-family: "Montserrat", sans-serif;
-  color: #572EE5;
+  color: var(--primary-color);
   font-weight: 700;
   padding-top: 46px;
   margin-bottom: 7px;
@@ -1974,6 +2013,7 @@ a, a:link, a:visited, a:active {
 .trending-gifos .trending-gifos-text .trending-gifos-text-text-content {
   line-height: 23px;
   font-family: "Roboto", sans-serif;
+  color: var(--standard-text-color);
 }
 
 @media screen and (min-width: 499px) {
@@ -2121,18 +2161,18 @@ a, a:link, a:visited, a:active {
   font-family: "Montserrat", sans-serif;
   font-weight: 700;
   font-size: 1.5625em;
-  color: #572EE5;
+  color: var(--primary-color);
   text-align: center;
   line-height: 40px;
   margin-bottom: 38px;
 }
 
-@media screen and (min-width: 499px) {
+@media screen and (min-width: 600px) {
   .search-title {
     margin-bottom: 60px;
     font-size: 35px;
     text-align: center;
-    color: #572EE5;
+    color: var(--primary-color);
     line-height: 30px;
   }
 }
@@ -2190,21 +2230,21 @@ a, a:link, a:visited, a:active {
 .show-more-home {
   width: 127px;
   height: 50px;
-  border: 1px solid #572EE5;
+  border: 1px solid var(--border);
   border-radius: 25px;
   font-family: "Montserrat", sans-serif;
   font-weight: 700;
   font-size: 13px;
-  background-color: white;
-  color: #572EE5;
+  background-color: var(--button-background);
+  color: var(--primary-color);
   letter-spacing: 0;
   text-align: center;
   display: none;
 }
 
 .show-more-home:hover {
-  color: white;
-  background-color: #572EE5;
+  color: var(--button-background);
+  background-color: var(--primary-color);
   cursor: pointer;
 }
 
@@ -2219,7 +2259,7 @@ a, a:link, a:visited, a:active {
 
 .disabled {
   opacity: 0.2;
-  background: #572EE5;
+  background: var(--primary-color);
   color: white;
 }
 

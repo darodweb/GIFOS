@@ -7,23 +7,40 @@ import {
     SEARCH_INPUT, AUTOCOMPLETE_SEARCH_BOX, SEARCH_RESULTS_DIVIDER, CANCEL_SEARCH_ICON, SEARCH_TERM_ICON,
     SEARCH_ICON, INPUT_LINE_SEPARATOR, HERO_SEARCH_BAR, AUTOCOMPLETE_TERM_SUGGESTION, URL_TRENDING_SEARCH_TERMS,
     TRENDING_TERMS_CONTAINER, SHOW_MORE_HOME, PREV_BUTTON, NEXT_BUTTON, SEARCH_RESULTS_CONTAINER, MODAL,
-    FAVORITES_CONTAINER, TRENDING_GIFS_CONTAINER, CLOSE_HAMBURGER_BUTTON
+    FAVORITES_CONTAINER, TRENDING_GIFS_CONTAINER, CLOSE_HAMBURGER_BUTTON, BODY, DARK_MODE_MENU,
+    LOGO_DARK_MODE, LOGO_DARK_LIGHT_MODE
 } from './constants.js';
 
 
 
-//Hamburger Menu
 
-// function hamburgerChange(event) {
-//     if (event.target.className !== "hamburger-close__display") {
-//         hamburger.backgroundImage = `url('../assets/close.svg')`;
-//     } else {
-//         hamburger.backgroundImage = url('../assets/burger.svg');
-//     }
+//-------DARK MODE TOGGLE--------------------------
+function changeMenuText(event) {
+    let _innerText = event.target.textContent;
+    if (_innerText === "Modo Nocturno") {
+        DARK_MODE_MENU.innerHTML = "Modo Diurno";
+        LOGO_DARK_MODE.classList.remove('hidden');
+        LOGO_DARK_LIGHT_MODE.classList.add('hidden');
+    } else if (_innerText === "Modo Diurno") {
+        DARK_MODE_MENU.innerHTML = "Modo Nocturno";
+        LOGO_DARK_MODE.classList.add('hidden');
+        LOGO_DARK_LIGHT_MODE.classList.remove('hidden');
+    }
+}
 
-// }
+DARK_MODE_TRIGGER.addEventListener('click', (event) => {
+    let currentTheme = localStorage.setItem('theme', 'dark')
+    BODY.classList.toggle('dark-mode');
+    changeMenuText(event);
+})
 
+DAY_MODE_MENU.addEventListener('click', (event) => {
+    BODY.classList.toggle('dark-mode');
+    changeMenuText(event);
 
+})
+
+//-----------HAMBURGER MENU-----------------------
 let burgerCloseButtonState = false;
 
 hamburger.addEventListener('click', () => {
@@ -32,10 +49,10 @@ hamburger.addEventListener('click', () => {
     menu.classList.toggle('display');
 
     if (burgerCloseButtonState !== false) {
-        hamburger.style.backgroundImage = `url('../assets/close.svg')`;
+        hamburger.style.backgroundImage = `var(--close-hamburger)`;
 
     } else if (burgerCloseButtonState === false) {
-        hamburger.style.backgroundImage = `url('../assets/burger.svg')`;
+        hamburger.style.backgroundImage = `var(--hamburger)`;
     }
 
 })
@@ -55,6 +72,8 @@ const getTrendingGifs = () => {
         })
         .catch(error => console.log(error))
 }
+
+
 
 const gifMarkup = (gif) => {
     return `
@@ -339,97 +358,98 @@ CANCEL_SEARCH_ICON.addEventListener('click', () => {
 
 //Dark Mode for HOME page
 
-const toggleBorderIds = () => {
-    if (BORDER_TOP.id === "" && BORDER_BOTTOM.id === "") {
-        BORDER_TOP.id += "dark-mode-dark-black__top-border"
-        BORDER_BOTTOM.id += "dark-mode-dark-black__bottom-border"
-    } else {
-        BORDER_TOP.removeAttribute('id');
-        BORDER_BOTTOM.removeAttribute('id');
-    }
-}
+// const toggleBorderIds = () => {
+//     if (BORDER_TOP.id === "" && BORDER_BOTTOM.id === "") {
+//         BORDER_TOP.id += "dark-mode-dark-black__top-border"
+//         BORDER_BOTTOM.id += "dark-mode-dark-black__bottom-border"
+//     } else {
+//         BORDER_TOP.removeAttribute('id');
+//         BORDER_BOTTOM.removeAttribute('id');
+//     }
+// }
 
-const toggleHeaderHeroAndFooterId = () => {
-    if (HEADER.id === "" && HERO.id === "" && FOOTER.id === "") {
-        HEADER.id += "dark-mode-gray__header"
-        HERO.id += "dark-mode-gray__hero"
-        FOOTER.id += "dark-mode-gray__footer"
+// const toggleHeaderHeroAndFooterId = () => {
+//     if (HEADER.id === "" && HERO.id === "" && FOOTER.id === "") {
+//         HEADER.id += "dark-mode-gray__header"
+//         HERO.id += "dark-mode-gray__hero"
+//         FOOTER.id += "dark-mode-gray__footer"
 
-    } else {
-        HEADER.removeAttribute('id');
-        HERO.removeAttribute('id');
-        FOOTER.removeAttribute('id');
-    }
-}
+//     } else {
+//         HEADER.removeAttribute('id');
+//         HERO.removeAttribute('id');
+//         FOOTER.removeAttribute('id');
+//     }
+// }
 
-const toggleInputId = () => {
-    const AUTOCOMPLETE_TERM_SUGGESTION_LIST_STYLE = document.querySelector('.hero-search__autocomplete-suggestion');
-    if (HERO_SEARCH_BAR.id === "") {
-        HERO_SEARCH_BAR.id += "hero-search-bar";
-        HERO_SEARCH_BAR.style.backgroundColor = '#37383C';
-        HERO_SEARCH_BAR.style.border = '1px solid white';
-        SEARCH_INPUT.id += "hero-search__input";
-        SEARCH_INPUT.style.border = 'none';
-        SEARCH_ICON.style.backgroundImage = "url('../../assets/icon-search-modo-noct.svg')";
-        SEARCH_ICON.classList.add('hero__search--dark-mode-icon');
-        SEARCH_TERM_ICON.style.backgroundImage = "url('../../assets/icon-search-modo-noct.svg')";
-        // AUTOCOMPLETE_TERM_SUGGESTION_LIST_STYLE.style.listStyleImage = 'url("../assets/icon-search-modo-noct.svg")';
-    } else {
-        HERO_SEARCH_BAR.removeAttribute('id');
-        HERO_SEARCH_BAR.style.border = '1px solid #572EE5';
-        HERO_SEARCH_BAR.style.backgroundColor = 'white';
-        SEARCH_INPUT.removeAttribute('id');
-        SEARCH_ICON.style.backgroundImage = "url('../../assets/icon-search.svg')"
-        SEARCH_ICON.classList.remove('hero__search--dark-mode-icon');
-    }
-}
+// const toggleInputId = () => {
+//     const AUTOCOMPLETE_TERM_SUGGESTION_LIST_STYLE = document.querySelector('.hero-search__autocomplete-suggestion');
+//     if (HERO_SEARCH_BAR.id === "") {
+//         HERO_SEARCH_BAR.id += "hero-search-bar";
+//         HERO_SEARCH_BAR.style.backgroundColor = '#37383C';
+//         HERO_SEARCH_BAR.style.border = '1px solid white';
+//         SEARCH_INPUT.id += "hero-search__input";
+//         SEARCH_INPUT.style.border = 'none';
+//         SEARCH_ICON.style.backgroundImage = "url('../../assets/icon-search-modo-noct.svg')";
+//         SEARCH_ICON.classList.add('hero__search--dark-mode-icon');
+//         SEARCH_TERM_ICON.style.backgroundImage = "url('../../assets/icon-search-modo-noct.svg')";
+//         // AUTOCOMPLETE_TERM_SUGGESTION_LIST_STYLE.style.listStyleImage = 'url("../assets/icon-search-modo-noct.svg")';
+//     } else {
+//         HERO_SEARCH_BAR.removeAttribute('id');
+//         HERO_SEARCH_BAR.style.border = '1px solid #572EE5';
+//         HERO_SEARCH_BAR.style.backgroundColor = 'white';
+//         SEARCH_INPUT.removeAttribute('id');
+//         SEARCH_ICON.style.backgroundImage = "url('../../assets/icon-search.svg')"
+//         SEARCH_ICON.classList.remove('hero__search--dark-mode-icon');
+//     }
+// }
 
-const toggleTrendingGifosId = () => {
-    if (TRENDING_GIFOS.id === "") {
-        TRENDING_GIFOS.id += "dark-mode-dark-gray__trending-gifos"
+// const toggleTrendingGifosId = () => {
+//     if (TRENDING_GIFOS.id === "") {
+//         TRENDING_GIFOS.id += "dark-mode-dark-gray__trending-gifos"
 
-    } else {
-        TRENDING_GIFOS.removeAttribute('id');
-    }
-}
+//     } else {
+//         TRENDING_GIFOS.removeAttribute('id');
+//     }
+// }
 
-//Function to change 'Modo Nocturno' text to 'Modo Diurno'
-const toogleMenuText = () => {
+// //Function to change 'Modo Nocturno' text to 'Modo Diurno'
+// const toogleMenuText = () => {
 
-    if (DARK_MODE_TRIGGER.id === "") {
-        DAY_MODE_MENU.removeAttribute('id');
-        DARK_MODE_TRIGGER.id += "hidden"
-    } else if (DAY_MODE_MENU.id === "") {
-        DAY_MODE_MENU.id += 'hidden';
-        DARK_MODE_TRIGGER.removeAttribute('id');
-    }
+//     if (DARK_MODE_TRIGGER.id === "") {
+//         DAY_MODE_MENU.removeAttribute('id');
+//         DARK_MODE_TRIGGER.id += "hidden"
+//     } else if (DAY_MODE_MENU.id === "") {
+//         DAY_MODE_MENU.id += 'hidden';
+//         DARK_MODE_TRIGGER.removeAttribute('id');
+//     }
 
-}
-
-
-//Function to toggle classes on DOM sections
-
-const toogleIds = () => {
-    toggleBorderIds();
-    toggleHeaderHeroAndFooterId();
-    toggleTrendingGifosId();
-    toogleMenuText();
-    toggleInputId();
-}
+// }
 
 
-//Event listerner to trigger dark mode
+// //Function to toggle classes on DOM sections
 
-DARK_MODE_TRIGGER.addEventListener('click', () => {
-    const HTML = document.querySelector('#html')
-    HTML.setAttribute('data-theme', 'true');
-    toogleIds();
-})
-DAY_MODE_MENU.addEventListener('click', () => {
-    const HTML = document.querySelector('#html')
-    HTML.removeAttribute('data-theme', 'true');
-    toogleIds();
-})
+// const toogleIds = () => {
+//     toggleBorderIds();
+//     toggleHeaderHeroAndFooterId();
+//     toggleTrendingGifosId();
+//     toogleMenuText();
+//     toggleInputId();
+// }
+
+
+// //Event listerner to trigger dark mode
+
+// DARK_MODE_TRIGGER.addEventListener('click', () => {
+//     const HTML = document.querySelector('#html')
+//     HTML.setAttribute('data-theme', 'true');
+//     toogleIds();
+// })
+// DAY_MODE_MENU.addEventListener('click', () => {
+//     const HTML = document.querySelector('#html')
+//     HTML.removeAttribute('data-theme', 'true');
+//     toogleIds();
+// })
+
 
 
 // FUNCTION TO SCROLL SLIDER ON HOME PAGE

@@ -42,16 +42,16 @@
     font-family: $primary-font;
     font-weight: 700;
     font-size: 1.5625em;
-    color: $primary-color;
+    color: var(--primary-color);
     text-align: center;
     line-height: 40px;
     margin-bottom: 38px;
 
-        @media screen and (min-width: 499px) {
+        @media screen and (min-width: 600px) {
         margin-bottom:60px;
         font-size: 35px;
         text-align: center;
-        color: $primary-color;
+        color: var(--primary-color);
         line-height: 30px; 
     }
 
@@ -106,20 +106,20 @@
 .show-more-home {   
 width: 127px;
 height: 50px;
-border: 1px solid $primary-color;
+border: 1px solid var(--border);
 border-radius: 25px;
 font-family: $primary-font;
 font-weight: 700;
 font-size: 13px;
-background-color: white;
-color: $primary-color;  
+background-color: var(--button-background);
+color: var(--primary-color);
 letter-spacing: 0;
 text-align: center;
 display: none;
 
     &:hover {
-        color: white;
-        background-color: $primary-color;
+        color: var(--button-background);
+        background-color: var(--primary-color);
         cursor: pointer;
     }
 
@@ -135,7 +135,7 @@ display: none;
 
 .disabled {
     opacity:0.2;
-    background: $primary-color;
+    background: var(--primary-color);
     color:white;
 }
 

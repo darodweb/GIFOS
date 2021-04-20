@@ -4,6 +4,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    background-color: var(--background-main-color)
 }
 
 .hero__image {
@@ -33,7 +34,7 @@
         font-family: $primary-font;
         font-weight: 700;
         font-size: 25px;
-        color: $primary-color;
+        color:  var(--primary-color);
         text-align: center;
         line-height: 33px;
         width: 286px;
@@ -43,7 +44,7 @@
         // height:99px;
         // margin: 0 auto;
         // font-family: $primary-font;
-        // color: $primary-color;
+        // color:  var(--primary-color);
         // font-size: 25px;
         // line-height: 33px;
         // text-align:center;
@@ -78,7 +79,7 @@
     //     @media screen and (min-width: 499px) {
     //         margin-left: 510px;
     //         cursor: pointer;
-    //         color:$primary-color;
+    //         color: var(--primary-color);
     //         font-size:20px;
     //     }
     // }
@@ -97,9 +98,9 @@
 
         .hero-search-bar {
             position:absolute;
-            background-color: white;
+            background-color: var(--input-background);
             width: 100%;
-            border: 1px solid $primary-color;
+            border: 1px solid  var(--primary-color);
             border-radius:27px;
         }
 
@@ -113,7 +114,7 @@
             font-family: 'Roboto', sans-serif;
             font-weight: 400;
             font-size: 16px;
-            color: black;
+            color: var(--input-text-color);
             text-align: left;
             border:none;
 
@@ -176,11 +177,11 @@
             width: 105%;
             border-radius: 3px;
             cursor: default;
-            list-style-image: url('../../assets/icon-search.svg');
+            list-style-image: var(--search-icon);
             opacity: 0.5;
             cursor: default;
             transform: scale(0.85);
-            color: black;
+            color: var(--auto-complete-text);
 
             &:hover {
                 background-color: #efefef;
@@ -194,7 +195,7 @@
         top: 15px;
         height: 20px;
         width: 20px;
-        background-image: url('../../assets/icon-search.svg');
+        background-image: var(--search-icon);
         background-repeat: no-repeat;
         background-position: center;
         background-size: cover;
@@ -213,7 +214,7 @@
         top: 15px;
         height: 20px;
         width: 20px;
-        background-image: url('../../assets/icon-search.svg');
+        background-image: var(--search-icon);
         background-repeat: no-repeat;
         background-position: center;
         background-size: cover;
@@ -226,7 +227,7 @@
         top: 15px;
         height: 20px;
         width: 20px;
-        background-image: url('../../assets/close.svg');
+        background-image: var(--input-close-button);
         background-repeat: no-repeat;
         background-position: center;
         background-size: cover;
@@ -245,7 +246,7 @@
         width: 300px;
         opacity: 0.5;
         height: 0.5px;
-        background-color: $dark-mode-dark-gray;
+        background-color: var(--hero-search-separator);
         display: none;
     }
 
@@ -258,7 +259,7 @@
     font-family: $primary-font;
     font-weight: 500;
     font-size: 14px;
-    color: $primary-color;
+    color:  var(--primary-color);
     text-align: center;
     line-height: 25px;
     cursor: pointer;
@@ -271,7 +272,7 @@
             font-family: $primary-font;
             font-weight: 500;
             font-size: $primary-size;
-            color: $primary-color;
+            color: var(--trending-terms-color);
             text-align: center;
             line-height: 25px;
             cursor: pointer;
@@ -296,18 +297,18 @@
 
     .hero__trending--title {
         font-family: $primary-font;
-        color: $primary-color;
+        color:  var(--primary-color);
         text-align: center;
         font-weight: 700;
         margin-top: 58px;
     }
 
-    .hero__trending--text {
-        text-align: center;
-        font-size: 14px;
-        color: $primary-color;
-        font-family: $primary-font;
-    }
+    // .hero__trending--text {
+    //     text-align: center;
+    //     font-size: 14px;
+    //     color:  var(--primary-color);
+    //     font-family: $primary-font;
+    // }
 }
 
 
@@ -327,10 +328,10 @@ a, a:link, a:visited, a:active {
 @media screen and (min-width: 499px) {
 
     #hero-search-live-search {
-        border: solid 1px $primary-color;
+        border: solid 1px  var(--primary-color);
         margin-top: 3.1rem;
         width: 550px;
-        border: 1px solid $primary-color;
+        border: 1px solid  var(--primary-color);
         border-bottom-left-radius: 27px;
         border-bottom-right-radius: 27px;
         display: block;

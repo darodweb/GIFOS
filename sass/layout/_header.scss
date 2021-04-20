@@ -1,22 +1,23 @@
 /*Header*/
 
 .border-top {
-    border-top: solid $primary-color 5px;
+    border-top: solid var(--top-bottom-borders) 5px;
 }
 
 header {
     display: flex;
     justify-content: space-between;
     height: 95px;
-    margin-bottom: 7px;
-    @media screen and (min-width: 980px) {
-        margin-bottom: 0px;
-    }
-    // width: 1440px;
+    background-color: var(--background-main-color);
+}
+
+.header {
+    background-color: var(--background-main-color);
 }
 
 .logo__container {
     margin-left: 22px;
+    // background-image: var(--desktop-logo);
 
     svg {
     margin-top: 29px;
@@ -32,7 +33,7 @@ header {
 /*Hamburguer Menu*/
 
 .hamburger {
-    background-image: url('../../assets/burger.svg');
+    background-image: var(--hamburger);
     width:15px;
     margin: 47px 26px 34px 0;
     height: 14px;
@@ -47,7 +48,7 @@ header {
 
 .hamburger.hamburger-close {
     display: block;
-    background-image: url('../../assets/close.svg');
+    background-image: var(--close-hamburger);
     width:15px;
     margin: 47px 26px 34px 0;
     height: 14px;
@@ -85,8 +86,8 @@ header {
     width: 100vw;
     height: 100vh;
     max-height: 100vh;
-    background-color: $primary-color;
-    opacity: .9;
+    background-color: var(--primary-color-menu-display);
+    opacity: 1;
     z-index: 100;
     top:95px;
     position:absolute;
@@ -106,7 +107,7 @@ header {
     // }
 
     // li a::after {
-    // background-color: $primary-color; 
+    // background-color: var(--primary-color); 
     // bottom: -24px;
     // content: '';
     // display: block;
@@ -147,7 +148,7 @@ ul#menu a, a:active, .menu-separator {
     margin: 0 auto;
 }
 
-a {
+  a {
     color: white;
     font-family: $primary-font;
     font-size: 15px;
@@ -160,8 +161,8 @@ a {
 
     &::after {   
         background: none repeat scroll 0 0 transparent;
-        bottom: 20px;
         content: "";
+        bottom: 0;
         display: block;
         height: 2px;
         left: 50%;
@@ -188,7 +189,7 @@ a:link, a:visited {
 
 // tspan .logo__text {
 //     font-size: 18px;
-//     color: $primary-color;
+//     color: var(--primary-color);
 //     word-spacing: 21px;
 // }
 
@@ -223,7 +224,7 @@ a:link, a:visited {
 
 // nav ul li a {
 //     text-decoration: none;
-//     color: $primary-color;
+//     color: var(--primary-color);
 //     line-height: 60px;
 //     font-family: $primary-font;
 
@@ -251,9 +252,9 @@ a:link, a:visited {
     background-color: white;
     width:54px;
     height:54px;
-    color: $primary-color;
+    color: var(--primary-color);
     outline:none;
-    border: 1px solid $primary-color;
+    border: 1px solid var(--primary-color);
     display:none;
     @media screen and (min-width: 980px) {
         display: flex;
@@ -268,7 +269,7 @@ a:link, a:visited {
 
 .floating__button:hover {
     @media screen and (min-width: 980px) {
-        background-color: $primary-color;
+        background-color: var(--primary-color);
         color: white;
         transition: all ease 0.3s; 
     }
