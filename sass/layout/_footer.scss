@@ -33,7 +33,7 @@ footer {
         .facebook-icon {
             height: 20px;
             width: 20px;
-            background-image: url('../../assets/icon_facebook.svg');
+            background-image: var(--facebook-icon);
             background-color: transparent;
             background-position: center;
             background-repeat: no-repeat;
@@ -41,14 +41,14 @@ footer {
             cursor: pointer;
 
             &:hover {
-                background-image: url('../../assets/icon_facebook_hover.svg');
+                background-image: var(--facebook-icon-hover);
             }
         }
 
         .twitter-icon {
             height: 20px;
             width: 20px;
-            background-image: url('../../assets/icon-twitter.svg');
+            background-image: var(--twitter-icon);
             background-color: transparent;
             background-position: center;
             background-repeat: no-repeat;
@@ -56,14 +56,14 @@ footer {
             cursor: pointer;
 
             &:hover {
-                background-image: url('../../assets/icon-twitter-hover.svg');
+                background-image: var(--twitter-icon-hover);
             }
         }
 
         .instagram-icon {
             height: 20px;
             width: 20px;
-            background-image: url('../../assets/icon_instagram.svg');
+            background-image: var(--instagram-icon);
             background-color: transparent;
             background-position: center;
             background-repeat: no-repeat;
@@ -71,7 +71,7 @@ footer {
             cursor: pointer;
 
             &:hover {
-                background-image: url('../../assets/icon_instagram-hover.svg');
+                background-image: var(--instagram-icon-hover);
             }
         }
     }

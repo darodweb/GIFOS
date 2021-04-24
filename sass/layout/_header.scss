@@ -94,6 +94,7 @@ header {
     left:0;
     text-align: center;
 
+
     // li:first-child {
     //     margin-top: -35rem;
     // }
@@ -131,33 +132,7 @@ ul#menu li a {
     text-decoration: none;
     position: relative;
     padding-bottom: 2px;
-
-}
-
-ul#menu a, a:active, .menu-separator {
-    position: relative;
-    top: -10rem;
-}
-
-.menu-separator {
-    opacity: 0.5;
-    border: 1px solid white;
-    width: 41px;
-    background-color: white;
-    list-style-type: none;
-    margin: 0 auto;
-}
-
-  a {
-    color: white;
-    font-family: $primary-font;
-    font-size: 15px;
-    font-weight: 700;
-    letter-spacing: 0;
-    line-height: 60px;
-    text-decoration: none;
-    position: relative;
-    padding-bottom: 2px;
+    top: -21rem;
 
     &::after {   
         background: none repeat scroll 0 0 transparent;
@@ -178,11 +153,94 @@ ul#menu a, a:active, .menu-separator {
             left: 0; 
         }
     }
+
+}
+
+ul#menu a, a:active, .menu-separator {
+    position: relative;
+    top: -21rem;
+}
+
+.menu-separator {
+    opacity: 0.5;
+    border: 1px solid white;
+    width: 41px;
+    background-color: white;
+    list-style-type: none;
+    margin: 0 auto;
+}
+
+a {
+    color: white;
+    font-family: $primary-font;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0;
+    line-height: 60px;
+    text-decoration: none;
+    position: relative;
+    padding-bottom: 2px;
+
+    // &::after {   
+    //     background: none repeat scroll 0 0 transparent;
+    //     content: "";
+    //     bottom: 0;
+    //     display: block;
+    //     height: 2px;
+    //     left: 50%;
+    //     position: absolute;
+    //     background: $secundary-color;
+    //     transition: width 0.3s ease 0s, left 0.3s ease 0s;
+    //     width: 0;
+    //     }
+    
+    // &:hover {
+    //     &::after { 
+    //         width: 100%; 
+    //         left: 0; 
+    //     }
+    // }
 }
 
 a:link, a:visited {
     text-decoration: none;
 }
+
+// .menu {
+//     color: white;
+//     font-family: $primary-font;
+//     font-size: 15px;
+//     font-weight: 700;
+//     letter-spacing: 0;
+//     line-height: 60px;
+//     text-decoration: none;
+//     position: relative;
+//     padding-bottom: 2px;
+
+//     &::after {   
+//         background: none repeat scroll 0 0 transparent;
+//         content: "";
+//         bottom: 0;
+//         display: block;
+//         height: 2px;
+//         left: 50%;
+//         position: absolute;
+//         background: $secundary-color;
+//         transition: width 0.3s ease 0s, left 0.3s ease 0s;
+//         width: 0;
+//         }
+    
+//     &:hover {
+//         &::after { 
+//             width: 100%; 
+//             left: 0; 
+//         }
+//     }
+// }
+
+// a:link, a:visited {
+//     text-decoration: none;
+// }
 
 
 

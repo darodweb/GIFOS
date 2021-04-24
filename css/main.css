@@ -24,6 +24,12 @@
   --hero-search-separator: #222326;
   --border: #572EE5;
   --button-background: white;
+  --facebook-icon: url('../../assets/icon_facebook.svg');
+  --facebook-icon-hover: url('../../assets/icon_facebook_hover.svg');
+  --twitter-icon: url('../../assets/icon-twitter.svg');
+  --twitter-icon-hover: url('../../assets/icon-twitter-hover.svg');
+  --instagram-icon: url('../../assets/icon_instagram.svg');
+  --instagram-icon-hover: url('../../assets/icon_instagram-hover.svg');
 }
 
 .dark-mode {
@@ -47,6 +53,12 @@
   --desktop-logo: url('../../assets/Logo-modo-noc.svg');
   --border: white;
   --button-background: #37383C;
+  --facebook-icon: url('../../assets/icon_facebook.svg');
+  --facebook-icon-hover: url('../../assets/icon_facebook_noc.svg');
+  --twitter-icon: url('../../assets/icon-twitter.svg');
+  --twitter-icon-hover: url('../../assets/icon_twitter_noc.svg');
+  --instagram-icon: url('../../assets/icon_instagram.svg');
+  --instagram-icon-hover: url('../../assets/icon_instagram_noc.svg');
 }
 
 /*Resets */
@@ -293,7 +305,7 @@ footer {
 .footer-social-container .social-icon-container .facebook-icon {
   height: 20px;
   width: 20px;
-  background-image: url("../../assets/icon_facebook.svg");
+  background-image: var(--facebook-icon);
   background-color: transparent;
   background-position: center;
   background-repeat: no-repeat;
@@ -302,13 +314,13 @@ footer {
 }
 
 .footer-social-container .social-icon-container .facebook-icon:hover {
-  background-image: url("../../assets/icon_facebook_hover.svg");
+  background-image: var(--facebook-icon-hover);
 }
 
 .footer-social-container .social-icon-container .twitter-icon {
   height: 20px;
   width: 20px;
-  background-image: url("../../assets/icon-twitter.svg");
+  background-image: var(--twitter-icon);
   background-color: transparent;
   background-position: center;
   background-repeat: no-repeat;
@@ -317,13 +329,13 @@ footer {
 }
 
 .footer-social-container .social-icon-container .twitter-icon:hover {
-  background-image: url("../../assets/icon-twitter-hover.svg");
+  background-image: var(--twitter-icon-hover);
 }
 
 .footer-social-container .social-icon-container .instagram-icon {
   height: 20px;
   width: 20px;
-  background-image: url("../../assets/icon_instagram.svg");
+  background-image: var(--instagram-icon);
   background-color: transparent;
   background-position: center;
   background-repeat: no-repeat;
@@ -332,7 +344,7 @@ footer {
 }
 
 .footer-social-container .social-icon-container .instagram-icon:hover {
-  background-image: url("../../assets/icon_instagram-hover.svg");
+  background-image: var(--instagram-icon-hover);
 }
 
 .brand-container h3 {
@@ -475,11 +487,31 @@ ul#menu li a {
   text-decoration: none;
   position: relative;
   padding-bottom: 2px;
+  top: -21rem;
+}
+
+ul#menu li a::after {
+  background: none repeat scroll 0 0 transparent;
+  content: "";
+  bottom: 0;
+  display: block;
+  height: 2px;
+  left: 50%;
+  position: absolute;
+  background: #5ED7C6;
+  -webkit-transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  width: 0;
+}
+
+ul#menu li a:hover::after {
+  width: 100%;
+  left: 0;
 }
 
 ul#menu a, a:active, .menu-separator {
   position: relative;
-  top: -10rem;
+  top: -21rem;
 }
 
 .menu-separator {
@@ -501,25 +533,6 @@ a {
   text-decoration: none;
   position: relative;
   padding-bottom: 2px;
-}
-
-a::after {
-  background: none repeat scroll 0 0 transparent;
-  content: "";
-  bottom: 0;
-  display: block;
-  height: 2px;
-  left: 50%;
-  position: absolute;
-  background: #5ED7C6;
-  -webkit-transition: width 0.3s ease 0s, left 0.3s ease 0s;
-  transition: width 0.3s ease 0s, left 0.3s ease 0s;
-  width: 0;
-}
-
-a:hover::after {
-  width: 100%;
-  left: 0;
 }
 
 a:link, a:visited {
