@@ -154,6 +154,25 @@ function addEventListenerToSearchTerms(event, inputElement, class_Name) {
     }
 }
 
+function addEventListenerToAutoCompleteSuggestions(event, inputElement, class_Name) {
+    if (event.target.className === class_Name) {
+        inputElement.value = event.target.textContent;
+        // let SavedSearchTerm = event.target.textContent;
+        // localStorage.setItem('searchTerm', `${SavedSearchTerm}`);
+        searchBtn.click();
+    }
+}
+
+HERO_SEARCH_BAR.addEventListener('click', (event) => {
+    addEventListenerToAutoCompleteSuggestions(
+        event,
+        SEARCH_INPUT,
+        "hero-search__autocomplete-suggestion"
+    )
+    CANCEL_SEARCH_ICON.click();
+})
+
+
 TRENDING_TERMS_CONTAINER.addEventListener('click', (event) => {
     addEventListenerToSearchTerms(
         event,
@@ -255,8 +274,8 @@ const searchHandler = () => {
     SEARCH_RESULTS_DIVIDER.style.height = "0.5px";
     SEARCH_RESULTS_DIVIDER.style.backgroundColor = "#9CAFC3";
     SEARCH_RESULTS_DIVIDER.style.width = "338px";
-    SEARCH_RESULTS_DIVIDER.style.marginTop = "74px";
-    SEARCH_RESULTS_DIVIDER.style.marginBottom = "84px";
+    SEARCH_RESULTS_DIVIDER.style.marginTop = "7rem";
+    SEARCH_RESULTS_DIVIDER.style.marginBottom = "27px";
     SEARCH_RESULTS_DIVIDER.style.position = "relative";
     SEARCH_RESULTS_DIVIDER.style.left = "50%";
     SEARCH_RESULTS_DIVIDER.style.transform = "translateX(-50%)";
