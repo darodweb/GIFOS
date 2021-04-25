@@ -92,8 +92,8 @@
         // height: 200px;
         // width: 100%;
         gap:20px;
-        grid-template-columns: repeat(4, minmax(220px, 330px));
-        padding: 0 156px;
+        grid-template-columns: repeat(2, minmax(120px, 250px));
+        padding: 0 15px;
         @media screen and (min-width:600px) {
             grid-template-columns: repeat(3, minmax(180px, 300px));
             padding: 0 15px;  
@@ -101,7 +101,7 @@
         @media screen and (min-width:980px) {
             grid-template-columns: repeat(4, minmax(220px, 330px));
             gap: 20px;
-            padding: 0 15px;
+            padding: 0 156px;
         }
 
     }

@@ -13,8 +13,23 @@ import {
 
 
 
+//Check current theme in localStorage
+let _isDarkTheme = localStorage.getItem('isDarkTheme');
+console.log(_isDarkTheme);
+if (_isDarkTheme !== null) {
+    if (_isDarkTheme === 'true') {
+        console.log('si entró en true')
+        BODY.classList.add('dark-mode');
+        DARK_MODE_DESKTOP_MENU.innerHTML = "MODO DIURNO";
+    } else if (_isDarkTheme === 'false') {
+        console.log('si entró en false')
+        BODY.classList.remove('dark-mode');
+        DARK_MODE_DESKTOP_MENU.innerHTML = "MODO NOCTURNO";
+    }
+}
 
-//-------DARK MODE TOGGLE--------------------------
+
+//-------DARK MODE TOGGLE ON MOBILE--------------------------
 function changeMobileMenuText(event) {
     let _innerText = event.target.textContent;
     if (_innerText === "Modo Nocturno") {
@@ -30,7 +45,7 @@ function changeMobileMenuText(event) {
 
 function changeDesktopMenuText(event) {
     let _innerTextDesktop = event.target.textContent;
-    console.log(_innerTextDesktop);
+
     if (_innerTextDesktop === "MODO NOCTURNO") {
         DARK_MODE_DESKTOP_MENU.innerHTML = "MODO DIURNO";
         LOGO_DARK_MODE.classList.remove('hidden');
@@ -43,24 +58,22 @@ function changeDesktopMenuText(event) {
 }
 
 //For desktop
+let toggleDarkTheme = _isDarkTheme
 DARK_MODE_DESKTOP_MENU.addEventListener('click', (event) => {
-    let currentTheme = localStorage.setItem('theme', 'dark')
+    toggleDarkTheme = !toggleDarkTheme
+    localStorage.setItem('isDarkTheme', `${toggleDarkTheme}`);
     BODY.classList.toggle('dark-mode');
     changeDesktopMenuText(event);
+    console.log(toggleDarkTheme);
+
 })
 
-
-//FOr Mobile
+//For Mobile
 DARK_MODE_TRIGGER.addEventListener('click', (event) => {
-    let currentTheme = localStorage.setItem('theme', 'dark')
+    toggleDarkTheme = !toggleDarkTheme
+    localStorage.setItem('isDarkTheme', `${toggleDarkTheme}`);
     BODY.classList.toggle('dark-mode');
     changeMobileMenuText(event);
-})
-
-DAY_MODE_MENU.addEventListener('click', (event) => {
-    BODY.classList.toggle('dark-mode');
-    changeMobileMenuText(event);
-
 })
 
 //-----------HAMBURGER MENU-----------------------

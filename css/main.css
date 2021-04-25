@@ -37,6 +37,8 @@
   --slider-button-left: url('../../assets/button-slider-left.svg');
   --slider-button-left-hover: url('../../assets/button-slider-left-hover.svg');
   --create-gifo-text: black;
+  --camera: url('../../assets/camara.svg');
+  --tape: url('../../assets/pelicula.svg');
 }
 
 .dark-mode {
@@ -73,6 +75,8 @@
   --slider-button-left: url('../../assets/button-slider-left-md-noct.svg');
   --slider-button-left-hover: url('../../assets/button-slider-left-hover.svg');
   --create-gifo-text: white;
+  --camera: url('../../assets/camara-modo-noc.svg');
+  --tape: url('../../assets/pelicula-modo-noc.svg');
 }
 
 /*Resets */
@@ -435,11 +439,18 @@ header {
 
 .logo__container {
   margin-left: 22px;
+  background-image: var(--desktop-logo);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 60px;
+  width: 60px;
+  margin-top: 29px;
 }
 
-.logo__container svg {
-  margin-top: 29px;
-  margin-left: 22px;
+@media screen and (min-width: 600px) {
+  .logo__container {
+    margin-left: 156px;
+  }
 }
 
 .logo__desktop, .logo__desktop--noc {
@@ -670,6 +681,10 @@ ul li {
   }
 }
 
+.main-logo::after {
+  content: none;
+}
+
 .favoritos {
   background-color: var(--background-main-color);
   margin-top: -1px;
@@ -777,9 +792,9 @@ ul li {
   display: grid;
   position: relative;
   gap: 20px;
-  -ms-grid-columns: (minmax(220px, 330px))[4];
-      grid-template-columns: repeat(4, minmax(220px, 330px));
-  padding: 0 156px;
+  -ms-grid-columns: (minmax(120px, 250px))[2];
+      grid-template-columns: repeat(2, minmax(120px, 250px));
+  padding: 0 15px;
 }
 
 @media screen and (min-width: 600px) {
@@ -795,7 +810,7 @@ ul li {
     -ms-grid-columns: (minmax(220px, 330px))[4];
         grid-template-columns: repeat(4, minmax(220px, 330px));
     gap: 20px;
-    padding: 0 15px;
+    padding: 0 156px;
   }
 }
 
@@ -869,16 +884,18 @@ ul li {
   position: relative;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (minmax(220px, 330px))[4];
-      grid-template-columns: repeat(4, minmax(220px, 330px));
+  -ms-grid-columns: (minmax(120px, 250px))[2];
+      grid-template-columns: repeat(2, minmax(120px, 250px));
   gap: 30px;
-  padding: 0 156px;
+  padding: 0 20px;
+  margin-top: 25px;
 }
 
-@media screen and (min-width: 499px) {
+@media screen and (min-width: 600px) {
   .mis-gifos-gif-container {
     -ms-grid-columns: (auto)[4];
         grid-template-columns: repeat(4, auto);
+    margin-top: 25px;
   }
 }
 
@@ -1452,10 +1469,19 @@ a, a:link, a:visited, a:active {
       -ms-flex-direction: row;
           flex-direction: row;
   background-color: var(--background-main-color);
+  margin-bottom: -1px;
 }
 
 .recording-section .camera-column {
   display: none;
+}
+
+@media screen and (min-width: 980px) {
+  .recording-section .camera-column {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
 }
 
 .recording-section .recording-column {
@@ -1810,7 +1836,7 @@ a, a:link, a:visited, a:active {
   font-family: "Montserrat", sans-serif;
   font-weight: 700;
   font-size: 15px;
-  color: #572EE5;
+  color: var(--primary-color);
   letter-spacing: 0;
   text-align: center;
   line-height: 22px;
@@ -1825,7 +1851,7 @@ a, a:link, a:visited, a:active {
   font-family: "Montserrat", sans-serif;
   font-weight: 700;
   font-size: 13px;
-  color: #572EE5;
+  color: var(--primary-color);
   letter-spacing: 0;
   text-align: center;
   cursor: pointer;
@@ -1856,6 +1882,12 @@ a, a:link, a:visited, a:active {
 
 .recording-section .tape-column {
   display: none;
+}
+
+@media screen and (min-width: 980px) {
+  .recording-section .tape-column {
+    display: block;
+  }
 }
 
 .bottom-line-container {
@@ -1898,6 +1930,8 @@ a, a:link, a:visited, a:active {
           flex: 100%;
   padding-bottom: 10px;
   background-color: var(--background-main-color);
+  margin-top: -1px;
+  margin-bottom: -1px;
 }
 
 .record-button-container .button {
@@ -1971,6 +2005,17 @@ a, a:link, a:visited, a:active {
             align-items: center;
     display: none;
   }
+}
+
+@media screen and (min-width: 600px) and (min-width: 980px) {
+  .recording-section .camera-column {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+@media screen and (min-width: 600px) {
   .recording-section .camera-column .camera-container {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -1987,7 +2032,7 @@ a, a:link, a:visited, a:active {
   .recording-section .camera-column .camera-container .camera-body {
     height: 162px;
     width: 123px;
-    background-image: url("../../assets/camara.svg");
+    background-image: var(--camera);
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
@@ -2040,16 +2085,30 @@ a, a:link, a:visited, a:active {
             align-items: center;
     display: none;
   }
+}
+
+@media screen and (min-width: 600px) and (min-width: 980px) {
+  .recording-section .tape-column {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+@media screen and (min-width: 600px) {
   .recording-section .tape-column .tape-img {
-    background-image: url(../../assets/pelicula.svg);
+    background-image: var(--tape);
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
     width: 142px;
     height: 88px;
   }
+}
+
+@media screen and (min-width: 600px) and (min-width: 980px) {
   .bottom-line-container .bottom-line {
-    width: 100%;
+    width: 70%;
   }
 }
 

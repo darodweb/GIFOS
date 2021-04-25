@@ -14,12 +14,14 @@
 .mis-gifos-gif-container {
     position: relative;
     display:grid;
-    grid-template-columns: repeat(4, minmax(220px, 330px));
+    grid-template-columns: repeat(2, minmax(120px, 250px));
     gap: 30px;
-    padding: 0 156px;
+    padding: 0 20px;
+    margin-top: 25px;
 
-    @media screen and (min-width: 499px) {
+    @media screen and (min-width: 600px) {
         grid-template-columns: repeat(4, auto);
+        margin-top: 25px;
     }
 }
 

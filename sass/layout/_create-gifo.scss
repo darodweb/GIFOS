@@ -7,9 +7,13 @@
     display: flex;
     flex-direction: row;
     background-color: var(--background-main-color);
+    margin-bottom: -1px;
 
     .camera-column {
         display: none;
+        @media screen and (min-width: 980px) {
+            display: flex;
+        }
     }
 
     .recording-column {
@@ -263,7 +267,7 @@
                 font-family: $primary-font;
                 font-weight: 700;
                 font-size: 15px;
-                color: $primary-color;
+                color: var(--primary-color);
                 letter-spacing: 0;
                 text-align: center;
                 line-height: 22px;
@@ -277,7 +281,7 @@
                 font-family: $primary-font;
                 font-weight: 700;
                 font-size: 13px;
-                color: $primary-color;
+                color: var(--primary-color);
                 letter-spacing: 0;
                 text-align: center;
                 cursor: pointer;
@@ -311,7 +315,11 @@
 
     .tape-column {
         display: none;
+        @media screen and (min-width: 980px) {
+            display: block;
+        }
     }
+    
 }
 
 .bottom-line-container {
@@ -337,7 +345,9 @@
     align-items: center;
     flex: 100%;
     padding-bottom: 10px;
-    background-color: var(--background-main-color);;
+    background-color: var(--background-main-color);
+    margin-top: -1px;
+    margin-bottom: -1px;
 
     .button {
         width: 127px;
@@ -402,6 +412,9 @@
             justify-content: flex-end;
             align-items: center;
             display:none;
+            @media screen and (min-width: 980px) {
+                display:flex;
+            }
 
             .camera-container {
                 display: flex;
@@ -412,7 +425,7 @@
                 .camera-body {
                     height: 162px;
                     width: 123px;
-                    background-image: url('../../assets/camara.svg');
+                    background-image: var(--camera);
                     background-repeat: no-repeat;
                     background-size: contain;
                     background-position: center;
@@ -460,9 +473,12 @@
             justify-content: flex-end;
             align-items: center;
             display:none;
+            @media screen and (min-width: 980px) {
+                display:flex;
+            }
 
             .tape-img {
-                background-image: url(../../assets/pelicula.svg);
+                background-image: var(--tape);
                 background-position: center;
                 background-repeat: no-repeat;
                 background-size: contain;
@@ -473,8 +489,10 @@
     }
 
     .bottom-line-container {
-        .bottom-line {
-            width: 100%;
+        @media screen and (min-width:980px) {
+            .bottom-line {
+                width: 70%;
+            }
         }
     }
 }
