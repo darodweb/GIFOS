@@ -36,6 +36,7 @@
   --slider-button-right-hover: url('../../assets/Button-Slider-right-hover.svg');
   --slider-button-left: url('../../assets/button-slider-left.svg');
   --slider-button-left-hover: url('../../assets/button-slider-left-hover.svg');
+  --create-gifo-text: black;
 }
 
 .dark-mode {
@@ -71,6 +72,7 @@
   --slider-button-right-hover: url('../../assets/Button-Slider-right-hover.svg');
   --slider-button-left: url('../../assets/button-slider-left-md-noct.svg');
   --slider-button-left-hover: url('../../assets/button-slider-left-hover.svg');
+  --create-gifo-text: white;
 }
 
 /*Resets */
@@ -844,6 +846,7 @@ ul li {
 
 .my-gifos {
   padding-top: 35px;
+  background-color: var(--background-main-color);
 }
 
 .my-gifos__title--container {
@@ -1435,8 +1438,12 @@ a, a:link, a:visited, a:active {
   color: white;
 }
 
+.main {
+  background-color: var(--background-main-color);
+}
+
 .recording-section {
-  padding-top: 107px;
+  padding-top: 16px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1444,6 +1451,7 @@ a, a:link, a:visited, a:active {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+  background-color: var(--background-main-color);
 }
 
 .recording-section .camera-column {
@@ -1484,7 +1492,7 @@ a, a:link, a:visited, a:active {
   position: relative;
   height: 390px;
   width: 100%;
-  border: 1px solid #572EE5;
+  border: 1px solid var(--primary-color);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1547,7 +1555,7 @@ a, a:link, a:visited, a:active {
   font-family: "Montserrat", sans-serif;
   font-weight: 700;
   font-size: 22px;
-  color: #572EE5;
+  color: var(--primary-color);
   text-align: center;
   line-height: 35px;
 }
@@ -1560,7 +1568,7 @@ a, a:link, a:visited, a:active {
   font-family: "Roboto", sans-serif;
   font-weight: 400;
   font-size: 14px;
-  color: black;
+  color: var(--create-gifo-text);
   text-align: center;
   line-height: 29px;
 }
@@ -1773,9 +1781,9 @@ a, a:link, a:visited, a:active {
   height: 32px;
   width: 32px;
   border-radius: 50%;
-  border: 1px solid #572EE5;
-  background-color: white;
-  color: #572EE5;
+  border: 1px solid var(--primary-color);
+  background-color: var(--background-main-color);
+  color: var(--primary-color);
   font-family: "Roboto", sans-serif;
   font-weight: 600;
   font-size: 18px;
@@ -1791,7 +1799,7 @@ a, a:link, a:visited, a:active {
 }
 
 .recording-section .recording-column .recording-state-container .steps-container .active {
-  background-color: #572EE5;
+  background-color: var(--primary-color);
   color: white;
 }
 
@@ -1864,14 +1872,15 @@ a, a:link, a:visited, a:active {
       -ms-flex: 100%;
           flex: 100%;
   padding: 0px 22px;
-  margin: 20px 0px;
+  padding: 20px 0px;
+  background-color: var(--background-main-color);
 }
 
 .bottom-line-container .bottom-line {
   width: 100%;
   height: 7px;
   border-radius: 10px;
-  background-color: #572EE5;
+  background-color: var(--primary-color);
 }
 
 .record-button-container {
@@ -1888,25 +1897,26 @@ a, a:link, a:visited, a:active {
       -ms-flex: 100%;
           flex: 100%;
   padding-bottom: 10px;
+  background-color: var(--background-main-color);
 }
 
 .record-button-container .button {
   width: 127px;
   height: 50px;
-  border: 1px solid #572EE5;
+  border: 1px solid var(--primary-color);
   border-radius: 25px;
   font-family: "Montserrat", sans-serif;
   font-weight: 700;
   font-size: 13px;
-  background-color: white;
-  color: #572EE5;
+  background-color: var(--background-main-color);
+  color: var(--primary-color);
   letter-spacing: 0;
   text-align: center;
 }
 
 .record-button-container .button:hover {
-  color: white;
-  background-color: #572EE5;
+  color: var(--background-main-color);
+  background-color: var(--primary-color);
   cursor: pointer;
 }
 
@@ -1939,7 +1949,7 @@ a, a:link, a:visited, a:active {
   display: none;
 }
 
-@media screen and (min-width: 499px) {
+@media screen and (min-width: 600px) {
   .recording-section {
     padding-left: 22px;
     padding-right: 22px;
@@ -1959,6 +1969,7 @@ a, a:link, a:visited, a:active {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
+    display: none;
   }
   .recording-section .camera-column .camera-container {
     display: -webkit-box;
@@ -1993,7 +2004,7 @@ a, a:link, a:visited, a:active {
     -webkit-box-flex: 60%;
         -ms-flex: 60%;
             flex: 60%;
-    padding: 0;
+    padding: 0px 22px;
   }
   .recording-section .recording-column .recording-container {
     height: 390px;
@@ -2027,6 +2038,7 @@ a, a:link, a:visited, a:active {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
+    display: none;
   }
   .recording-section .tape-column .tape-img {
     background-image: url(../../assets/pelicula.svg);
@@ -2037,7 +2049,7 @@ a, a:link, a:visited, a:active {
     height: 88px;
   }
   .bottom-line-container .bottom-line {
-    width: 70%;
+    width: 100%;
   }
 }
 
