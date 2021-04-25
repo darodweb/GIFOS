@@ -17,12 +17,12 @@
     height: 42px;
     width: 42px;
     margin-right: 15px;
-    background-image: url('../../assets/button-slider-left.svg');
+    background-image: var(--slider-button-left);
     background-repeat: no-repeat;
     background-size: cover;
 
         &:hover {
-        background-image: url('../../assets/button-slider-left-hover.svg');
+        background-image: var(--slider-button-left-hover);
         }
     }
     }
@@ -34,12 +34,12 @@
     height: 42px;
     width: 42px;
     margin-left: 25px;
-    background-image: url('../../assets/Button-Slider-right.svg');
+    background-image: var(--slider-button-right);
     background-repeat: no-repeat;
     background-size: cover;
 
         &:hover {
-        background-image: url('../../assets/Button-Slider-right-hover.svg');
+        background-image: var(--slider-button-right-hover);
         }
     }
 
@@ -93,7 +93,7 @@
 }
 
 .trending-gifos-slider-container {
-        width:100%;
+        width:80%;
         scrollbar-width: none;
         white-space: nowrap;
         overflow-x: auto;

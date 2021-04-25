@@ -20,6 +20,10 @@
             grid-template-rows: repeat(auto, 200px);
             margin: 0 auto;
             grid-gap: 25px;
+            @media screen and (min-width:980px){
+                grid-template-columns: repeat(4, minmax(220px, 300px));
+                gap: 20px;
+            }
 
 
             .search-results__gif-container {
@@ -302,3 +306,11 @@ display: none;
     }
 }
 
+// @media screen and (min-width: 980px) {
+//     .search-results {
+//         grid-template-columns: repeat(4, minmax(220px, 330px));
+//         gap: 30px;
+//         padding: 0 156px;
+//         margin: 0 auto;
+//     }
+// }

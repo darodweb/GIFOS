@@ -8,14 +8,14 @@ import {
     SEARCH_ICON, INPUT_LINE_SEPARATOR, HERO_SEARCH_BAR, AUTOCOMPLETE_TERM_SUGGESTION, URL_TRENDING_SEARCH_TERMS,
     TRENDING_TERMS_CONTAINER, SHOW_MORE_HOME, PREV_BUTTON, NEXT_BUTTON, SEARCH_RESULTS_CONTAINER, MODAL,
     FAVORITES_CONTAINER, TRENDING_GIFS_CONTAINER, CLOSE_HAMBURGER_BUTTON, BODY, DARK_MODE_MENU,
-    LOGO_DARK_MODE, LOGO_DARK_LIGHT_MODE
+    LOGO_DARK_MODE, LOGO_DARK_LIGHT_MODE, DARK_MODE_DESKTOP_MENU
 } from './constants.js';
 
 
 
 
 //-------DARK MODE TOGGLE--------------------------
-function changeMenuText(event) {
+function changeMobileMenuText(event) {
     let _innerText = event.target.textContent;
     if (_innerText === "Modo Nocturno") {
         DARK_MODE_MENU.innerHTML = "Modo Diurno";
@@ -28,15 +28,38 @@ function changeMenuText(event) {
     }
 }
 
+function changeDesktopMenuText(event) {
+    let _innerTextDesktop = event.target.textContent;
+    console.log(_innerTextDesktop);
+    if (_innerTextDesktop === "MODO NOCTURNO") {
+        DARK_MODE_DESKTOP_MENU.innerHTML = "MODO DIURNO";
+        LOGO_DARK_MODE.classList.remove('hidden');
+        LOGO_DARK_LIGHT_MODE.classList.add('hidden');
+    } else {
+        DARK_MODE_DESKTOP_MENU.innerHTML = "MODO NOCTURNO";
+        LOGO_DARK_MODE.classList.add('hidden');
+        LOGO_DARK_LIGHT_MODE.classList.remove('hidden');
+    }
+}
+
+//For desktop
+DARK_MODE_DESKTOP_MENU.addEventListener('click', (event) => {
+    let currentTheme = localStorage.setItem('theme', 'dark')
+    BODY.classList.toggle('dark-mode');
+    changeDesktopMenuText(event);
+})
+
+
+//FOr Mobile
 DARK_MODE_TRIGGER.addEventListener('click', (event) => {
     let currentTheme = localStorage.setItem('theme', 'dark')
     BODY.classList.toggle('dark-mode');
-    changeMenuText(event);
+    changeMobileMenuText(event);
 })
 
 DAY_MODE_MENU.addEventListener('click', (event) => {
     BODY.classList.toggle('dark-mode');
-    changeMenuText(event);
+    changeMobileMenuText(event);
 
 })
 

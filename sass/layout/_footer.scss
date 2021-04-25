@@ -1,10 +1,20 @@
 footer {
     border-bottom: 5px solid var(--top-bottom-borders);
     background-color: var(--background-main-color);
+    @media screen and (min-width: 980px) {
+        display: flex;
+        justify-content: space-between;
+        height:116px;
+        padding: 0 155px;
+    }
 }
+
 
 .footer-social-container {
     padding-top: 46px;
+    @media screen and (min-width: 980px) {
+        padding-top: 0px;
+    }
     
     h3 {
         font-family: $secondary-font;
@@ -24,6 +34,10 @@ footer {
         width: 100px;
         padding-top: 24px;
         margin: 0 auto;
+        @media screen and (min-width: 980px) {
+            padding-top: 0;
+
+        }
         
 
         a {
@@ -87,4 +101,20 @@ footer {
     text-align: center;
     padding-top: 46px;
     padding-bottom: 12px;
+}
+
+@media screen and (min-width: 980px) {
+    .footer-social-container {
+        display:inline-flex;
+        flex-direction: row;
+
+
+        h3 {
+            margin: auto 0;
+        }
+    }
+
+
+    
+
 }

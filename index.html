@@ -77,7 +77,6 @@
                 </g>
             </svg>
 
-
         </div>
         <nav>
             <!-- <img class="hamburger" id="hamburger" src="./assets/burger.svg" alt="menu-button"> -->
@@ -87,18 +86,30 @@
 
             <ul class="menu" id="menu">
                 <li class="dark-mode mobile"><a href="javascript:void(0)" class="dark-mode-text">Modo Nocturno</a></li>
-                <!-- <li class="dark-mode desktop"><a href="javascript:void(0)" class="dark-mode-text">MODO NOCTURNO</a></li> -->
+                <li><a href="javascript:void(0)" class="desktop-hidden desktop-dark-mode-text">MODO NOCTURNO</a></li>
                 <li class="menu-separator"></li>
+
                 <li class="day-mode" id="hidden"><a href="javascript:void(0)" class="light-mode-text"></a></li>
+
                 <!-- <li class="menu-separator mobile-separator"></li> -->
-                <li><a href="/pages/favorites.html" class="mobile">Favoritos</a></li>
-                <!-- <li><a href="/pages/favorites.html">FAVORITOS</a></li> -->
+                <li class="mobile"><a href="/pages/favorites.html" class="mobile">Favoritos</a></li>
+                <li><a href="/pages/favorites.html" class="desktop-hidden">FAVORITOS</a></li>
                 <li class="menu-separator mobile-separator"></li>
-                <li><a href="/pages/my-gifos.html">Mis Gifos</a></li>
-                <!-- <li><a href="/pages/my-gifos.html">MIS GIFOS</a></li> -->
+
+                <li class="mobile"><a href="/pages/my-gifos.html">Mis Gifos</a></li>
+                <li><a href="/pages/my-gifos.html" class="desktop-hidden">MIS GIFOS</a></li>
+
                 <li class="menu-separator mobile-separator"></li>
                 <li class="mobile"><a href="/pages/create-gifo.html">Crear Gifos</a></li>
-                <!-- <li class="mobile"><a href="/pages/create-gifo.html">CREAR GIFOS</a></li> -->
+                <!-- <li class=><a href="/pages/create-gifo.html" class="desktop-hidden">CREAR GIFOS</a></li> -->
+
+                <li class="desktop-hidden">
+                    <a href="./pages/create-gifo.html">
+                        <div class="floating-button-container">
+                            <div class="floating__button"></div>
+                        </div>
+                    </a>
+                </li>
             </ul>
 
             <!-- <ul>
@@ -127,11 +138,11 @@
                         aria-label="Crear gifo"></a></li>
             </ul> -->
 
-            <a href="./pages/create-gifo.html">
+            <!-- <a href="./pages/create-gifo.html">
                 <div class="floating-button-container">
                     <div class="floating__button">+</div>
                 </div>
-            </a>
+            </a> -->
         </nav>
 
     </header>

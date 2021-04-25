@@ -9,9 +9,14 @@
     }
     background-color: $dark-mode-gray;
 
-    .floating__button {
-        border:none;
-    }
+    // .floating__button {
+    //     border:none;
+    //     background-image: var(--create-gif-button);
+
+    //     &:hover {
+    //         background-image: var(--create-gif-button-hover);
+    //     }
+    // }
 
     a {
         color:white;

@@ -75,6 +75,7 @@ header {
     @media screen and (min-width: 980px) {
         display:flex;
         justify-content: space-between;
+        align-items: flex-end;
 
 
     }
@@ -145,6 +146,9 @@ ul#menu li a {
         background: $secundary-color;
         transition: width 0.3s ease 0s, left 0.3s ease 0s;
         width: 0;
+        @media screen and (min-width: 980px) {
+            bottom: 20px;
+        }
         }
     
     &:hover {
@@ -306,40 +310,65 @@ a:link, a:visited {
 
 /*Floating Action Button*/
 .floating__button {
-    border-radius:100%;
-    background-color: white;
-    width:54px;
-    height:54px;
-    color: var(--primary-color);
-    outline:none;
-    border: 1px solid var(--primary-color);
-    display:none;
     @media screen and (min-width: 980px) {
+        width:54px;
+        height:54px; 
         display: flex;
         justify-content: center;
         align-items: center;
         font-size: 30px;
         font-weight: 700;
         cursor: pointer;
+        background-image: var(--create-gif-button);
     }
   
 }
 
 .floating__button:hover {
     @media screen and (min-width: 980px) {
-        background-color: var(--primary-color);
-        color: white;
+        background-image: var(--create-gif-button-hover);
         transition: all ease 0.3s; 
+        }
+        
     }
     
+
+// .kc_fab_main_btn:focus {
+//   transform:scale(1.1);
+//   transform:rotate(45deg);
+//   -ms-transform: rotate(45deg);
+//     -webkit-transform: rotate(45deg);
+
+// }
+
+ 
+ul li {
+    list-style: none;
 }
 
-.kc_fab_main_btn:focus {
-  transform:scale(1.1);
-  transform:rotate(45deg);
-  -ms-transform: rotate(45deg);
-    -webkit-transform: rotate(45deg);
+.desktop-hidden {
+    display:none;
+}
 
+@media screen and (min-width: 980px) {
+    .mobile {
+        display:none;
+    }
+
+    ul#menu li a {
+        top: 0;
+        color: var(--primary-color);
+        font-size: 13px;
+        margin: 0 20px;
+    }
+
+    .menu-separator {
+        display:none;
+    }
+    .desktop-hidden {
+        display:flex;
+        justify-content: space-between;
+    }
 }
 
 

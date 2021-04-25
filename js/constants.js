@@ -60,6 +60,7 @@ const TRENDING_GIFOS = document.querySelector('.trending-gifos');
 const BORDER_BOTTOM = document.querySelector('.border-bottom');
 const DARK_MODE_TRIGGER = document.querySelector('.dark-mode');
 const DARK_MODE_MENU = document.querySelector('.dark-mode-text');
+const DARK_MODE_DESKTOP_MENU = document.querySelector('.desktop-dark-mode-text');
 const FOOTER = document.querySelector('.footer');
 const DAY_MODE_MENU = document.querySelector('.day-mode');
 const BODY = document.querySelector('body');
@@ -111,5 +112,5 @@ export {
     STEP_1, STEP_2, STOP_BUTTON, UPLOAD_BUTTON, TIMER, REPEAT_CAPTION, UPLOAD_URL,
     RESET_BUTTON, RECORDING_VIDEO_CONTAINER, GIF_ID_URL, LABEL_API_KEY, API_KEY,
     UPLOAD_OVERLAY, UPLOAD_LOADER, UPLOAD_OK, UPLOAD_MESSAGE, STEP_3, GIF_BY_ID_URL, BODY,
-    DARK_MODE_MENU, LOGO_DARK_MODE, LOGO_DARK_LIGHT_MODE
+    DARK_MODE_MENU, LOGO_DARK_MODE, LOGO_DARK_LIGHT_MODE, DARK_MODE_DESKTOP_MENU
 };

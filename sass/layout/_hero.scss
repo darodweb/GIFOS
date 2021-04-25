@@ -49,8 +49,7 @@
         // line-height: 33px;
         // text-align:center;
         @media screen and (min-width:980px) {
-            max-width: 600px;
-            height: 100px;
+            width:100%;
             font-size: 35px;
             line-height: 50px;
             text-align: center;
@@ -69,7 +68,11 @@
         color: $secundary-color;
     }
 
-
+.hero__title--container {
+    @media screen and (min-width:980px) {
+        width:600px;
+    }
+}
 
 
     // .hero-search-bar {
