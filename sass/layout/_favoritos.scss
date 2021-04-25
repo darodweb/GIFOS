@@ -1,3 +1,8 @@
+.favoritos {
+    background-color: var(--background-main-color);
+    margin-top: -1px;
+}
+
 .favoritos__title--container {
     width:100%;
     display:flex;
@@ -86,9 +91,19 @@
         position: relative;
         // height: 200px;
         // width: 100%;
-        gap:30px;
+        gap:20px;
         grid-template-columns: repeat(4, minmax(220px, 330px));
         padding: 0 156px;
+        @media screen and (min-width:600px) {
+            grid-template-columns: repeat(3, minmax(180px, 300px));
+            padding: 0 15px;  
+        }
+        @media screen and (min-width:980px) {
+            grid-template-columns: repeat(4, minmax(220px, 330px));
+            gap: 20px;
+            padding: 0 15px;
+        }
+
     }
 
     .favorites-gif__container {
