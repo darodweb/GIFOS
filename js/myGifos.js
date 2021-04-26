@@ -11,14 +11,24 @@ import {
 
 //Check current theme in localStorage
 let _isDarkTheme = localStorage.getItem('isDarkTheme');
-console.log(_isDarkTheme);
-if (_isDarkTheme !== null) {
+// if (_isDarkTheme !== null) {
+//     if (_isDarkTheme === 'true') {
+//         console.log('si entró en true')
+//         BODY.classList.add('dark-mode');
+//         DARK_MODE_DESKTOP_MENU.innerHTML = "MODO DIURNO";
+//     } else if (_isDarkTheme === 'false') {
+//         console.log('si entró en false')
+//         BODY.classList.remove('dark-mode');
+//         DARK_MODE_DESKTOP_MENU.innerHTML = "MODO NOCTURNO";
+//     }
+// }
+
+if (_isDarkTheme) {
+    BODY.classList.add('dark-mode');
+
     if (_isDarkTheme === 'true') {
-        console.log('si entró en true')
-        BODY.classList.add('dark-mode');
         DARK_MODE_DESKTOP_MENU.innerHTML = "MODO DIURNO";
-    } else if (_isDarkTheme === 'false') {
-        console.log('si entró en false')
+    } else {
         BODY.classList.remove('dark-mode');
         DARK_MODE_DESKTOP_MENU.innerHTML = "MODO NOCTURNO";
     }
@@ -30,12 +40,12 @@ function changeMobileMenuText(event) {
     let _innerText = event.target.textContent;
     if (_innerText === "Modo Nocturno") {
         DARK_MODE_MENU.innerHTML = "Modo Diurno";
-        LOGO_DARK_MODE.classList.remove('hidden');
-        LOGO_DARK_LIGHT_MODE.classList.add('hidden');
+        // LOGO_DARK_MODE.classList.remove('hidden');
+        // LOGO_DARK_LIGHT_MODE.classList.add('hidden');
     } else if (_innerText === "Modo Diurno") {
         DARK_MODE_MENU.innerHTML = "Modo Nocturno";
-        LOGO_DARK_MODE.classList.add('hidden');
-        LOGO_DARK_LIGHT_MODE.classList.remove('hidden');
+        // LOGO_DARK_MODE.classList.add('hidden');
+        // LOGO_DARK_LIGHT_MODE.classList.remove('hidden');
     }
 }
 
@@ -44,12 +54,9 @@ function changeDesktopMenuText(event) {
 
     if (_innerTextDesktop === "MODO NOCTURNO") {
         DARK_MODE_DESKTOP_MENU.innerHTML = "MODO DIURNO";
-        LOGO_DARK_MODE.classList.remove('hidden');
-        LOGO_DARK_LIGHT_MODE.classList.add('hidden');
+
     } else {
         DARK_MODE_DESKTOP_MENU.innerHTML = "MODO NOCTURNO";
-        LOGO_DARK_MODE.classList.add('hidden');
-        LOGO_DARK_LIGHT_MODE.classList.remove('hidden');
     }
 }
 
@@ -60,7 +67,6 @@ DARK_MODE_DESKTOP_MENU.addEventListener('click', (event) => {
     localStorage.setItem('isDarkTheme', `${toggleDarkTheme}`);
     BODY.classList.toggle('dark-mode');
     changeDesktopMenuText(event);
-    console.log(toggleDarkTheme);
 
 })
 

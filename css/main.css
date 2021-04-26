@@ -283,6 +283,10 @@
           transform: scale(0.98);
 }
 
+.index {
+  cursor: pointer;
+}
+
 footer {
   border-bottom: 5px solid var(--top-bottom-borders);
   background-color: var(--background-main-color);
