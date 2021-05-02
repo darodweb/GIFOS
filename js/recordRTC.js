@@ -7,7 +7,6 @@ export const recordRTC = (function () {
         audio: false,
         video: {
             height: { max: 320 }
-            // facingMode: { exact: "user" }
         }
     }
     const _config = {
